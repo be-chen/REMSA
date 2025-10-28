@@ -1,0 +1,626 @@
+{
+    "model_id": {
+        "value": "CSMAE",
+        "confidence": 0.9133
+    },
+    "model_name": {
+        "value": "Cross-Sensor Masked Autoencoder",
+        "confidence": 0.7623
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.6675
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "Cross-Sensor Masked Autoencoders (CSMAEs) are adaptations of vanilla Masked Autoencoders (MAEs) for sensor-agnostic and cross-modal content-based image retrieval (CBIR) in remote sensing. CSMAEs introduce architectural and training modifications to enable learning from multi-sensor (e.g., SAR and multispectral) image pairs, supporting both uni-modal and cross-modal retrieval.",
+        "confidence": 0.7624
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2401.07782",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/jakhac/CSMAE",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Vision Transformer (ViT)",
+        "confidence": 0.9875
+    },
+    "num_layers": {
+        "value": 12,
+        "confidence": 0.9991
+    },
+    "num_parameters": {
+        "value": 114150000,
+        "confidence": 0.7963
+    },
+    "pretext_training_type": {
+        "value": "Masked image modeling (MIM) with uni-modal and cross-modal reconstruction and latent similarity preservation",
+        "confidence": 0.7915
+    },
+    "masking_strategy": {
+        "value": "Random, identical, or disjoint multi-modal masking correspondence with 50% masking ratio",
+        "confidence": 0.8291
+    },
+    "pretraining": {
+        "value": "Self-supervised masked image modeling on multi-sensor (SAR and multispectral) image pairs with both uni-modal and cross-modal reconstruction objectives and latent similarity preservation loss",
+        "confidence": 0.7211
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Multi-modal remote sensing",
+                "confidence": 0.4261
+            },
+            {
+                "value": "Sensor-agnostic representation learning",
+                "confidence": 0.4534
+            },
+            {
+                "value": "Content-based image retrieval",
+                "confidence": 0.721
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Sensor-specific or sensor-common encoders/decoders",
+                "confidence": 0.642
+            },
+            {
+                "value": "Cross-sensor encoder",
+                "confidence": 0.9427
+            },
+            {
+                "value": "Multi-modal patch embedding",
+                "confidence": 0.5805
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-1",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.9907
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "SAR",
+                "confidence": 0.9558
+            },
+            {
+                "value": "Multispectral",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.8719
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "10m and 20m (Sentinel-2 bands, 20m bands upsampled to 10m)",
+        "confidence": 0.7287
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "VV",
+                "confidence": 0.4668
+            },
+            {
+                "value": "VH",
+                "confidence": 0.9
+            },
+            {
+                "value": "B2",
+                "confidence": 0.5485
+            },
+            {
+                "value": "B3",
+                "confidence": 0.9
+            },
+            {
+                "value": "B4",
+                "confidence": 0.9
+            },
+            {
+                "value": "B8",
+                "confidence": 0.8921
+            },
+            {
+                "value": "B5",
+                "confidence": 0.8951
+            },
+            {
+                "value": "B6",
+                "confidence": 0.9
+            },
+            {
+                "value": "B7",
+                "confidence": 0.9
+            },
+            {
+                "value": "B8A",
+                "confidence": 0.8859
+            },
+            {
+                "value": "B11",
+                "confidence": 0.9
+            },
+            {
+                "value": "B12",
+                "confidence": 0.9
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "BigEarthNet",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "10 European countries",
+                        "confidence": 0.9213
+                    },
+                    {
+                        "value": "Serbia",
+                        "confidence": 0.9991
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "summer and autumn (BEN-270K), summer (BEN-14K)",
+                "confidence": 0.3577
+            },
+            "num_images": {
+                "value": 270470,
+                "confidence": 0.7848
+            },
+            "token_size": {
+                "value": "15x15",
+                "confidence": 0.995
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-4 (AdamW, linear warmup, cosine annealing)",
+                "confidence": 0.3748
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Bicubic interpolation for 20m bands",
+                        "confidence": 0.3667
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random selection of image pairs",
+                "confidence": 0.3133
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 50.0,
+                "confidence": 0.5737
+            }
+        },
+        {
+            "dataset": {
+                "value": "BigEarthNet",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Serbia",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "summer",
+                "confidence": 1.0
+            },
+            "num_images": {
+                "value": 14832,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": "15x15",
+                "confidence": 1.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-4 (AdamW, linear warmup, cosine annealing)",
+                "confidence": 0.9999
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Bicubic interpolation for 20m bands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random selection of image pairs",
+                "confidence": 0.995
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 50.0,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Content-based image retrieval (CBIR)",
+                "confidence": 0.4143
+            },
+            "application": {
+                "value": "Sensor-agnostic and cross-modal image retrieval",
+                "confidence": 0.4105
+            },
+            "dataset": {
+                "value": "BigEarthNet (BEN-270K, BEN-14K)",
+                "confidence": 0.3745
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1 score",
+                        "confidence": 0.8794
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 71.22,
+                        "confidence": 0.8431
+                    },
+                    {
+                        "value": 72.98,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 71.61,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 72.18,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "10 European countries",
+                        "confidence": 0.9944
+                    },
+                    {
+                        "value": "Serbia",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 590326,
+                "confidence": 0.9253
+            },
+            "num_samples": {
+                "value": 270470,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 45.83,
+                "confidence": 0.5962
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": "10m and 20m (20m bands upsampled to 10m)",
+                "confidence": 0.348
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 VV",
+                        "confidence": 0.8083
+                    },
+                    {
+                        "value": "Sentinel-1 VH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 10m bands",
+                        "confidence": 0.9521
+                    },
+                    {
+                        "value": "Sentinel-2 20m bands",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 0.9999
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Mean squared error (uni-modal and cross-modal reconstruction), mutual information maximization loss (LMIM)",
+                "confidence": 0.3016
+            },
+            "split_ratio": {
+                "value": "52% train, 24% val, 24% test",
+                "confidence": 0.563
+            }
+        },
+        {
+            "task": {
+                "value": "Content-based image retrieval (CBIR)",
+                "confidence": 0.9997
+            },
+            "application": {
+                "value": "Sensor-agnostic and cross-modal image retrieval",
+                "confidence": 0.9996
+            },
+            "dataset": {
+                "value": "BigEarthNet (BEN-14K)",
+                "confidence": 0.9977
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1 score",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 70.18,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 72.3,
+                        "confidence": 0.9795
+                    },
+                    {
+                        "value": 70.75,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 71.39,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Serbia",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 590326,
+                "confidence": 0.8587
+            },
+            "num_samples": {
+                "value": 14832,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 2.51,
+                "confidence": 0.9896
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": "10m and 20m (20m bands upsampled to 10m)",
+                "confidence": 0.9971
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 VV",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-1 VH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 10m bands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 20m bands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Mean squared error (uni-modal and cross-modal reconstruction), mutual information maximization loss (LMIM)",
+                "confidence": 0.9996
+            },
+            "split_ratio": {
+                "value": "52% train, 24% val, 24% test",
+                "confidence": 1.0
+            }
+        }
+    ]
+}

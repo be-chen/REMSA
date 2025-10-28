@@ -1,0 +1,310 @@
+{
+    "model_id": {
+        "value": "TTP",
+        "confidence": 0.885
+    },
+    "model_name": {
+        "value": "Time Travelling Pixels",
+        "confidence": 0.9986
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.678
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "TTP integrates the latent knowledge of the SAM foundation model into remote sensing image change detection, using low-rank fine-tuning, a time-traveling activation gate for bitemporal feature integration, and a lightweight multi-level decoding head. Achieves state-of-the-art results on LEVIR-CD.",
+        "confidence": 0.8464
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2312.16202",
+        "confidence": 0.999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://kychen.me/TTP",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "SAM (Segment Anything Model) Transformer Encoder",
+        "confidence": 0.7361
+    },
+    "num_layers": {
+        "value": 12,
+        "confidence": 0.6803
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Transfer learning with low-rank fine-tuning",
+        "confidence": 0.8866
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Leverages general segmentation knowledge from the SAM foundation model, with backbone parameters frozen and low-rank trainable parameters introduced for adaptation to remote sensing.",
+        "confidence": 0.7073
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Low-rank fine-tuning",
+                "confidence": 0.8707
+            },
+            {
+                "value": "Time-traveling activation gate",
+                "confidence": 0.9334
+            },
+            {
+                "value": "Multi-level decoding head",
+                "confidence": 0.9004
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Low-rank trainable parameters in multi-head attention layers",
+                "confidence": 0.8996
+            },
+            {
+                "value": "Time-traveling activation gate after global attention layers",
+                "confidence": 0.9041
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.9553
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9936
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9839
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.7747
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.9392
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.6137
+    },
+    "bands": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "pretraining_phases": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "benchmarks": [
+        {
+            "task": {
+                "value": "change detection",
+                "confidence": 0.7101
+            },
+            "application": {
+                "value": "remote sensing image change detection",
+                "confidence": 0.5513
+            },
+            "dataset": {
+                "value": "LEVIR-CD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 0.9855
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "OA",
+                        "confidence": 0.7357
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 93.0,
+                        "confidence": 0.9963
+                    },
+                    {
+                        "value": 91.7,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 92.1,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 85.6,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 99.2,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 637,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 637,
+                "confidence": 0.9985
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "changed",
+                        "confidence": 0.9593
+                    },
+                    {
+                        "value": "unchanged",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1024x1024 (raw), 512x512 (input)",
+                "confidence": 0.3421
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "rotation",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0004,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 300,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "binary cross-entropy",
+                "confidence": 0.9749
+            },
+            "split_ratio": {
+                "value": "445/64/128 (train/val/test)",
+                "confidence": 0.6561
+            }
+        }
+    ]
+}

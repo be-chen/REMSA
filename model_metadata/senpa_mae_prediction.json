@@ -1,0 +1,588 @@
+{
+    "model_id": {
+        "value": "senpa-mae",
+        "confidence": 0.8239
+    },
+    "model_name": {
+        "value": "SenPa-MAE",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8796
+    },
+    "release_date": {
+        "value": "2024-08-20",
+        "confidence": 1.0
+    },
+    "last_updated": {
+        "value": "2024-08-20",
+        "confidence": 1.0
+    },
+    "short_description": {
+        "value": "SenPa-MAE is a transformer-based masked autoencoder for multi-satellite self-supervised pretraining, incorporating sensor parameter encoding to enable sensor-independent Earth observation foundation models.",
+        "confidence": 0.7764
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2408.11000",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/JonathanPrexl/SenPa-MAE",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://github.com/JonathanPrexl/SenPa-MAE",
+        "confidence": 0.9998
+    },
+    "backbone": {
+        "value": "ViT-Base",
+        "confidence": 0.9171
+    },
+    "num_layers": {
+        "value": 12,
+        "confidence": 0.9959
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Masked Autoencoding (MAE)",
+        "confidence": 0.704
+    },
+    "masking_strategy": {
+        "value": "Random masking of 66% of tokens (patch-channel tokens)",
+        "confidence": 0.714
+    },
+    "pretraining": {
+        "value": "Self-supervised masked autoencoding with sensor parameter encoding and spectral superposition augmentation across Sentinel-2, Planet SuperDove, and Landsat-8/9 imagery.",
+        "confidence": 0.8127
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Sensor parameter encoding (spectral response function, ground sampling distance)",
+                "confidence": 0.8875
+            },
+            {
+                "value": "Spectral superposition augmentation",
+                "confidence": 0.9445
+            },
+            {
+                "value": "Resolution augmentation",
+                "confidence": 0.8886
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Tokenization per patch and channel",
+                "confidence": 0.6925
+            },
+            {
+                "value": "Sensor parameter encoding module (MLPs for spectral response and GSD)",
+                "confidence": 0.4727
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9999
+            },
+            {
+                "value": "Planet SuperDove",
+                "confidence": 0.9493
+            },
+            {
+                "value": "Landsat-8",
+                "confidence": 0.9995
+            },
+            {
+                "value": "Landsat-9",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9461
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9998
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.8723
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9999
+    },
+    "spatial_resolution": {
+        "value": "5m (resampled)",
+        "confidence": 0.7193
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9673
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "All 10m and 20m GSD bands of Sentinel-2",
+                "confidence": 0.8099
+            },
+            {
+                "value": "All bands of Planet SuperDove",
+                "confidence": 0.9359
+            },
+            {
+                "value": "All bands of Landsat-8/9",
+                "confidence": 0.9936
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Sentinel-2 (10m, 20m bands), Planet SuperDove, Landsat-8/9",
+                "confidence": 0.3482
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "29 globally distributed locations",
+                        "confidence": 0.8918
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 116000,
+                "confidence": 0.9998
+            },
+            "token_size": {
+                "value": "9x9 patch pattern per channel, 4 channels per image",
+                "confidence": 0.3041
+            },
+            "image_resolution": {
+                "value": "256x256 px (raw), 144x144 px (input)",
+                "confidence": 0.3074
+            },
+            "epochs": {
+                "value": 400,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-4 (cosine decay, 3 warmup epochs)",
+                "confidence": 0.3826
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spectral superposition augmentation (SSA)",
+                        "confidence": 0.5469
+                    },
+                    {
+                        "value": "Resolution augmentation (random cubic downsampling with Gaussian blur)",
+                        "confidence": 0.331
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Resample all images to 5m pixel-spacing grid",
+                        "confidence": 0.3467
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling of 50k patches (S2, SD), 25k patches (LS) from 29 locations; 4 random channels per image",
+                "confidence": 0.3002
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 0.66,
+                "confidence": 0.9992
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.5661
+            },
+            "application": {
+                "value": "Land cover mapping",
+                "confidence": 0.7497
+            },
+            "dataset": {
+                "value": "ESA WorldCover V200",
+                "confidence": 0.8277
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "micro IoU",
+                        "confidence": 0.8198
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.71,
+                        "confidence": 0.7785
+                    },
+                    {
+                        "value": 0.69,
+                        "confidence": 0.9973
+                    },
+                    {
+                        "value": 0.65,
+                        "confidence": 0.9738
+                    },
+                    {
+                        "value": 0.52,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Planet SuperDove",
+                        "confidence": 0.9959
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States (9 locations, 5 for training, 4 for validation)",
+                        "confidence": 0.305
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 42000,
+                "confidence": 0.8409
+            },
+            "num_samples": {
+                "value": 42000,
+                "confidence": 0.9996
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Artificial surfaces",
+                        "confidence": 0.3749
+                    },
+                    {
+                        "value": "Cropland",
+                        "confidence": 0.7977
+                    },
+                    {
+                        "value": "Grassland",
+                        "confidence": 0.9706
+                    },
+                    {
+                        "value": "Shrubland",
+                        "confidence": 0.6448
+                    },
+                    {
+                        "value": "Forest",
+                        "confidence": 0.4749
+                    },
+                    {
+                        "value": "Bare soil",
+                        "confidence": 0.4703
+                    },
+                    {
+                        "value": "Water",
+                        "confidence": 0.7655
+                    },
+                    {
+                        "value": "Permanent snow and ice",
+                        "confidence": 0.5677
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256 px (resampled to 5m)",
+                "confidence": 0.5025
+            },
+            "spatial_resolution": {
+                "value": "5m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "4 randomly selected channels per image from S2 or SD",
+                        "confidence": 0.3057
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spectral superposition augmentation (SSA)",
+                        "confidence": 0.4605
+                    },
+                    {
+                        "value": "Resolution augmentation",
+                        "confidence": 0.9743
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy (segmentation)",
+                "confidence": 0.3657
+            },
+            "split_ratio": {
+                "value": "5 train locations / 4 validation locations",
+                "confidence": 0.326
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.995
+            },
+            "application": {
+                "value": "Land cover mapping (zero-shot evaluation)",
+                "confidence": 0.3939
+            },
+            "dataset": {
+                "value": "ESA WorldCover V200",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "micro IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.71,
+                        "confidence": 0.8299
+                    },
+                    {
+                        "value": 0.69,
+                        "confidence": 0.992
+                    },
+                    {
+                        "value": 0.63,
+                        "confidence": 0.7145
+                    },
+                    {
+                        "value": 0.52,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Planet SuperDove",
+                        "confidence": 0.9985
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States (9 locations, 5 for training, 4 for validation)",
+                        "confidence": 0.4151
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 42000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 42000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Artificial surfaces",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Cropland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grassland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Shrubland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Bare soil",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Water",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Permanent snow and ice",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256 px (resampled to 5m)",
+                "confidence": 0.9921
+            },
+            "spatial_resolution": {
+                "value": "5m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "S2 1237",
+                        "confidence": 0.632
+                    },
+                    {
+                        "value": "S2 1234",
+                        "confidence": 0.9795
+                    },
+                    {
+                        "value": "SD 2468",
+                        "confidence": 0.9982
+                    },
+                    {
+                        "value": "SD 1357",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spectral superposition augmentation (SSA)",
+                        "confidence": 0.9854
+                    },
+                    {
+                        "value": "Resolution augmentation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy (segmentation)",
+                "confidence": 0.9989
+            },
+            "split_ratio": {
+                "value": "5 train locations / 4 validation locations",
+                "confidence": 0.9969
+            }
+        }
+    ]
+}

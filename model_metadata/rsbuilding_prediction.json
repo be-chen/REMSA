@@ -1,0 +1,1114 @@
+{
+    "model_id": {
+        "value": "RSBuilding",
+        "confidence": 0.9725
+    },
+    "model_name": {
+        "value": "RSBuilding",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "RSBuilding is a general remote sensing foundation model for building extraction and change detection, designed to enhance cross-scene generalization and task universality. It uses a Transformer-based encoder (ViT or Swin), a multi-level feature sampler, and a cross-attention decoder with task prompts, and is trained with a federated strategy on a large-scale curated dataset.",
+        "confidence": 0.7986
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2403.07564",
+        "confidence": 0.9997
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/Meize0729/RSBuilding",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ViT or Swin Transformer",
+        "confidence": 0.8288
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Multi-task federated training (building extraction and change detection)",
+        "confidence": 0.8089
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Federated training on a curated dataset of ~245,000 images for building extraction and change detection, using both single-task and dual-task annotated data.",
+        "confidence": 0.6898
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Building extraction",
+                "confidence": 0.5741
+            },
+            {
+                "value": "Change detection",
+                "confidence": 0.9725
+            },
+            {
+                "value": "Remote sensing imagery",
+                "confidence": 0.7507
+            },
+            {
+                "value": "Multi-scale feature enhancement",
+                "confidence": 0.6366
+            },
+            {
+                "value": "Spatiotemporal information integration",
+                "confidence": 0.3032
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Multi-level feature sampler",
+                "confidence": 0.9642
+            },
+            {
+                "value": "Cross-attention decoder with task prompts",
+                "confidence": 0.9713
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Optical satellites",
+                "confidence": 0.7868
+            },
+            {
+                "value": "Aerial imagery",
+                "confidence": 0.9077
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.9953
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9781
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.8418
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9468
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.8872
+    },
+    "spatial_resolution": {
+        "value": "variable (0.3m to 0.8m, depending on dataset)",
+        "confidence": 0.6992
+    },
+    "temporal_resolution": {
+        "value": "variable (single-temporal and bi-temporal)",
+        "confidence": 0.7879
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.7992
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "RSBuilding Dataset (curated from WHU, INRIA, Massachusetts, Map Challenge, Tanzania Challenge, EGY-BCD, MSBC, MSOSCD, LEVIR-CD, S2Looking, WHU-CD, BANDON, xView2)",
+                "confidence": 0.3322
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (including China, East Asia, US, Europe, Africa)",
+                        "confidence": 0.3007
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 245000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.9984
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-4",
+                "confidence": 0.9967
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 0.8437
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 0.981
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mosaic",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temporal exchange",
+                        "confidence": 0.9997
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "crop to 512x512",
+                        "confidence": 0.5088
+                    },
+                    {
+                        "value": "data selection from multiple sources",
+                        "confidence": 0.3009
+                    }
+                ]
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": "Federated training strategy to handle missing task labels",
+                "confidence": 0.3027
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Building Extraction",
+                "confidence": 0.5302
+            },
+            "application": {
+                "value": "Building segmentation from remote sensing imagery",
+                "confidence": 0.3439
+            },
+            "dataset": {
+                "value": "WHU",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 0.6657
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 95.93,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 95.82,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 95.88,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 92.15,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.8904
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "China",
+                        "confidence": 0.7971
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 8189,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 8189,
+                "confidence": 0.8279
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "building",
+                        "confidence": 0.7178
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 0.9961
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.9397
+            },
+            "spatial_resolution": {
+                "value": "0.3m",
+                "confidence": 0.9997
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 0.9976
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mosaic",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temporal exchange",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 0.9991
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary Cross-Entropy",
+                "confidence": 0.5403
+            },
+            "split_ratio": {
+                "value": "4736/1036/2416 (train/val/test)",
+                "confidence": 0.6518
+            }
+        },
+        {
+            "task": {
+                "value": "Building Extraction",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Building segmentation from remote sensing imagery",
+                "confidence": 0.92
+            },
+            "dataset": {
+                "value": "INRIA",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.4,
+                        "confidence": 0.9333
+                    },
+                    {
+                        "value": 89.65,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 90.52,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 82.68,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.9935
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Austin",
+                        "confidence": 0.9318
+                    },
+                    {
+                        "value": "Chicago",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kitsap",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Tyrol",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Vienna",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 360,
+                "confidence": 0.7326
+            },
+            "num_samples": {
+                "value": 360,
+                "confidence": 0.9324
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "building",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.9994
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mosaic",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temporal exchange",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary Cross-Entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Change Detection",
+                "confidence": 0.9995
+            },
+            "application": {
+                "value": "Building change detection from bi-temporal remote sensing imagery",
+                "confidence": 0.4343
+            },
+            "dataset": {
+                "value": "LEVIR-CD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 93.39,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 91.8,
+                        "confidence": 0.9985
+                    },
+                    {
+                        "value": 92.59,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 86.19,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Google Earth",
+                        "confidence": 0.6258
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": 637,
+                "confidence": 0.9999
+            },
+            "num_samples": {
+                "value": 637,
+                "confidence": 0.9888
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "change",
+                        "confidence": 0.9266
+                    },
+                    {
+                        "value": "no change",
+                        "confidence": 0.7616
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1024x1024 (cropped to 512x512)",
+                "confidence": 0.7313
+            },
+            "spatial_resolution": {
+                "value": "0.5m",
+                "confidence": 0.9974
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mosaic",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temporal exchange",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary Cross-Entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "445/64/128 (train/val/test)",
+                "confidence": 0.9732
+            }
+        },
+        {
+            "task": {
+                "value": "Change Detection",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Building change detection from bi-temporal remote sensing imagery",
+                "confidence": 0.8692
+            },
+            "dataset": {
+                "value": "S2Looking",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.14,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 64.97,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 68.81,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 52.46,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Optical satellites",
+                        "confidence": 0.9215
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8354
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 5000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 5000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "change",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "no change",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1024x1024 (cropped to 512x512)",
+                "confidence": 0.9824
+            },
+            "spatial_resolution": {
+                "value": "0.5-0.8m",
+                "confidence": 0.7525
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mosaic",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temporal exchange",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary Cross-Entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "7:1:2 (train/val/test)",
+                "confidence": 0.6431
+            }
+        },
+        {
+            "task": {
+                "value": "Building Extraction & Change Detection",
+                "confidence": 0.7814
+            },
+            "application": {
+                "value": "Joint building segmentation and change detection",
+                "confidence": 0.3977
+            },
+            "dataset": {
+                "value": "BANDON",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 0.9857
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 88.82,
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": 89.64,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 89.23,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 80.55,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 75.55,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 72.44,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 73.96,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 58.68,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.897
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Beijing",
+                        "confidence": 0.9576
+                    },
+                    {
+                        "value": "Shanghai",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Wuhan",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Shenzhen",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Hong Kong",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Jinan",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2283,
+                "confidence": 0.9547
+            },
+            "num_samples": {
+                "value": 2283,
+                "confidence": 0.9999
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 0.9997
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "building",
+                        "confidence": 0.9977
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 0.971
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "2048x2048 (cropped to 512x512)",
+                "confidence": 0.5608
+            },
+            "spatial_resolution": {
+                "value": "0.6m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "flipping",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "photometric distortion",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mosaic",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temporal exchange",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary Cross-Entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "1689/202/392 (train/val/test)",
+                "confidence": 0.7717
+            }
+        }
+    ]
+}

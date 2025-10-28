@@ -1,0 +1,594 @@
+{
+    "model_id": {
+        "value": "RS-DFM",
+        "confidence": 0.946
+    },
+    "model_name": {
+        "value": "RS-DFM",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "RS-DFM is a Remote Sensing Distributed Foundation Model enabling online collaborative perception across multiple platforms and diverse downstream tasks by mapping observations into a unified space and implementing a task-agnostic information interaction strategy. It introduces a generalized BEV generation module leveraging geometric priors and a high-low frequency decoupled collaboration module for efficient feature compression and transmission.",
+        "confidence": 0.8324
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2406.07032",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Swin-Tiny",
+        "confidence": 1.0
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "ground-based geometric prior",
+                "confidence": 0.7723
+            },
+            {
+                "value": "generalized BEV mapping",
+                "confidence": 0.5359
+            },
+            {
+                "value": "high-low frequency feature decoupling",
+                "confidence": 0.7191
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "optimized for low inference latency",
+                "confidence": 0.5406
+            },
+            {
+                "value": "optimized memory usage",
+                "confidence": 0.7045
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "RGB optical camera",
+                "confidence": 0.9797
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.8423
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9943
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9466
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.6209
+    },
+    "spatial_resolution": {
+        "value": "0.75m",
+        "confidence": 0.9219
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9748
+            }
+        ]
+    },
+    "pretraining_phases": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.1
+            }
+        ]
+    },
+    "benchmarks": [
+        {
+            "task": {
+                "value": "3D object detection",
+                "confidence": 0.9563
+            },
+            "application": {
+                "value": "Collaborative UAV-based remote sensing",
+                "confidence": 0.3073
+            },
+            "dataset": {
+                "value": "AirCo-MultiTasks",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mATE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mASE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mAOE",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.443,
+                        "confidence": 0.9704
+                    },
+                    {
+                        "value": 0.413,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.176,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.123,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB optical camera",
+                        "confidence": 0.999
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Simulated urban intersections (CARLA)",
+                        "confidence": 0.3211
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 38000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 38000,
+                "confidence": 0.9999
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "vehicles",
+                        "confidence": 0.811
+                    },
+                    {
+                        "value": "bicycles",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "pedestrians",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1600x900",
+                "confidence": 0.9985
+            },
+            "spatial_resolution": {
+                "value": "0.75m (BEV)",
+                "confidence": 0.9415
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9668
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "scaling",
+                        "confidence": 0.6338
+                    },
+                    {
+                        "value": "random cropping",
+                        "confidence": 0.9577
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0002,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "BEV instance segmentation",
+                "confidence": 0.7947
+            },
+            "application": {
+                "value": "Collaborative UAV-based remote sensing",
+                "confidence": 0.9734
+            },
+            "dataset": {
+                "value": "AirCo-MultiTasks",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "PQ",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SQ",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "RQ",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 31.17,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 27.3,
+                        "confidence": 0.9579
+                    },
+                    {
+                        "value": 74.76,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 36.51,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB optical camera",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Simulated urban intersections (CARLA)",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 38000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 38000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "vehicles",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "bicycles",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "pedestrians",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1600x900",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.75m (BEV)",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "scaling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0002,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Trajectory prediction",
+                "confidence": 0.9455
+            },
+            "application": {
+                "value": "Collaborative UAV-based remote sensing",
+                "confidence": 0.999
+            },
+            "dataset": {
+                "value": "AirCo-MultiTasks",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "VPQ",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 35.65,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 30.27,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB optical camera",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Simulated urban intersections (CARLA)",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 38000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 38000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "vehicles",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "bicycles",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "pedestrians",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1600x900",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.75m (BEV)",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "scaling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "random cropping",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0002,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

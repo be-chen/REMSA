@@ -1,0 +1,600 @@
+{
+    "model_id": {
+        "value": "satvision-toa-giant-patch8-window8-128",
+        "confidence": 0.964
+    },
+    "model_name": {
+        "value": "SatVision-TOA",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "Giant",
+        "confidence": 0.9778
+    },
+    "release_date": {
+        "value": "2024-11-26",
+        "confidence": 1.0
+    },
+    "last_updated": {
+        "value": "2024-11-26",
+        "confidence": 1.0
+    },
+    "short_description": {
+        "value": "SatVision-TOA is a 3 billion parameter vision transformer-based geospatial foundation model pre-trained on 100 million MODIS L1B Top-Of-Atmosphere (TOA) radiance images across 14 spectral bands. It is designed for moderate- and coarse-resolution all-sky remote sensing imagery, excelling in tasks such as 3D cloud retrieval and image reconstruction, and demonstrates strong transferability to other sensors.",
+        "confidence": 0.7933
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2411.17000",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/nasa-nccs-hpda/pytorch-caney",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://huggingface.co/nasa-cisto-data-science-group/satvision-toa-giant-patch8-window8-128",
+        "confidence": 1.0
+    },
+    "backbone": {
+        "value": "SwinV2 Giant",
+        "confidence": 0.996
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 3000000000,
+        "confidence": 0.9998
+    },
+    "pretext_training_type": {
+        "value": "Masked-Image-Modeling (MIM)",
+        "confidence": 0.9626
+    },
+    "masking_strategy": {
+        "value": "Randomly mask 8x8 patches (60% masking ratio) of input image chips",
+        "confidence": 0.6902
+    },
+    "pretraining": {
+        "value": "Self-supervised learning using Masked-Image-Modeling on 100 million MODIS TOA image chips (128x128x14), with SwinV2 Giant architecture, trained for 50 epochs using AdamW optimizer and bfloat16 precision.",
+        "confidence": 0.6956
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Atmospheric science",
+                "confidence": 0.6143
+            },
+            {
+                "value": "Cloud and aerosol monitoring",
+                "confidence": 0.4997
+            },
+            {
+                "value": "Land surface monitoring",
+                "confidence": 0.7324
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Hierarchical windowed attention",
+                "confidence": 0.5096
+            },
+            {
+                "value": "Adapted for 14-band multispectral input",
+                "confidence": 0.6637
+            },
+            {
+                "value": "Input patch size 8x8",
+                "confidence": 0.5422
+            },
+            {
+                "value": "Window size 12",
+                "confidence": 0.6682
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "MODIS",
+                "confidence": 0.7922
+            },
+            {
+                "value": "GOES-ABI",
+                "confidence": 0.9842
+            },
+            {
+                "value": "VIIRS",
+                "confidence": 0.985
+            },
+            {
+                "value": "SEVIRI",
+                "confidence": 0.8198
+            },
+            {
+                "value": "AHI",
+                "confidence": 0.9792
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.9874
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.5934
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.8104
+    },
+    "spatial_resolution": {
+        "value": "1 km",
+        "confidence": 0.8508
+    },
+    "temporal_resolution": {
+        "value": "daily",
+        "confidence": 0.9408
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "1",
+                "confidence": 0.7646
+            },
+            {
+                "value": "2",
+                "confidence": 1.0
+            },
+            {
+                "value": "3",
+                "confidence": 1.0
+            },
+            {
+                "value": "6",
+                "confidence": 1.0
+            },
+            {
+                "value": "7",
+                "confidence": 1.0
+            },
+            {
+                "value": "21",
+                "confidence": 1.0
+            },
+            {
+                "value": "26",
+                "confidence": 1.0
+            },
+            {
+                "value": "27",
+                "confidence": 1.0
+            },
+            {
+                "value": "28",
+                "confidence": 1.0
+            },
+            {
+                "value": "29",
+                "confidence": 1.0
+            },
+            {
+                "value": "30",
+                "confidence": 1.0
+            },
+            {
+                "value": "31",
+                "confidence": 1.0
+            },
+            {
+                "value": "32",
+                "confidence": 1.0
+            },
+            {
+                "value": "33",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "MODIS L1B Top-Of-Atmosphere (TOA) global daily composites",
+                "confidence": 0.3246
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (all continents and oceans, NW, NE, SW, SE quadrants)",
+                        "confidence": 0.3068
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "March 2000 to present (10 years, ~270 days/year)",
+                "confidence": 0.3643
+            },
+            "num_images": {
+                "value": 100000000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": "8x8 patches",
+                "confidence": 0.7178
+            },
+            "image_resolution": {
+                "value": "128x128x14",
+                "confidence": 0.7058
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": "max 0.00159727 (OneCycle cosine scheduler, linear warmup, AdamW optimizer)",
+                "confidence": 0.3001
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Elliptical Weighted Averaging (EWA) for band aggregation",
+                        "confidence": 0.3375
+                    },
+                    {
+                        "value": "Min-max scaling for brightness temperature",
+                        "confidence": 0.3189
+                    },
+                    {
+                        "value": "Scaling reflectance by 0.01",
+                        "confidence": 0.5332
+                    },
+                    {
+                        "value": "Selection of lowest view zenith angle",
+                        "confidence": 0.3569
+                    },
+                    {
+                        "value": "Solar zenith angle < 72 deg",
+                        "confidence": 0.3898
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Stratified sampling across global quadrants and cover types using clustering on land- and cloud-cover structure",
+                "confidence": 0.3001
+            },
+            "processing_level": {
+                "value": "L1B",
+                "confidence": 0.7089
+            },
+            "cloud_cover": {
+                "value": "All-sky (no cloud filtering, includes cloudy and clear-sky)",
+                "confidence": 0.3005
+            },
+            "missing_data": {
+                "value": "Overlapping observations: select lowest view zenith angle; only daytime images used",
+                "confidence": 0.3008
+            },
+            "masking_ratio": {
+                "value": 0.6,
+                "confidence": 0.9874
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Image reconstruction",
+                "confidence": 0.6477
+            },
+            "application": {
+                "value": "Masked image modeling (self-supervised pretraining objective)",
+                "confidence": 0.3062
+            },
+            "dataset": {
+                "value": "MODIS TOA (withheld test set)",
+                "confidence": 0.3133
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "SSIM",
+                        "confidence": 0.9578
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.9289,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "MODIS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9888
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "128x128x14",
+                "confidence": 0.9573
+            },
+            "spatial_resolution": {
+                "value": "1 km",
+                "confidence": 0.9989
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "2",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "21",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "26",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "27",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "28",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "29",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "30",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "31",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "32",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "33",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "3D cloud retrieval (semantic segmentation)",
+                "confidence": 0.4643
+            },
+            "application": {
+                "value": "Vertical cloud mask prediction (CloudSat+CALIPSO curtain)",
+                "confidence": 0.3125
+            },
+            "dataset": {
+                "value": "GOES-ABI chips (14 channels, 128x128), CloudSat/CALIPSO overpasses",
+                "confidence": 0.3
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIOU",
+                        "confidence": 0.9903
+                    },
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.8709
+                    },
+                    {
+                        "value": "AUC",
+                        "confidence": 0.9989
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.4638,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.9574,
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": 0.98,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GOES-ABI",
+                        "confidence": 0.9983
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "CloudSat/CALIPSO curtain (global, 1:30PM local time)",
+                        "confidence": 0.3125
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 8300,
+                "confidence": 0.8113
+            },
+            "num_samples": {
+                "value": 8300,
+                "confidence": 0.5896
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "cloud",
+                        "confidence": 0.6795
+                    },
+                    {
+                        "value": "not-cloud",
+                        "confidence": 0.8632
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128x14",
+                "confidence": 0.9936
+            },
+            "spatial_resolution": {
+                "value": "variable (ABI native, matched to MODIS 1 km)",
+                "confidence": 0.3018
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "14 ABI channels matched to MODIS bands",
+                        "confidence": 0.3466
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.855
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0003,
+                "confidence": 0.9784
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

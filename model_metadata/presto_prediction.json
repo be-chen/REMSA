@@ -1,0 +1,1436 @@
+{
+    "model_id": {
+        "value": "presto-v1",
+        "confidence": 0.732
+    },
+    "model_name": {
+        "value": "Presto",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.8964
+    },
+    "release_date": {
+        "value": "2024-02-05",
+        "confidence": 0.9888
+    },
+    "last_updated": {
+        "value": "2024-02-05",
+        "confidence": 0.9946
+    },
+    "short_description": {
+        "value": "Presto is a lightweight, pre-trained transformer model for remote sensing pixel-timeseries data, designed for computational efficiency and robustness to missing data, supporting multi-sensor and temporal inputs.",
+        "confidence": 0.7832
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2304.14065",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/nasaharvest/presto",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Transformer (custom, 2 layers, 8 heads, embedding size 128, MLP ratio 4)",
+        "confidence": 0.819
+    },
+    "num_layers": {
+        "value": 2,
+        "confidence": 1.0
+    },
+    "num_parameters": {
+        "value": 0.4,
+        "confidence": 0.6565
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised masked autoencoding",
+        "confidence": 0.9321
+    },
+    "masking_strategy": {
+        "value": "Structured masking: random, channel-groups, contiguous timesteps, timesteps; masking ratio 0.75",
+        "confidence": 0.8015
+    },
+    "pretraining": {
+        "value": "Masked autoencoding on pixel-timeseries from multiple sensors and derived products, reconstructing masked timepoints and modalities.",
+        "confidence": 0.7003
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Temporal encoding (month)",
+                "confidence": 0.6815
+            },
+            {
+                "value": "Channel group encoding",
+                "confidence": 0.645
+            },
+            {
+                "value": "Location metadata",
+                "confidence": 0.3842
+            },
+            {
+                "value": "Handling missing data",
+                "confidence": 0.4609
+            },
+            {
+                "value": "Multi-sensor integration",
+                "confidence": 0.5802
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Learned linear projections per channel group",
+                "confidence": 0.6187
+            },
+            {
+                "value": "Learned channel group encodings",
+                "confidence": 0.6697
+            },
+            {
+                "value": "Month encoding",
+                "confidence": 0.5888
+            },
+            {
+                "value": "Location encoding",
+                "confidence": 0.5605
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.9919
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            },
+            {
+                "value": "ERA5",
+                "confidence": 0.9925
+            },
+            {
+                "value": "SRTM DEM",
+                "confidence": 0.6893
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9927
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9888
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.8433
+            },
+            {
+                "value": "Climate Reanalysis",
+                "confidence": 0.5338
+            },
+            {
+                "value": "Topography",
+                "confidence": 0.8017
+            },
+            {
+                "value": "Location",
+                "confidence": 0.7243
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.9312
+    },
+    "temporal_alignment": {
+        "value": "full",
+        "confidence": 0.9996
+    },
+    "spatial_resolution": {
+        "value": "10m",
+        "confidence": 0.9993
+    },
+    "temporal_resolution": {
+        "value": "monthly (pretraining), variable (downstream)",
+        "confidence": 0.5781
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Sentinel-1 VV",
+                "confidence": 0.9239
+            },
+            {
+                "value": "Sentinel-1 VH",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B2",
+                "confidence": 0.9977
+            },
+            {
+                "value": "Sentinel-2 B3",
+                "confidence": 0.9989
+            },
+            {
+                "value": "Sentinel-2 B4",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B5",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B6",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B7",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B8",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B8A",
+                "confidence": 0.9996
+            },
+            {
+                "value": "Sentinel-2 B11",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2 B12",
+                "confidence": 1.0
+            },
+            {
+                "value": "NDVI",
+                "confidence": 0.9132
+            },
+            {
+                "value": "ERA5 precipitation",
+                "confidence": 0.8904
+            },
+            {
+                "value": "ERA5 temperature",
+                "confidence": 0.9924
+            },
+            {
+                "value": "Dynamic World land cover",
+                "confidence": 0.8345
+            },
+            {
+                "value": "SRTM elevation",
+                "confidence": 0.6528
+            },
+            {
+                "value": "SRTM slope",
+                "confidence": 0.8895
+            },
+            {
+                "value": "Location coordinates",
+                "confidence": 0.454
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Globally stratified pixel-timeseries from Sentinel-1, Sentinel-2, ERA5, NDVI, Dynamic World, SRTM DEM, Location",
+                "confidence": 0.3001
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (Western Hemisphere, Eastern Hemisphere split into two regions, further divided into ecoregions)",
+                        "confidence": 0.3003
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "2020-01 to 2021-12",
+                "confidence": 0.9515
+            },
+            "num_images": {
+                "value": 21535000,
+                "confidence": 0.9997
+            },
+            "token_size": {
+                "value": "per channel group per timestep (embedding size 128)",
+                "confidence": 0.3018
+            },
+            "image_resolution": {
+                "value": "10m per pixel",
+                "confidence": 0.7297
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 4096,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "cosine annealing, max 0.001",
+                "confidence": 0.5031
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Stratified sampling by land cover",
+                        "confidence": 0.3511
+                    },
+                    {
+                        "value": "Grid-sampling 2,500 pixels per 510x510 tile",
+                        "confidence": 0.317
+                    },
+                    {
+                        "value": "Preprocessing and export via Google Earth Engine",
+                        "confidence": 0.3308
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Stratified global sampling by ecoregion and land cover",
+                "confidence": 0.3298
+            },
+            "processing_level": {
+                "value": "Sentinel-2: 10m/20m bands only (60m bands removed); SRTM DEM",
+                "confidence": 0.3002
+            },
+            "cloud_cover": {
+                "value": "Dynamic World: only non-cloudy Sentinel-2 images; NDVI: mode of classes per month",
+                "confidence": 0.3
+            },
+            "missing_data": {
+                "value": "Robust to missing timesteps/channels via masking; static variables never masked",
+                "confidence": 0.3001
+            },
+            "masking_ratio": {
+                "value": 0.75,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Segmentation",
+                "confidence": 0.9124
+            },
+            "application": {
+                "value": "Crop type segmentation",
+                "confidence": 0.8427
+            },
+            "dataset": {
+                "value": "CropHarvest",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 0.9148
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.835,
+                        "confidence": 0.9797
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.7342
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ERA5",
+                        "confidence": 0.6811
+                    },
+                    {
+                        "value": "NDVI",
+                        "confidence": 0.6933
+                    },
+                    {
+                        "value": "Dynamic World",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "Topography",
+                        "confidence": 0.7334
+                    },
+                    {
+                        "value": "Location",
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Kenya",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Brazil",
+                        "confidence": 0.9963
+                    },
+                    {
+                        "value": "Togo",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 2867,
+                "confidence": 0.8426
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "maize (Kenya)",
+                        "confidence": 0.5892
+                    },
+                    {
+                        "value": "coffee (Brazil)",
+                        "confidence": 0.9904
+                    },
+                    {
+                        "value": "cropland (Togo)",
+                        "confidence": 0.9151
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "[1, 1, 12, 18]",
+                "confidence": 0.7913
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 VV",
+                        "confidence": 0.5445
+                    },
+                    {
+                        "value": "Sentinel-1 VH",
+                        "confidence": 0.9939
+                    },
+                    {
+                        "value": "Sentinel-2 B2",
+                        "confidence": 0.604
+                    },
+                    {
+                        "value": "Sentinel-2 B3",
+                        "confidence": 0.794
+                    },
+                    {
+                        "value": "Sentinel-2 B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B5",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Sentinel-2 B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NDVI",
+                        "confidence": 0.9901
+                    },
+                    {
+                        "value": "ERA5 precipitation",
+                        "confidence": 0.988
+                    },
+                    {
+                        "value": "ERA5 temperature",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Dynamic World",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Topography",
+                        "confidence": 0.9694
+                    },
+                    {
+                        "value": "Location",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.6588
+            },
+            "application": {
+                "value": "Crop type classification",
+                "confidence": 0.6582
+            },
+            "dataset": {
+                "value": "S2-Agri 100",
+                "confidence": 0.9993
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.6335
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 0.9164
+                    },
+                    {
+                        "value": "Macro F1",
+                        "confidence": 0.6954
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.6889,
+                        "confidence": 0.825
+                    },
+                    {
+                        "value": 0.58,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4041,
+                        "confidence": 0.9923
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "France",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 1500,
+                "confidence": 0.9899
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "[5, 5, 24, 10]",
+                "confidence": 0.9818
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9886
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-2 B2",
+                        "confidence": 0.5996
+                    },
+                    {
+                        "value": "Sentinel-2 B3",
+                        "confidence": 0.9069
+                    },
+                    {
+                        "value": "Sentinel-2 B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B5",
+                        "confidence": 0.9978
+                    },
+                    {
+                        "value": "Sentinel-2 B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8A",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Sentinel-2 B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.6935
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0003,
+                "confidence": 0.9943
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.968
+            },
+            "application": {
+                "value": "Tree species multi-label classification",
+                "confidence": 0.4364
+            },
+            "dataset": {
+                "value": "TreeSatML",
+                "confidence": 0.6935
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Weighted F1",
+                        "confidence": 0.6624
+                    },
+                    {
+                        "value": "Micro F1",
+                        "confidence": 0.629
+                    },
+                    {
+                        "value": "mAP",
+                        "confidence": 0.7229
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.5529,
+                        "confidence": 0.9918
+                    },
+                    {
+                        "value": 0.5829,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6331,
+                        "confidence": 0.9996
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.6718
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Germany",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 45337,
+                "confidence": 0.9998
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "[6, 6, 1, 2] (S1), [6, 6, 1, 11] (S2)",
+                "confidence": 0.4087
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9984
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 VV",
+                        "confidence": 0.7431
+                    },
+                    {
+                        "value": "Sentinel-1 VH",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Sentinel-2 B2",
+                        "confidence": 0.729
+                    },
+                    {
+                        "value": "Sentinel-2 B3",
+                        "confidence": 0.9579
+                    },
+                    {
+                        "value": "Sentinel-2 B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B5",
+                        "confidence": 0.9985
+                    },
+                    {
+                        "value": "Sentinel-2 B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.9996
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.6259
+            },
+            "dataset": {
+                "value": "EuroSat",
+                "confidence": 0.8441
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9684
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.953,
+                        "confidence": 0.9895
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 21600,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "[64, 64, 1, 3] (RGB), [64, 64, 1, 11] (MS)",
+                "confidence": 0.6874
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-2 B2",
+                        "confidence": 0.9595
+                    },
+                    {
+                        "value": "Sentinel-2 B3",
+                        "confidence": 0.9953
+                    },
+                    {
+                        "value": "Sentinel-2 B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B5",
+                        "confidence": 0.9984
+                    },
+                    {
+                        "value": "Sentinel-2 B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Regression",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Live fuel moisture estimation",
+                "confidence": 0.6127
+            },
+            "dataset": {
+                "value": "Fuel Moisture",
+                "confidence": 0.9155
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "RMSE",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 25.28,
+                        "confidence": 0.9795
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9963
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ERA5",
+                        "confidence": 0.9971
+                    },
+                    {
+                        "value": "NDVI",
+                        "confidence": 0.9791
+                    },
+                    {
+                        "value": "Dynamic World",
+                        "confidence": 0.8115
+                    },
+                    {
+                        "value": "Topography",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Location",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "USA",
+                        "confidence": 0.9842
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 1578,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "[1, 1, 3, 19]",
+                "confidence": 0.9858
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9998
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 VV",
+                        "confidence": 0.872
+                    },
+                    {
+                        "value": "Sentinel-1 VH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B2",
+                        "confidence": 0.9111
+                    },
+                    {
+                        "value": "Sentinel-2 B3",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Sentinel-2 B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NDVI",
+                        "confidence": 0.9971
+                    },
+                    {
+                        "value": "ERA5 precipitation",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "ERA5 temperature",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Dynamic World",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Topography",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Location",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Regression",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Algae bloom severity estimation",
+                "confidence": 0.5883
+            },
+            "dataset": {
+                "value": "Algae Blooms",
+                "confidence": 0.9979
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "RMSE",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.815,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ERA5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NDVI",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Dynamic World",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Topography",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Location",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "USA",
+                        "confidence": 0.9997
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 777,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "[1, 1, 12, 19]",
+                "confidence": 0.9978
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 VV",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Sentinel-1 VH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B2",
+                        "confidence": 0.9992
+                    },
+                    {
+                        "value": "Sentinel-2 B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2 B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NDVI",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ERA5 precipitation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ERA5 temperature",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Dynamic World",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Topography",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Location",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

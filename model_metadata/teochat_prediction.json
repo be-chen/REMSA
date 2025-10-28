@@ -1,0 +1,2604 @@
+{
+    "model_id": {
+        "value": "TEOChat",
+        "confidence": 0.9419
+    },
+    "model_name": {
+        "value": "TEOChat",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.7465
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "short_description": {
+        "value": "TEOChat is the first vision-language model (VLM) for temporal earth observation (EO) data, capable of engaging in conversations about temporal sequences of EO images. It is trained on TEOChatlas, a large instruction-following dataset with both single image and temporal EO tasks, and demonstrates strong spatial and temporal reasoning, outperforming prior VLMs and rivaling specialist models.",
+        "confidence": 0.8111
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2410.06234",
+        "confidence": 0.9998
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/ermongroup/TEOChat",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://github.com/ermongroup/TEOChat",
+        "confidence": 0.998
+    },
+    "backbone": {
+        "value": "CLIP ViT-L/14 (Radford et al., 2021)",
+        "confidence": 0.8848
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Instruction tuning (visual instruction tuning) with next-token cross-entropy loss",
+        "confidence": 0.7841
+    },
+    "masking_strategy": {
+        "value": "None (no explicit masking, uses instruction tuning)",
+        "confidence": 0.5493
+    },
+    "pretraining": {
+        "value": "Instruction-tuned on TEOChatlas, which includes both single image and temporal EO tasks from multiple datasets and sensors",
+        "confidence": 0.7101
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Temporal reasoning",
+                "confidence": 0.3106
+            },
+            {
+                "value": "Spatial reasoning",
+                "confidence": 0.7744
+            },
+            {
+                "value": "Change detection",
+                "confidence": 0.4393
+            },
+            {
+                "value": "Scene classification",
+                "confidence": 0.6313
+            },
+            {
+                "value": "Visual question answering",
+                "confidence": 0.5611
+            },
+            {
+                "value": "Region-based reasoning",
+                "confidence": 0.3508
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Temporally-shared image encoder (Siamese across time)",
+                "confidence": 0.6664
+            },
+            {
+                "value": "2-layer MLP vision-language connector",
+                "confidence": 0.8659
+            },
+            {
+                "value": "LLM decoder (Llama 2)",
+                "confidence": 0.5484
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "WorldView-2",
+                "confidence": 0.9163
+            },
+            {
+                "value": "WorldView-3",
+                "confidence": 0.9999
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9564
+            },
+            {
+                "value": "GaoFen",
+                "confidence": 0.9848
+            },
+            {
+                "value": "Jilin-1",
+                "confidence": 0.9958
+            },
+            {
+                "value": "DJI Mavic Pro",
+                "confidence": 0.959
+            },
+            {
+                "value": "SuperView",
+                "confidence": 0.9989
+            },
+            {
+                "value": "BeiJing-2",
+                "confidence": 0.9998
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.8982
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Optical RGB",
+                "confidence": 0.6046
+            },
+            {
+                "value": "Multispectral (Sentinel-2)",
+                "confidence": 0.7416
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.65
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.7302
+    },
+    "spatial_resolution": {
+        "value": "224x224 pixels (input images resized and cropped)",
+        "confidence": 0.6569
+    },
+    "temporal_resolution": {
+        "value": "variable (bitemporal, pentatemporal, multitemporal up to 8 images)",
+        "confidence": 0.8165
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9972
+            },
+            {
+                "value": "Sentinel-2 bands (multispectral)",
+                "confidence": 0.6258
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "TEOChatlas (GeoChat Instruct, fMoW, xBD, S2Looking, QFabric)",
+                "confidence": 0.4159
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (fMoW, xBD, S2Looking, QFabric, GeoChat Instruct cover worldwide locations)",
+                        "confidence": 0.3008
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 1244393,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9981
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 0.9938
+            },
+            "learning_rate": {
+                "value": "2e-5 (peak, cosine schedule, 3% warmup)",
+                "confidence": 0.3249
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.3116
+                    },
+                    {
+                        "value": "Random inclusion of image resolution and sensor name in prompt",
+                        "confidence": 0.3146
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Resize shorter side to 224",
+                        "confidence": 0.8493
+                    },
+                    {
+                        "value": "Center crop to 224x224",
+                        "confidence": 0.9287
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling of up to 8 images for long sequences; random sampling of shorter sequences from QFabric",
+                "confidence": 0.3009
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Temporal Scene Classification",
+                "confidence": 0.8081
+            },
+            "application": {
+                "value": "Land use/land cover classification over time",
+                "confidence": 0.3214
+            },
+            "dataset": {
+                "value": "fMoW RGB",
+                "confidence": 0.9817
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9826
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 75.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "WorldView-3",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9267
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.306
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 0.9923
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 0.7607
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Temporal Scene Classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land use/land cover classification over time",
+                "confidence": 0.9486
+            },
+            "dataset": {
+                "value": "fMoW Sentinel",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 45.5,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-2 bands",
+                        "confidence": 0.7353
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9981
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Building Localization",
+                "confidence": 0.5601
+            },
+            "application": {
+                "value": "Disaster response, building localization",
+                "confidence": 0.3328
+            },
+            "dataset": {
+                "value": "xBD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 38.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (disaster regions)",
+                        "confidence": 0.3394
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9913
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.6146
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9997
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 0.9995
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Building Damage Classification",
+                "confidence": 0.9872
+            },
+            "application": {
+                "value": "Disaster response, building damage assessment",
+                "confidence": 0.5497
+            },
+            "dataset": {
+                "value": "xBD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 50.0,
+                        "confidence": 0.9989
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (disaster regions)",
+                        "confidence": 0.9982
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 4,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "No damage",
+                        "confidence": 0.9705
+                    },
+                    {
+                        "value": "Minor Damage",
+                        "confidence": 0.9579
+                    },
+                    {
+                        "value": "Major Damage",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Destroyed",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9987
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Building Change Detection",
+                "confidence": 0.9703
+            },
+            "application": {
+                "value": "Urban development monitoring",
+                "confidence": 0.5566
+            },
+            "dataset": {
+                "value": "S2Looking",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 34.5,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GaoFen",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SuperView",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BeiJing-2",
+                        "confidence": 0.9997
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9665
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "No Change",
+                        "confidence": 0.483
+                    },
+                    {
+                        "value": "Change",
+                        "confidence": 0.6876
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9995
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Spatial Change Referring Expression",
+                "confidence": 0.9102
+            },
+            "application": {
+                "value": "Disaster response, spatial change localization",
+                "confidence": 0.3076
+            },
+            "dataset": {
+                "value": "xBD",
+                "confidence": 0.9989
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 25.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (disaster regions)",
+                        "confidence": 0.8089
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9952
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Spatial Change Referring Expression",
+                "confidence": 0.9587
+            },
+            "application": {
+                "value": "Urban development monitoring, spatial change localization",
+                "confidence": 0.6321
+            },
+            "dataset": {
+                "value": "S2Looking",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 32.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GaoFen",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SuperView",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BeiJing-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Change Question Answering",
+                "confidence": 0.9843
+            },
+            "application": {
+                "value": "Disaster response, change QA",
+                "confidence": 0.4059
+            },
+            "dataset": {
+                "value": "xBD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 89.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (disaster regions)",
+                        "confidence": 0.9838
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9978
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Change Question Answering",
+                "confidence": 0.9985
+            },
+            "application": {
+                "value": "Urban development monitoring, change QA",
+                "confidence": 0.9178
+            },
+            "dataset": {
+                "value": "S2Looking",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.4,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GaoFen",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SuperView",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BeiJing-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Region-based Change Question Answering",
+                "confidence": 0.9064
+            },
+            "application": {
+                "value": "Disaster response, region-based change QA",
+                "confidence": 0.5979
+            },
+            "dataset": {
+                "value": "xBD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 94.0,
+                        "confidence": 0.998
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (disaster regions)",
+                        "confidence": 0.9971
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Region-based Change Question Answering",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Urban development monitoring, region-based change QA",
+                "confidence": 0.977
+            },
+            "dataset": {
+                "value": "S2Looking",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 90.0,
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GaoFen",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SuperView",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BeiJing-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Region-based Change Question Answering",
+                "confidence": 0.9564
+            },
+            "application": {
+                "value": "Urban change detection",
+                "confidence": 0.6614
+            },
+            "dataset": {
+                "value": "QFabric [2 images]",
+                "confidence": 0.7188
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 66.7,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9935
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.99
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Region-based Change Question Answering",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Urban change detection",
+                "confidence": 0.9999
+            },
+            "dataset": {
+                "value": "QFabric [5 images]",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 74.3,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Temporal Referring Expression",
+                "confidence": 0.9999
+            },
+            "application": {
+                "value": "Urban change detection, temporal localization",
+                "confidence": 0.4718
+            },
+            "dataset": {
+                "value": "QFabric",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 74.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9991
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Region-based Temporal Question Answering",
+                "confidence": 0.9978
+            },
+            "application": {
+                "value": "Urban change detection, temporal QA",
+                "confidence": 0.4476
+            },
+            "dataset": {
+                "value": "QFabric",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9874
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 71.7,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Region-based Temporal Question Answering",
+                "confidence": 0.9462
+            },
+            "application": {
+                "value": "Urban change detection, temporal QA",
+                "confidence": 0.9774
+            },
+            "dataset": {
+                "value": "QFabric [5 images]",
+                "confidence": 0.9998
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 66.4,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random sampling of instruction phrasings",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Next-token cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Scene Classification",
+                "confidence": 0.9007
+            },
+            "application": {
+                "value": "Single image scene classification",
+                "confidence": 0.4341
+            },
+            "dataset": {
+                "value": "AID",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 80.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Various (AID)",
+                        "confidence": 0.3178
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8756
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 10000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9995
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9873
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Scene Classification",
+                "confidence": 0.9963
+            },
+            "application": {
+                "value": "Single image scene classification",
+                "confidence": 0.7142
+            },
+            "dataset": {
+                "value": "UCMerced",
+                "confidence": 0.9998
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 86.3,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Various (UCMerced)",
+                        "confidence": 0.9781
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8894
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2100,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 21,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Visual Question Answering",
+                "confidence": 0.802
+            },
+            "application": {
+                "value": "Single image VQA",
+                "confidence": 0.68
+            },
+            "dataset": {
+                "value": "LRBEN",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.8962
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.7,
+                        "confidence": 0.9929
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Various (LRBEN)",
+                        "confidence": 0.6415
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9049
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9988
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9963
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Visual Question Answering",
+                "confidence": 0.9997
+            },
+            "application": {
+                "value": "Single image VQA",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "HRBEN",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9987
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 67.5,
+                        "confidence": 0.6474
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Various (HRBEN)",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

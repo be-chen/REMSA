@@ -1,0 +1,882 @@
+{
+    "model_id": {
+        "value": "DeCUR",
+        "confidence": 0.9423
+    },
+    "model_name": {
+        "value": "DeCUR",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "arXiv:2309.05300v3",
+        "confidence": 0.9418
+    },
+    "release_date": {
+        "value": "2024-07-19",
+        "confidence": 0.9999
+    },
+    "last_updated": {
+        "value": "2024-07-19",
+        "confidence": 0.977
+    },
+    "short_description": {
+        "value": "DeCUR is a multimodal self-supervised learning method that decouples common and unique representations across modalities, enhancing both intra- and inter-modal learning. It extends Barlow Twins with a loss design for modality decoupling and optionally integrates deformable attention for modality-informative feature learning. Evaluated on SAR-optical, RGB-DEM, and RGB-depth scenarios, DeCUR achieves state-of-the-art results in both multimodal and modality-missing settings.",
+        "confidence": 0.7972
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2309.05300",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/zhu-xlab/DeCUR",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ResNet-50 (with optional deformable attention), MiT-B2/B5 (SegFormer)",
+        "confidence": 0.7672
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Redundancy reduction (Barlow Twins extension), negative-free self-supervised learning",
+        "confidence": 0.7702
+    },
+    "masking_strategy": {
+        "value": "Decoupling embedding dimensions into common and unique; redundancy reduction loss drives common to identity and unique to zero in cross-modal correlation",
+        "confidence": 0.7431
+    },
+    "pretraining": {
+        "value": "Multimodal self-supervised learning with decoupled common and unique representations, optionally using deformable attention in ConvNet backbones",
+        "confidence": 0.6338
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Deformable attention for modality-informative regions",
+                "confidence": 0.7505
+            },
+            {
+                "value": "Spectral and spatial saliency analysis",
+                "confidence": 0.6815
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "First layer modified for input channels",
+                "confidence": 0.7184
+            },
+            {
+                "value": "Deformable attention modules added to last two stages (ResNet-50)",
+                "confidence": 0.4701
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.8991
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9
+            },
+            {
+                "value": "Aerial RGB",
+                "confidence": 0.8341
+            },
+            {
+                "value": "LiDAR DEM",
+                "confidence": 0.6672
+            },
+            {
+                "value": "Indoor RGB",
+                "confidence": 0.8392
+            },
+            {
+                "value": "Depth",
+                "confidence": 0.7153
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.8517
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.7708
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9916
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.6306
+            },
+            {
+                "value": "DEM",
+                "confidence": 0.8472
+            },
+            {
+                "value": "Depth",
+                "confidence": 0.8985
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.982
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.994
+    },
+    "spatial_resolution": {
+        "value": "10m (SAR-optical), 1m (RGB-DEM), variable (RGB-depth)",
+        "confidence": 0.8823
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9983
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Sentinel-1: VV, VH",
+                "confidence": 0.7212
+            },
+            {
+                "value": "Sentinel-2: B1-B12",
+                "confidence": 0.7501
+            },
+            {
+                "value": "Aerial RGB: R, G, B",
+                "confidence": 0.7225
+            },
+            {
+                "value": "DEM: Height",
+                "confidence": 0.5816
+            },
+            {
+                "value": "Depth: HHA",
+                "confidence": 0.7357
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "SSL4EO-S12",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Multiple seasons, global (Sentinel-1/2 coverage)",
+                        "confidence": 0.3034
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 251000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "264x264",
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "0.2 (weights), 0.0048 (bias/BN)",
+                "confidence": 0.5273
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random resized crop",
+                        "confidence": 0.7709
+                    },
+                    {
+                        "value": "grayscale",
+                        "confidence": 0.992
+                    },
+                    {
+                        "value": "Gaussian blur",
+                        "confidence": 0.9462
+                    },
+                    {
+                        "value": "horizontal flip",
+                        "confidence": 0.6158
+                    },
+                    {
+                        "value": "vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "SAR: cut 2% outliers, band-wise normalization",
+                        "confidence": 0.3077
+                    },
+                    {
+                        "value": "Optical: 8-bit compression, band-wise normalization",
+                        "confidence": 0.5241
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "One random season per image and modality",
+                "confidence": 0.578
+            },
+            "processing_level": {
+                "value": "Sentinel-2 L1C",
+                "confidence": 0.6967
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "dataset": {
+                "value": "GeoNRW",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "North Rhine-Westphalia, Germany",
+                        "confidence": 0.9737
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 111000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "250x250",
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "0.2 (weights), 0.0048 (bias/BN)",
+                "confidence": 0.941
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random resized crop",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "horizontal flip",
+                        "confidence": 0.9898
+                    },
+                    {
+                        "value": "vertical flip",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "DEM duplicated to 3 channels",
+                        "confidence": 0.873
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Cropped from 6942 scenes",
+                "confidence": 0.3388
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "dataset": {
+                "value": "SUN-RGBD",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Indoor scenes",
+                        "confidence": 0.8267
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 10335,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.7728
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-4 (AdamW for MiT-B2/B5)",
+                "confidence": 0.4054
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random resized crop",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "horizontal flip",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Depth to HHA format",
+                        "confidence": 0.5177
+                    }
+                ]
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.8038
+            },
+            "application": {
+                "value": "SAR-optical multimodal and single-modal scene classification",
+                "confidence": 0.3121
+            },
+            "dataset": {
+                "value": "BigEarthNet-MM",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.9612
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 81.5,
+                        "confidence": 0.8282
+                    },
+                    {
+                        "value": 89.8,
+                        "confidence": 0.848
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9735
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.7816
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9173
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "VV",
+                        "confidence": 0.8846
+                    },
+                    {
+                        "value": "VH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B1-B12",
+                        "confidence": 0.9404
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 0.9919
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.5,
+                "confidence": 0.794
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "MultiLabelSoftMarginLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9561
+            },
+            "application": {
+                "value": "RGB-DEM multimodal and single-modal semantic segmentation",
+                "confidence": 0.5728
+            },
+            "dataset": {
+                "value": "GeoNRW",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.9996
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 36.6,
+                        "confidence": 0.7869
+                    },
+                    {
+                        "value": 48.9,
+                        "confidence": 0.9945
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9939
+                    },
+                    {
+                        "value": "LiDAR DEM",
+                        "confidence": 0.6529
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "North Rhine-Westphalia, Germany",
+                        "confidence": 0.931
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 6942,
+                "confidence": 0.9913
+            },
+            "num_samples": {
+                "value": 111000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "250x250",
+                "confidence": 0.9069
+            },
+            "spatial_resolution": {
+                "value": "1m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 0.9838
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "DEM",
+                        "confidence": 0.7156
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 0.9962
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9997
+            },
+            "application": {
+                "value": "RGB-depth semantic segmentation",
+                "confidence": 0.5937
+            },
+            "dataset": {
+                "value": "SUN-RGBD, NYU-Depth v2",
+                "confidence": 0.6922
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "OA",
+                        "confidence": 0.9893
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 34.5,
+                        "confidence": 0.7557
+                    },
+                    {
+                        "value": 75.5,
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": 31.2,
+                        "confidence": 0.9059
+                    },
+                    {
+                        "value": 63.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.7328
+                    },
+                    {
+                        "value": "Depth (HHA)",
+                        "confidence": 0.7754
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Indoor",
+                        "confidence": 0.9494
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 10335,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 37,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 0.9158
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "HHA",
+                        "confidence": 0.9922
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 0.7308
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.01,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

@@ -1,0 +1,792 @@
+{
+    "model_id": {
+        "value": "HSIGene",
+        "confidence": 0.9817
+    },
+    "model_name": {
+        "value": "HSIGene",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "HSIGene is a foundation model for hyperspectral image (HSI) generation based on latent diffusion, supporting multi-condition control for precise and reliable HSI generation. It introduces a spatial super-resolution-based data augmentation method and a two-stage super-resolution approach to improve the perceptual quality and diversity of augmented images. HSIGene is the first and largest HSI generative model supporting multiple control conditions.",
+        "confidence": 0.8067
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2409.12470",
+        "confidence": 0.9965
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/LiPang/HSIGene",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "VAE encoder + UNet + ControlNet",
+        "confidence": 0.8857
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 1500000000,
+        "confidence": 1.0
+    },
+    "pretext_training_type": {
+        "value": "Latent diffusion with multi-condition controllable generation",
+        "confidence": 0.8705
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Latent diffusion model trained on real and augmented hyperspectral images with multi-condition control (sketch, segmentation, HED, MLSD, content, text). Data augmentation via spatial super-resolution using a two-stage framework (DSRNet for RGB bands, RGAN for HSI).",
+        "confidence": 0.6804
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spatial super-resolution for data augmentation",
+                "confidence": 0.562
+            },
+            {
+                "value": "Rectangular Guided Attention Network (RGAN)",
+                "confidence": 0.9023
+            },
+            {
+                "value": "Multi-condition controllable generation",
+                "confidence": 0.4789
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "ControlNet encoder for multi-condition integration",
+                "confidence": 0.6715
+            },
+            {
+                "value": "Rectangular cross-attention module in RGAN",
+                "confidence": 0.6093
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Airborne Multi-Modality Imaging Spectrometer",
+                "confidence": 0.9998
+            },
+            {
+                "value": "Headwall Hyperspec-VNIR-C",
+                "confidence": 1.0
+            },
+            {
+                "value": "ITRES CASI-1500",
+                "confidence": 0.9996
+            },
+            {
+                "value": "CASI",
+                "confidence": 0.9404
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.965
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Hyperspectral",
+                "confidence": 0.9963
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.8116
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.9901
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "0.5m, 1m, 2.5m",
+        "confidence": 0.8979
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "400-1000nm (aligned, 48 bands)",
+                "confidence": 0.5659
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Xiongan, Chikusei, DFC2013, DFC2018, Heihe",
+                "confidence": 0.9862
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Xiongan (China)",
+                        "confidence": 0.507
+                    },
+                    {
+                        "value": "Chikusei (Japan)",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Heihe (China)",
+                        "confidence": 0.7681
+                    },
+                    {
+                        "value": "DFC2013, DFC2018 (Houston, USA)",
+                        "confidence": 0.3205
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 47000,
+                "confidence": 0.8361
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9777
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-5",
+                "confidence": 0.9985
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spatial super-resolution (Heihe x2, Chikusei x4)",
+                        "confidence": 0.4056
+                    },
+                    {
+                        "value": "Cropping (256x256, stride 128)",
+                        "confidence": 0.3726
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Spectral alignment to 400-1000nm, 48 bands via linear interpolation",
+                        "confidence": 0.3262
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Cropping with stride 128",
+                "confidence": 0.3806
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "HSI Synthesis",
+                "confidence": 0.4715
+            },
+            "application": {
+                "value": "Hyperspectral image generation",
+                "confidence": 0.6232
+            },
+            "dataset": {
+                "value": "AID (for evaluation), Xiongan, Chikusei, DFC2013, DFC2018, Heihe (for training)",
+                "confidence": 0.3228
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "IS",
+                        "confidence": 0.9739
+                    },
+                    {
+                        "value": "FID",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NIQE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BRISQUE",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "ClipIQA",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "sPr",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "sRec",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 1.2,
+                        "confidence": 0.8847
+                    },
+                    {
+                        "value": 76.073,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 6.447,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 31.622,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.456,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.988,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.846,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Airborne Multi-Modality Imaging Spectrometer",
+                        "confidence": 0.9873
+                    },
+                    {
+                        "value": "Headwall Hyperspec-VNIR-C",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "ITRES CASI-1500",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "CASI",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "AID (various, farmland images)",
+                        "confidence": 0.3003
+                    },
+                    {
+                        "value": "Xiongan",
+                        "confidence": 0.8569
+                    },
+                    {
+                        "value": "Chikusei",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "Heihe",
+                        "confidence": 0.6549
+                    },
+                    {
+                        "value": "Houston",
+                        "confidence": 0.7119
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 47000,
+                "confidence": 0.828
+            },
+            "num_samples": {
+                "value": 47000,
+                "confidence": 0.9917
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 4,
+                "confidence": 0.9993
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "farmland",
+                        "confidence": 0.9874
+                    },
+                    {
+                        "value": "city building",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "architecture",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "wasteland",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.5m, 1m, 2.5m",
+                "confidence": 0.8921
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "48 bands (400-1000nm)",
+                        "confidence": 0.4792
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spatial super-resolution",
+                        "confidence": 0.982
+                    },
+                    {
+                        "value": "Cropping",
+                        "confidence": 0.9638
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-05,
+                "confidence": 0.9983
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MSE",
+                "confidence": 0.9353
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "HSI Super-resolution",
+                "confidence": 0.6728
+            },
+            "application": {
+                "value": "Hyperspectral image super-resolution",
+                "confidence": 0.5325
+            },
+            "dataset": {
+                "value": "Heihe, Chikusei, Xiongan, WHU-Hi-HanChuan",
+                "confidence": 0.3284
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "NIQE",
+                        "confidence": 0.8408
+                    },
+                    {
+                        "value": "PI",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "BRISQUE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ILNIQE",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "ClipIQA",
+                        "confidence": 0.999
+                    },
+                    {
+                        "value": "CNNIQA",
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": "sPr",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "sRec",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 6.121,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 5.695,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 15.572,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 60.075,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.49,
+                        "confidence": 0.8441
+                    },
+                    {
+                        "value": 0.387,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.963,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.868,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "CASI",
+                        "confidence": 0.6758
+                    },
+                    {
+                        "value": "Airborne Multi-Modality Imaging Spectrometer",
+                        "confidence": 0.604
+                    },
+                    {
+                        "value": "Headwall Hyperspec-VNIR-C",
+                        "confidence": 0.9781
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Heihe",
+                        "confidence": 0.9909
+                    },
+                    {
+                        "value": "Chikusei",
+                        "confidence": 0.965
+                    },
+                    {
+                        "value": "Xiongan",
+                        "confidence": 0.9975
+                    },
+                    {
+                        "value": "WHU-Hi-HanChuan",
+                        "confidence": 0.8542
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9742
+            },
+            "spatial_resolution": {
+                "value": "0.5m, 1m, 2.5m",
+                "confidence": 0.7182
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "48 bands (400-1000nm)",
+                        "confidence": 0.8526
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spatial super-resolution",
+                        "confidence": 0.8986
+                    },
+                    {
+                        "value": "Cropping",
+                        "confidence": 0.8844
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9705
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 0.997
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "L1",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "HSI Denoising",
+                "confidence": 0.8303
+            },
+            "application": {
+                "value": "Hyperspectral image denoising",
+                "confidence": 0.9175
+            },
+            "dataset": {
+                "value": "Xiongan, WHU-Hi-HanChuan",
+                "confidence": 0.9966
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "PSNR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SSIM",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAM",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 38.227,
+                        "confidence": 0.692
+                    },
+                    {
+                        "value": 0.923,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.028,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Airborne Multi-Modality Imaging Spectrometer",
+                        "confidence": 0.9791
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Xiongan",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "WHU-Hi-HanChuan",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 0.8639
+            },
+            "spatial_resolution": {
+                "value": "0.5m",
+                "confidence": 0.9736
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "48 bands (400-1000nm)",
+                        "confidence": 0.9783
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Spatial super-resolution",
+                        "confidence": 0.6032
+                    },
+                    {
+                        "value": "Cropping",
+                        "confidence": 0.9854
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 4,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

@@ -1,0 +1,1268 @@
+{
+    "model_id": {
+        "value": "CSP",
+        "confidence": 0.6759
+    },
+    "model_name": {
+        "value": "CSP",
+        "confidence": 0.9839
+    },
+    "version": {
+        "value": "2023",
+        "confidence": 0.6227
+    },
+    "release_date": {
+        "value": "2023-07-01",
+        "confidence": 0.8212
+    },
+    "last_updated": {
+        "value": "2023-07-01",
+        "confidence": 0.8985
+    },
+    "short_description": {
+        "value": "Contrastive Spatial Pre-Training (CSP) is a self-supervised dual-encoder framework for learning geospatial-visual representations from large-scale unlabeled geo-tagged images, aligning image and location embeddings for improved downstream classification tasks.",
+        "confidence": 0.7825
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2305.01118",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://gengchenmai.github.io/csp-website/",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://gengchenmai.github.io/csp-website/",
+        "confidence": 0.9983
+    },
+    "backbone": {
+        "value": "InceptionV3 (iNat2018), ResNet50 (fMoW), ViT (ablation)",
+        "confidence": 0.778
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised contrastive learning between image and location embeddings",
+        "confidence": 0.8184
+    },
+    "masking_strategy": {
+        "value": "Dropout-based augmentation for location encoder (SimCSE), in-batch negatives, random negative location sampling",
+        "confidence": 0.7353
+    },
+    "pretraining": {
+        "value": "Dual-encoder contrastive pre-training: image encoder is frozen (pretrained on ImageNet or Geo-SSL), location encoder is trained to align with image embeddings using contrastive objectives (NCE or MC loss) with multiple negative sampling strategies.",
+        "confidence": 0.7182
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spatial dependency",
+                "confidence": 0.7049
+            },
+            {
+                "value": "Spatial heterogeneity",
+                "confidence": 0.9927
+            },
+            {
+                "value": "Spatially explicit AI",
+                "confidence": 0.4687
+            },
+            {
+                "value": "Geospatial distribution modeling",
+                "confidence": 0.4877
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Projection layer W() for image encoder",
+                "confidence": 0.6144
+            },
+            {
+                "value": "Dual-encoder architecture",
+                "confidence": 0.5141
+            },
+            {
+                "value": "Location encoder (Space2Vec grid)",
+                "confidence": 0.5486
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "RGB camera (iNat2018)",
+                "confidence": 0.4311
+            },
+            {
+                "value": "Multispectral satellite (fMoW)",
+                "confidence": 0.4377
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9613
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral (fMoW)",
+                "confidence": 0.3359
+            },
+            {
+                "value": "RGB (iNat2018)",
+                "confidence": 0.7072
+            },
+            {
+                "value": "Location (latitude, longitude)",
+                "confidence": 0.3318
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9978
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "iNat2018 (for iNat2018 task)",
+                "confidence": 0.3285
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global, with US bias",
+                        "confidence": 0.3043
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 436063,
+                "confidence": 0.9978
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 0.4858
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 0.4352
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 0.809
+                    }
+                ]
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": "Stratified sampling for few-shot; random negative location sampling for contrastive",
+                "confidence": 0.3007
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "dataset": {
+                "value": "fMoW (for fMoW task)",
+                "confidence": 0.6986
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9951
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 363570,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 0.9873
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": "Stratified sampling for few-shot; random negative location sampling for contrastive",
+                "confidence": 0.9869
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Fine-grained species recognition",
+                "confidence": 0.4383
+            },
+            "application": {
+                "value": "Geo-aware image classification",
+                "confidence": 0.5813
+            },
+            "dataset": {
+                "value": "iNat2018",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 0.7786
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 9.01,
+                        "confidence": 0.9987
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB camera",
+                        "confidence": 0.9088
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global, US bias",
+                        "confidence": 0.36
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 436063,
+                "confidence": 0.8117
+            },
+            "num_samples": {
+                "value": 21803,
+                "confidence": 0.9819
+            },
+            "sampling_percentage": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 8142,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.8087
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 0.5647
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 0.7647
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 0.9988
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 0.3492
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Fine-grained species recognition",
+                "confidence": 0.9195
+            },
+            "application": {
+                "value": "Geo-aware image classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "iNat2018",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 19.68,
+                        "confidence": 0.9993
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB camera",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global, US bias",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 436063,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 43606,
+                "confidence": 0.9963
+            },
+            "sampling_percentage": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 8142,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 0.9858
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Fine-grained species recognition",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Geo-aware image classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "iNat2018",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 29.61,
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB camera",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global, US bias",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 436063,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 87212,
+                "confidence": 0.8963
+            },
+            "sampling_percentage": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 8142,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 0.9998
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Fine-grained species recognition",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Geo-aware image classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "iNat2018",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.79,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB camera",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global, US bias",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 436063,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 436063,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 8142,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Satellite image classification",
+                "confidence": 0.6403
+            },
+            "application": {
+                "value": "Remote sensing land use/object classification",
+                "confidence": 0.3558
+            },
+            "dataset": {
+                "value": "fMoW",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 67.47,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Satellite",
+                        "confidence": 0.9923
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 363570,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 18178,
+                "confidence": 0.9163
+            },
+            "sampling_percentage": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 0.9999
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Satellite image classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Remote sensing land use/object classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "fMoW",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 69.23,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Satellite",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 363570,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 36357,
+                "confidence": 0.9994
+            },
+            "sampling_percentage": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Satellite image classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Remote sensing land use/object classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "fMoW",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 70.66,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Satellite",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 363570,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 72714,
+                "confidence": 0.9982
+            },
+            "sampling_percentage": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Satellite image classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Remote sensing land use/object classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "fMoW",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 71.0,
+                        "confidence": 0.8877
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Satellite",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 363570,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 363570,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Dropout (SimCSE)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random negative sampling",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "In-batch negative sampling",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MC loss (contrastive multi-classification)",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

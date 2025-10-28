@@ -1,0 +1,1004 @@
+{
+    "model_id": {
+        "value": "reo-vlm",
+        "confidence": 0.9656
+    },
+    "model_name": {
+        "value": "REO-VLM",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8792
+    },
+    "release_date": {
+        "value": "2024-12-21",
+        "confidence": 1.0
+    },
+    "last_updated": {
+        "value": "2024-12-21",
+        "confidence": 0.9999
+    },
+    "short_description": {
+        "value": "REO-VLM is a unified vision-language model for Earth Observation that integrates regression and generative capabilities, enabling both scientific regression (e.g., above-ground biomass estimation) and image content interpretation from multimodal EO data. It is trained and evaluated on the REO-Instruct benchmark, which contains 1.6 million EO-language pairs with RGB, multispectral, and SAR imagery.",
+        "confidence": 0.7746
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2412.16583",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "LLaVA-1.5",
+        "confidence": 0.9977
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Two-stage: first stage for generation (cross-entropy loss), second stage for regression (MSE loss)",
+        "confidence": 0.7393
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Two-stage training: (1) fine-tune LLM and generation head with cross-entropy loss; (2) fine-tune regression head and reverse projection module with MSE loss. Visual encoder and multimodal projector are frozen.",
+        "confidence": 0.8136
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Land cover domain knowledge",
+                "confidence": 0.7245
+            },
+            {
+                "value": "Ecological patch counting",
+                "confidence": 0.6792
+            },
+            {
+                "value": "Human activity monitoring",
+                "confidence": 0.6909
+            },
+            {
+                "value": "Above-ground biomass regression",
+                "confidence": 0.6325
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Spectral recombination and pseudo-RGB strategies for MS and SAR alignment",
+                "confidence": 0.8171
+            },
+            {
+                "value": "Visual token selection module",
+                "confidence": 0.7981
+            },
+            {
+                "value": "Reverse projection module",
+                "confidence": 0.8984
+            },
+            {
+                "value": "Four-layer MLP-mixer regression head",
+                "confidence": 0.8877
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9
+            },
+            {
+                "value": "ALOS-2 PALSAR-2",
+                "confidence": 0.9998
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9328
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.7723
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.7642
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9998
+            },
+            {
+                "value": "Text",
+                "confidence": 0.99
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.9954
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9999
+    },
+    "spatial_resolution": {
+        "value": "10m (MS), 25m (SAR), 250m x 250m patch",
+        "confidence": 0.7733
+    },
+    "temporal_resolution": {
+        "value": "2019-2020",
+        "confidence": 0.989
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "B02",
+                "confidence": 0.8004
+            },
+            {
+                "value": "B03",
+                "confidence": 1.0
+            },
+            {
+                "value": "B04",
+                "confidence": 1.0
+            },
+            {
+                "value": "B05",
+                "confidence": 0.9999
+            },
+            {
+                "value": "B06",
+                "confidence": 1.0
+            },
+            {
+                "value": "B07",
+                "confidence": 1.0
+            },
+            {
+                "value": "B08",
+                "confidence": 1.0
+            },
+            {
+                "value": "B11",
+                "confidence": 0.9151
+            },
+            {
+                "value": "B12",
+                "confidence": 1.0
+            },
+            {
+                "value": "SAR HH",
+                "confidence": 0.6458
+            },
+            {
+                "value": "SAR HV",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "REO-Instruct (based on AGBD)",
+                "confidence": 0.551
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (various land cover types, geographic distributions)",
+                        "confidence": 0.3051
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "2019-2020",
+                "confidence": 0.9978
+            },
+            "num_images": {
+                "value": 1600000,
+                "confidence": 0.9959
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "25x25 pixels (250m x 250m area)",
+                "confidence": 0.4411
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Spectral recombination to 5 pseudo-RGB images per MS image",
+                        "confidence": 0.3012
+                    },
+                    {
+                        "value": "Spatial alignment of modalities",
+                        "confidence": 0.3868
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Weighted selection and resampling for land cover balance",
+                "confidence": 0.4606
+            },
+            "processing_level": {
+                "value": "Sentinel-2 L2A",
+                "confidence": 0.9172
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Land cover classification",
+                "confidence": 0.6866
+            },
+            "application": {
+                "value": "Land cover mapping from EO imagery",
+                "confidence": 0.3264
+            },
+            "dataset": {
+                "value": "REO-Instruct",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 0.8715
+                    },
+                    {
+                        "value": "MA Pre",
+                        "confidence": 0.646
+                    },
+                    {
+                        "value": "MA Recl",
+                        "confidence": 0.9988
+                    },
+                    {
+                        "value": "MA F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 19.94,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 26.9,
+                        "confidence": 0.9166
+                    },
+                    {
+                        "value": 18.22,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 21.73,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.998
+                    },
+                    {
+                        "value": "ALOS-2 PALSAR-2",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9807
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1600000,
+                "confidence": 0.9893
+            },
+            "num_samples": {
+                "value": 8600,
+                "confidence": 0.9993
+            },
+            "sampling_percentage": {
+                "value": 0.54,
+                "confidence": 0.6645
+            },
+            "num_classes": {
+                "value": 20,
+                "confidence": 0.9994
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Closed forest",
+                        "confidence": 0.9281
+                    },
+                    {
+                        "value": "Evergreen needleleaf forest",
+                        "confidence": 0.9976
+                    },
+                    {
+                        "value": "Shrubs",
+                        "confidence": 0.9987
+                    },
+                    {
+                        "value": "Cultivated and Managed Vegetation/Agriculture (Cropland)",
+                        "confidence": 0.7847
+                    },
+                    {
+                        "value": "Herbaceous vegetation",
+                        "confidence": 0.7726
+                    },
+                    {
+                        "value": "Urban",
+                        "confidence": 0.4328
+                    },
+                    {
+                        "value": "Snow and Ice",
+                        "confidence": 0.4706
+                    },
+                    {
+                        "value": "Bare sparse vegetation",
+                        "confidence": 0.9915
+                    },
+                    {
+                        "value": "Others",
+                        "confidence": 0.5342
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "25x25 pixels",
+                "confidence": 0.9549
+            },
+            "spatial_resolution": {
+                "value": "10m (MS), 25m (SAR)",
+                "confidence": 0.7507
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B02",
+                        "confidence": 0.7418
+                    },
+                    {
+                        "value": "B03",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B04",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B05",
+                        "confidence": 0.9936
+                    },
+                    {
+                        "value": "B06",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B07",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B08",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HH",
+                        "confidence": 0.9862
+                    },
+                    {
+                        "value": "SAR HV",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "VQA-human activity monitoring",
+                "confidence": 0.65
+            },
+            "application": {
+                "value": "Human activity detection and monitoring",
+                "confidence": 0.3187
+            },
+            "dataset": {
+                "value": "REO-Instruct",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9689
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 80.5,
+                        "confidence": 0.8964
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ALOS-2 PALSAR-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1600000,
+                "confidence": 0.9999
+            },
+            "num_samples": {
+                "value": 8600,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 0.54,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "25x25 pixels",
+                "confidence": 0.9999
+            },
+            "spatial_resolution": {
+                "value": "10m (MS), 25m (SAR)",
+                "confidence": 0.9936
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B02",
+                        "confidence": 0.999
+                    },
+                    {
+                        "value": "B03",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B04",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B05",
+                        "confidence": 0.9939
+                    },
+                    {
+                        "value": "B06",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B07",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B08",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HV",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Ecological patch counting",
+                "confidence": 0.9998
+            },
+            "application": {
+                "value": "Ecological patch estimation",
+                "confidence": 0.3198
+            },
+            "dataset": {
+                "value": "REO-Instruct",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "RMSE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MAE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "R-squared",
+                        "confidence": 0.9992
+                    },
+                    {
+                        "value": "OA",
+                        "confidence": 0.997
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 1.27,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.91,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": -0.19,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 35.9,
+                        "confidence": 0.9932
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ALOS-2 PALSAR-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1600000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 8600,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 0.54,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "25x25 pixels",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m (MS), 25m (SAR)",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B02",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B03",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B04",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B05",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B06",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B07",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B08",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HV",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Above Ground Biomass (AGB) regression",
+                "confidence": 0.5146
+            },
+            "application": {
+                "value": "Biomass estimation",
+                "confidence": 0.7269
+            },
+            "dataset": {
+                "value": "REO-Instruct",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "RMSE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MAE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "R-squared",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 76.52,
+                        "confidence": 0.8117
+                    },
+                    {
+                        "value": 43.84,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.35,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ALOS-2 PALSAR-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1600000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 8600,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 0.54,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "25x25 pixels",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m (MS), 25m (SAR)",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B02",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "B03",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B04",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B05",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B06",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B07",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B08",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAR HV",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "MSE",
+                "confidence": 0.9145
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

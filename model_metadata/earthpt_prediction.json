@@ -1,0 +1,415 @@
+{
+    "model_id": {
+        "value": "EarthPT-700M",
+        "confidence": 0.939
+    },
+    "model_name": {
+        "value": "EarthPT",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "700M",
+        "confidence": 0.9999
+    },
+    "release_date": {
+        "value": "2024-01-11",
+        "confidence": 0.9996
+    },
+    "last_updated": {
+        "value": "2024-01-11",
+        "confidence": 0.9984
+    },
+    "short_description": {
+        "value": "EarthPT is a 700 million parameter autoregressive decoding transformer foundation model for Earth Observation, trained on multispectral time series data to forecast future pixel-level surface reflectances and produce semantically meaningful embeddings for downstream tasks.",
+        "confidence": 0.8618
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2309.07207",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/aspiaspace/EarthPT",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://doi.org/10.5281/zenodo.10489724",
+        "confidence": 1.0
+    },
+    "backbone": {
+        "value": "Autoregressive decoding transformer (Radford et al. 2019) with MLP input embedding",
+        "confidence": 0.757
+    },
+    "num_layers": {
+        "value": 36,
+        "confidence": 1.0
+    },
+    "num_parameters": {
+        "value": 700000000,
+        "confidence": 1.0
+    },
+    "pretext_training_type": {
+        "value": "Autoregressive self-supervised forecasting",
+        "confidence": 0.8986
+    },
+    "masking_strategy": {
+        "value": "None (autoregressive next-step prediction)",
+        "confidence": 0.7409
+    },
+    "pretraining": {
+        "value": "Trained in an autoregressive self-supervised manner to predict the next observation in multispectral time series of surface reflectance.",
+        "confidence": 0.7508
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Date embedding for temporal context",
+                "confidence": 0.3578
+            },
+            {
+                "value": "Spectral band normalization",
+                "confidence": 0.6668
+            },
+            {
+                "value": "Remote sensing indices (NDVI, NDWI, BSI, GCVI)",
+                "confidence": 0.4825
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "MLP input embedding for non-textual data",
+                "confidence": 0.8006
+            },
+            {
+                "value": "Additional float embeddings for date of current and next observation",
+                "confidence": 0.8078
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-1 (SAR, for input to ClearSky)",
+                "confidence": 0.5953
+            },
+            {
+                "value": "Sentinel-2 (simulated via ClearSky)",
+                "confidence": 0.4555
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.9923
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9999
+            },
+            {
+                "value": "Time series",
+                "confidence": 0.8452
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.6932
+    },
+    "temporal_alignment": {
+        "value": "full",
+        "confidence": 0.9998
+    },
+    "spatial_resolution": {
+        "value": "10m",
+        "confidence": 0.9839
+    },
+    "temporal_resolution": {
+        "value": "5 days",
+        "confidence": 0.9853
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Blue",
+                "confidence": 0.9996
+            },
+            {
+                "value": "Green",
+                "confidence": 1.0
+            },
+            {
+                "value": "Red",
+                "confidence": 1.0
+            },
+            {
+                "value": "Red Edge 1",
+                "confidence": 0.9997
+            },
+            {
+                "value": "Red Edge 2",
+                "confidence": 1.0
+            },
+            {
+                "value": "Red Edge 3",
+                "confidence": 1.0
+            },
+            {
+                "value": "Red Edge 4",
+                "confidence": 1.0
+            },
+            {
+                "value": "NIR",
+                "confidence": 0.9997
+            },
+            {
+                "value": "SWIR 1",
+                "confidence": 0.9832
+            },
+            {
+                "value": "SWIR 2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "ClearSky inferred Sentinel-2 equivalent imagery (UK, TL BNG tile)",
+                "confidence": 0.3005
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "UK (TL BNG tile, 100x100km region)",
+                        "confidence": 0.3033
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "January 2015 to December 2022 (train/val), January 2023 to May 2023 (test)",
+                "confidence": 0.4033
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": "Each temporal observation as a token; block size 256",
+                "confidence": 0.3053
+            },
+            "image_resolution": {
+                "value": "10m/pixel",
+                "confidence": 0.6438
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 164000,
+                "confidence": 0.9997
+            },
+            "learning_rate": {
+                "value": "max 2E-5, decayed by factor of 10 over 1.1x total steps",
+                "confidence": 0.3094
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Float16 NumPy arrays",
+                        "confidence": 0.3799
+                    },
+                    {
+                        "value": "Spectral band normalization (v/500-1)",
+                        "confidence": 0.3481
+                    },
+                    {
+                        "value": "Date embedding (sin/cos)",
+                        "confidence": 0.5772
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Time series sampled at Sentinel-1 cadence (~5 days)",
+                "confidence": 0.354
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": "SAR-based, impervious to cloud (ClearSky algorithm)",
+                "confidence": 0.3004
+            },
+            "missing_data": {
+                "value": "ClearSky fills gaps using SAR, so no missing data due to clouds",
+                "confidence": 0.3
+            },
+            "masking_ratio": {
+                "value": 0,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Forecasting (time series prediction)",
+                "confidence": 0.3518
+            },
+            "application": {
+                "value": "Pixel-level surface reflectance and remote sensing index forecasting",
+                "confidence": 0.3598
+            },
+            "dataset": {
+                "value": "ClearSky inferred Sentinel-2 equivalent imagery (UK, TL63 BNG tile)",
+                "confidence": 0.3531
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Median L1 error",
+                        "confidence": 0.9746
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.05,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 (SAR, for input to ClearSky)",
+                        "confidence": 0.3467
+                    },
+                    {
+                        "value": "Sentinel-2 (simulated via ClearSky)",
+                        "confidence": 0.9269
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "UK (TL63 BNG tile)",
+                        "confidence": 0.7089
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1000000,
+                "confidence": 0.7274
+            },
+            "num_samples": {
+                "value": 1000000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "10m/pixel",
+                "confidence": 0.8115
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Blue",
+                        "confidence": 0.9962
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Red",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Red Edge 1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Red Edge 2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Red Edge 3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Red Edge 4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NIR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SWIR 1",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "SWIR 2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 164000,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-05,
+                "confidence": 0.9978
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Huber loss",
+                "confidence": 0.9918
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

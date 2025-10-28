@@ -1,0 +1,752 @@
+{
+    "model_id": {
+        "value": "U-BARN",
+        "confidence": 0.9349
+    },
+    "model_name": {
+        "value": "U-BARN",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8446
+    },
+    "release_date": {
+        "value": "2024-01-25",
+        "confidence": 0.9988
+    },
+    "last_updated": {
+        "value": "2024-02-12",
+        "confidence": 0.9857
+    },
+    "short_description": {
+        "value": "U-BARN (Unet-BERT spAtio-temporal Representation eNcoder) is a self-supervised deep learning model for learning spatio-temporal representations from irregularly sampled multispectral Sentinel-2 satellite image time series. It combines a Unet-based spatial-spectral encoder with a transformer-based temporal encoder, and is pretrained using a BERT-inspired masked reconstruction task.",
+        "confidence": 0.8223
+    },
+    "paper_link": {
+        "value": "https://doi.org/10.1109/JSTARS.2024.3358066",
+        "confidence": 0.9974
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://src.koda.cnrs.fr/iris.dumeur/ssl_ubarn",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Unet + Transformer",
+        "confidence": 0.9419
+    },
+    "num_layers": {
+        "value": 3,
+        "confidence": 0.9394
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised masked reconstruction (BERT-inspired)",
+        "confidence": 0.8097
+    },
+    "masking_strategy": {
+        "value": "Random permutation of spectro-spatial embedding values among selected encoded patches within a batch (temporal masking, 60% masking rate)",
+        "confidence": 0.7936
+    },
+    "pretraining": {
+        "value": "Self-supervised pretraining on large-scale unlabeled Sentinel-2 L2A time series from France, reconstructing masked patches from annual time series (up to 100 dates) using a shallow decoder and mean squared error loss.",
+        "confidence": 0.7279
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Cloud handling",
+                "confidence": 0.3936
+            },
+            {
+                "value": "Irregular time series",
+                "confidence": 0.5137
+            },
+            {
+                "value": "Spatio-temporal context",
+                "confidence": 0.3053
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Unet for spatial-spectral encoding",
+                "confidence": 0.463
+            },
+            {
+                "value": "Temporal attention at full spatial resolution",
+                "confidence": 0.7134
+            },
+            {
+                "value": "Removal of temporal attention from Unet bottleneck",
+                "confidence": 0.7097
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9999
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.8363
+    },
+    "temporal_alignment": {
+        "value": "full",
+        "confidence": 0.9839
+    },
+    "spatial_resolution": {
+        "value": "10m",
+        "confidence": 0.9795
+    },
+    "temporal_resolution": {
+        "value": "5-day revisit (variable, up to 100 dates per year)",
+        "confidence": 0.7777
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "B2",
+                "confidence": 0.8493
+            },
+            {
+                "value": "B3",
+                "confidence": 1.0
+            },
+            {
+                "value": "B4",
+                "confidence": 1.0
+            },
+            {
+                "value": "B8",
+                "confidence": 0.9999
+            },
+            {
+                "value": "B5",
+                "confidence": 0.9999
+            },
+            {
+                "value": "B6",
+                "confidence": 1.0
+            },
+            {
+                "value": "B7",
+                "confidence": 1.0
+            },
+            {
+                "value": "B8A",
+                "confidence": 0.9578
+            },
+            {
+                "value": "B11",
+                "confidence": 1.0
+            },
+            {
+                "value": "B12",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Large-scale unlabeled Sentinel-2 L2A dataset (13 tiles over France, 2016-2020)",
+                "confidence": 0.3164
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "France",
+                        "confidence": 0.9937
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "2016-2020",
+                "confidence": 0.9678
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": "Patch size 64x64",
+                "confidence": 0.3388
+            },
+            "image_resolution": {
+                "value": "10m (20m bands resampled to 10m)",
+                "confidence": 0.3725
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "0.001 (with plateau reduction scheduler, patience 10)",
+                "confidence": 0.3109
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random crop (training)",
+                        "confidence": 0.5149
+                    },
+                    {
+                        "value": "Center crop (validation/testing)",
+                        "confidence": 0.6638
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Bicubic interpolation for resampling",
+                        "confidence": 0.3395
+                    },
+                    {
+                        "value": "Robust normalization (quantile clipping, median centering, scaling)",
+                        "confidence": 0.3032
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random selection of 10 regions of interest (1024x1024) per tile per year; temporal padding if <100 dates",
+                "confidence": 0.3002
+            },
+            "processing_level": {
+                "value": "L2A",
+                "confidence": 0.9989
+            },
+            "cloud_cover": {
+                "value": "Cloudy images included; cloud mask used for loss masking only",
+                "confidence": 0.3005
+            },
+            "missing_data": {
+                "value": "Invalid pixels masked in loss; temporal padding for short series",
+                "confidence": 0.3002
+            },
+            "masking_ratio": {
+                "value": 0.6,
+                "confidence": 0.9901
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9187
+            },
+            "application": {
+                "value": "Crop type segmentation",
+                "confidence": 0.6252
+            },
+            "dataset": {
+                "value": "PASTIS",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Kappa",
+                        "confidence": 0.7316
+                    },
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.8502
+                    },
+                    {
+                        "value": "F1-score",
+                        "confidence": 0.5687
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.775
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.852,
+                        "confidence": 0.3144
+                    },
+                    {
+                        "value": 0.889,
+                        "confidence": 0.35
+                    },
+                    {
+                        "value": 0.823,
+                        "confidence": 0.3116
+                    },
+                    {
+                        "value": 0.765,
+                        "confidence": 0.3348
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "France",
+                        "confidence": 0.9981
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2433,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2433,
+                "confidence": 0.9367
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 18,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Meadow",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Soft winter wheat",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Corn",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Winter barley",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Winter rapeseed",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Spring barley",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sunflower",
+                        "confidence": 0.9985
+                    },
+                    {
+                        "value": "Grapevine",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Beet",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Winter triticale",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Winter durum wheat",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Fruits, vegetables, flowers",
+                        "confidence": 0.9688
+                    },
+                    {
+                        "value": "Potatoes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Leguminous fodder",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Soybeans",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Orchard",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Mixed cereal",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Sorghum",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "64x64 patches at 10m",
+                "confidence": 0.3895
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 0.9983
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random crop (training)",
+                        "confidence": 0.7787
+                    },
+                    {
+                        "value": "Center crop (validation/testing)",
+                        "confidence": 0.7272
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy (on known crop classes)",
+                "confidence": 0.5567
+            },
+            "split_ratio": {
+                "value": "5-fold cross-validation (3 train, 1 val, 1 test)",
+                "confidence": 0.3397
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Dense land cover segmentation",
+                "confidence": 0.9637
+            },
+            "dataset": {
+                "value": "MultiSenGE",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "F1-score",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.857,
+                        "confidence": 0.307
+                    },
+                    {
+                        "value": 0.887,
+                        "confidence": 0.3338
+                    },
+                    {
+                        "value": 0.823,
+                        "confidence": 0.3139
+                    },
+                    {
+                        "value": 0.765,
+                        "confidence": 0.3607
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Eastern France",
+                        "confidence": 0.8729
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 8115,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 8115,
+                "confidence": 0.9943
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 14,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Dense built-up",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sparse built-up",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Specialized built-up areas",
+                        "confidence": 0.9874
+                    },
+                    {
+                        "value": "Specialized but vegetative areas",
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": "Large scale network",
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": "Arable lands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Vineyards",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Orchards",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grasslands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Groves, Hedges",
+                        "confidence": 0.6995
+                    },
+                    {
+                        "value": "Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Open spaces, mineral",
+                        "confidence": 0.9947
+                    },
+                    {
+                        "value": "Wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Water surfaces",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256 patches at 10m",
+                "confidence": 0.8691
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random crop (training)",
+                        "confidence": 0.9919
+                    },
+                    {
+                        "value": "Center crop (validation/testing)",
+                        "confidence": 0.9986
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy",
+                "confidence": 0.9794
+            },
+            "split_ratio": {
+                "value": "60% train, 16% val, 24% test",
+                "confidence": 0.4969
+            }
+        }
+    ]
+}

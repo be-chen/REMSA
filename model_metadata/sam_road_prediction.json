@@ -1,0 +1,540 @@
+{
+    "model_id": {
+        "value": "sam-road-v1",
+        "confidence": 0.7142
+    },
+    "model_name": {
+        "value": "SAM-Road",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8149
+    },
+    "release_date": {
+        "value": "2024-04-13",
+        "confidence": 0.9988
+    },
+    "last_updated": {
+        "value": "2024-04-13",
+        "confidence": 1.0
+    },
+    "short_description": {
+        "value": "SAM-Road adapts the Segment Anything Model (SAM) for extracting large-scale, vectorized road network graphs from satellite imagery, combining dense semantic segmentation with a transformer-based graph neural network for topology prediction.",
+        "confidence": 0.8651
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2403.16051",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/htcr/sam_road",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ViT-B (Vision Transformer - Base)",
+        "confidence": 0.8054
+    },
+    "num_layers": {
+        "value": 12,
+        "confidence": 1.0
+    },
+    "num_parameters": {
+        "value": 80000000,
+        "confidence": 0.8839
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised pretraining on segmentation masks (SAM pretraining)",
+        "confidence": 0.6332
+    },
+    "masking_strategy": {
+        "value": "Not specified for SAM-Road; inherits from SAM pretraining",
+        "confidence": 0.6329
+    },
+    "pretraining": {
+        "value": "Fine-tuned from the pre-trained Segment Anything Model (SAM) on satellite imagery for road and intersection mask prediction",
+        "confidence": 0.7679
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Non-maximum suppression for vertex extraction",
+                "confidence": 0.8668
+            },
+            {
+                "value": "Graph neural network for topology prediction",
+                "confidence": 0.5217
+            },
+            {
+                "value": "Sliding-window inference for large regions",
+                "confidence": 0.5489
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Fine-tuning on satellite imagery",
+                "confidence": 0.6017
+            },
+            {
+                "value": "0.1x base learning rate for encoder",
+                "confidence": 0.6976
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Optical RGB satellite imagery",
+                "confidence": 0.7702
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral (RGB)",
+                "confidence": 0.7978
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.99
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "1 meter/pixel",
+        "confidence": 0.9728
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "R",
+                "confidence": 0.6741
+            },
+            {
+                "value": "G",
+                "confidence": 0.9
+            },
+            {
+                "value": "B",
+                "confidence": 0.9
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "SA-1B (SAM pretraining dataset)",
+                "confidence": 0.3199
+            },
+            "regions_coverage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": "16x16 patches",
+                "confidence": 0.5351
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Semantic segmentation and graph extraction",
+                "confidence": 0.3286
+            },
+            "application": {
+                "value": "Road network graph extraction from satellite imagery",
+                "confidence": 0.7569
+            },
+            "dataset": {
+                "value": "City-scale",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "TOPO Precision",
+                        "confidence": 0.8731
+                    },
+                    {
+                        "value": "TOPO Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "TOPO F1",
+                        "confidence": 0.9983
+                    },
+                    {
+                        "value": "APLS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 90.47,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 67.69,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 77.23,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 68.37,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Optical RGB satellite imagery",
+                        "confidence": 0.7074
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "20 U.S. cities",
+                        "confidence": 0.9076
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 180,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 180,
+                "confidence": 0.9931
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Road",
+                        "confidence": 0.6826
+                    },
+                    {
+                        "value": "Intersection",
+                        "confidence": 0.9996
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "2048x2048 pixels",
+                "confidence": 0.6835
+            },
+            "spatial_resolution": {
+                "value": "1 meter/pixel",
+                "confidence": 0.9969
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random rotation (multiples of 90 degrees)",
+                        "confidence": 0.4741
+                    },
+                    {
+                        "value": "Random translation (random patch sampling)",
+                        "confidence": 0.3308
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary cross entropy",
+                "confidence": 0.8624
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation and graph extraction",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Road network graph extraction from satellite imagery",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "SpaceNet",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "TOPO Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "TOPO Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "TOPO F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "APLS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 93.03,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 70.97,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 80.52,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 71.64,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Optical RGB satellite imagery",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Shanghai",
+                        "confidence": 0.7857
+                    },
+                    {
+                        "value": "Las Vegas",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "other global cities",
+                        "confidence": 0.3897
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2549,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2549,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Road",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Intersection",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "400x400 pixels",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "1 meter/pixel",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random rotation (multiples of 90 degrees)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random translation (random patch sampling)",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 64,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Binary cross entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

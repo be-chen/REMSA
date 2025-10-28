@@ -1,0 +1,503 @@
+{
+    "model_id": {
+        "value": "GeoText-1652-v1",
+        "confidence": 0.8312
+    },
+    "model_name": {
+        "value": "GeoText-1652",
+        "confidence": 0.9998
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.8723
+    },
+    "release_date": {
+        "value": "2024-07-31",
+        "confidence": 0.9153
+    },
+    "last_updated": {
+        "value": "2024-07-31",
+        "confidence": 0.9974
+    },
+    "short_description": {
+        "value": "GeoText-1652 is a vision-language benchmark for natural language-guided drone geolocalization, extending University-1652 with dense image-level and region-level text annotations and bounding boxes, enabling fine-grained spatial relation matching for drone navigation and target localization.",
+        "confidence": 0.7816
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2311.12751",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://multimodalgeo.github.io/GeoText/",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "XVLM (Swin image encoder, BERT text encoder)",
+        "confidence": 0.8854
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "num_parameters": {
+        "value": 217000000,
+        "confidence": 1.0
+    },
+    "pretext_training_type": {
+        "value": "Cross-modal contrastive learning with spatial relation matching",
+        "confidence": 0.7726
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "XVLM pretrained on 16M images; fine-tuned on GeoText-1652 with spatial and grounding objectives",
+        "confidence": 0.7456
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spatial relation matching",
+                "confidence": 0.8535
+            },
+            {
+                "value": "Region-level annotation",
+                "confidence": 0.7065
+            },
+            {
+                "value": "Human-computer interaction annotation",
+                "confidence": 0.5103
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Added spatial relation matching module",
+                "confidence": 0.6308
+            },
+            {
+                "value": "ROI Pooling for region features",
+                "confidence": 0.5339
+            },
+            {
+                "value": "Multi-layer perceptron for spatial classification",
+                "confidence": 0.5612
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Drone",
+                "confidence": 0.7303
+            },
+            {
+                "value": "Satellite",
+                "confidence": 0.9999
+            },
+            {
+                "value": "Ground cameras",
+                "confidence": 0.8206
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9749
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral (RGB)",
+                "confidence": 0.536
+            },
+            {
+                "value": "Text",
+                "confidence": 0.9989
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9953
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.8715
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "16M images (generic vision-language pretraining)",
+                "confidence": 0.304
+            },
+            "regions_coverage": {
+                "value": []
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 16000000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": "32x32 patches",
+                "confidence": 0.4116
+            },
+            "image_resolution": {
+                "value": "384x384",
+                "confidence": 0.9522
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Text-to-Image Retrieval",
+                "confidence": 0.5117
+            },
+            "application": {
+                "value": "Drone Navigation via Text",
+                "confidence": 0.4691
+            },
+            "dataset": {
+                "value": "GeoText-1652",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Recall@1",
+                        "confidence": 0.9978
+                    },
+                    {
+                        "value": "Recall@5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall@10",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 13.6,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 24.6,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 31.2,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Drone",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Satellite",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Ground cameras",
+                        "confidence": 0.9615
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Universities (72 total, 33 train, 39 test)",
+                        "confidence": 0.3068
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 50218,
+                "confidence": 0.6325
+            },
+            "num_samples": {
+                "value": 50218,
+                "confidence": 0.9998
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 951,
+                "confidence": 0.7076
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "384x384",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Brightness adjustment",
+                        "confidence": 0.9146
+                    },
+                    {
+                        "value": "Identity operation",
+                        "confidence": 0.927
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 3e-05,
+                "confidence": 0.9995
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "ITC, ITM, Grounding Loss, Spatial Loss",
+                "confidence": 0.3275
+            },
+            "split_ratio": {
+                "value": "Train: 33 universities, Test: 39 universities",
+                "confidence": 0.4103
+            }
+        },
+        {
+            "task": {
+                "value": "Image-to-Text Retrieval",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Drone-view Target Localization",
+                "confidence": 0.8377
+            },
+            "dataset": {
+                "value": "GeoText-1652",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Recall@1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall@5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall@10",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 26.3,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 53.7,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 66.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Drone",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Satellite",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Ground cameras",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Universities (72 total, 33 train, 39 test)",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 50218,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 50218,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 951,
+                "confidence": 0.9988
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "384x384",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Brightness adjustment",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Identity operation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 3e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "ITC, ITM, Grounding Loss, Spatial Loss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "Train: 33 universities, Test: 39 universities",
+                "confidence": 0.9999
+            }
+        }
+    ]
+}

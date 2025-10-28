@@ -1,0 +1,1321 @@
+{
+    "model_id": {
+        "value": "SSL4EO-S12",
+        "confidence": 0.8248
+    },
+    "model_name": {
+        "value": "SSL4EO-S12",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.85
+    },
+    "release_date": {
+        "value": "2022-06-01",
+        "confidence": 0.9978
+    },
+    "last_updated": {
+        "value": "2023-05-29",
+        "confidence": 0.9518
+    },
+    "short_description": {
+        "value": "SSL4EO-S12 is a large-scale, globally distributed, multi-temporal and multi-sensor dataset for self-supervised learning in Earth observation. It provides 251,079 locations worldwide, each with Sentinel-1 dual-pol SAR, Sentinel-2 L1C (top-of-atmosphere) and L2A (surface reflectance) multispectral images, sampled in four seasons (2020/2021), for a total of over 3 million 2640m x 2640m patches. The dataset is designed for unsupervised pre-training and benchmarking of self-supervised learning methods in remote sensing.",
+        "confidence": 0.7569
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2211.07044",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/zhu-xlab/SSL4EO-S12",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Self-supervised pre-training using MoCo-v2/v3, DINO, MAE, and data2vec on Sentinel-2 L1C images (main), with multi-temporal and multimodal augmentations. Pre-training for 100 epochs on 4 NVIDIA A100 GPUs, batch size 256.",
+        "confidence": 0.7166
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Multi-temporal augmentation",
+                "confidence": 0.4526
+            },
+            {
+                "value": "Multimodal fusion (SAR/optical)",
+                "confidence": 0.4594
+            },
+            {
+                "value": "Atmospheric correction as augmentation",
+                "confidence": 0.6487
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Early fusion for multimodal (SAR/optical) input",
+                "confidence": 0.4492
+            },
+            {
+                "value": "RandomSensorDrop augmentation",
+                "confidence": 0.5106
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.9995
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9999
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.871
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9966
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.9006
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.65
+    },
+    "spatial_resolution": {
+        "value": "10m (S1/S2 visible/NIR), 20m (S2 red edge/SWIR), 60m (S2 aerosols)",
+        "confidence": 0.8509
+    },
+    "temporal_resolution": {
+        "value": "4 timestamps per year (spring, summer, fall, winter)",
+        "confidence": 0.7374
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Sentinel-1 VV",
+                "confidence": 0.6506
+            },
+            {
+                "value": "Sentinel-1 VH",
+                "confidence": 0.9
+            },
+            {
+                "value": "Sentinel-2 B1",
+                "confidence": 0.8531
+            },
+            {
+                "value": "Sentinel-2 B2",
+                "confidence": 0.6777
+            },
+            {
+                "value": "Sentinel-2 B3",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B4",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B5",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B6",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B7",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B8",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B8A",
+                "confidence": 0.799
+            },
+            {
+                "value": "Sentinel-2 B9",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B10",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B11",
+                "confidence": 0.8
+            },
+            {
+                "value": "Sentinel-2 B12",
+                "confidence": 0.8
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "SSL4EO-S12",
+                "confidence": 0.9999
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (sampled around top-10k populated cities, all continents except little polar coverage)",
+                        "confidence": 0.3004
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "2020-2021",
+                "confidence": 0.7125
+            },
+            "num_images": {
+                "value": 1000000,
+                "confidence": 0.959
+            },
+            "token_size": {
+                "value": "224x224 (resized from 264x264 patches)",
+                "confidence": 0.3065
+            },
+            "image_resolution": {
+                "value": "2640m x 2640m patches (264x264 at 10m)",
+                "confidence": 0.3165
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "0.03 (SGD for ResNet), 1.5e-4 (AdamW for ViT/DINO/MAE), 1e-3 (AdamW for data2vec)",
+                "confidence": 0.3173
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "RandomBrightness/Contrast",
+                        "confidence": 0.9512
+                    },
+                    {
+                        "value": "RandomGrayscale",
+                        "confidence": 0.9994
+                    },
+                    {
+                        "value": "RandomGaussianBlur",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "RandomSeasonContrast",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "Multi-Crop (DINO)",
+                        "confidence": 0.5928
+                    },
+                    {
+                        "value": "Solarization (DINO)",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "RandomSeason (MAE/data2vec)",
+                        "confidence": 0.5676
+                    },
+                    {
+                        "value": "Resize/CenterCrop (data2vec)",
+                        "confidence": 0.5336
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Cloud filtering (<10% cloud cover)",
+                        "confidence": 0.3119
+                    },
+                    {
+                        "value": "Overlap filtering (grid search)",
+                        "confidence": 0.3882
+                    },
+                    {
+                        "value": "Conversion to uint8 (divide by 10000, multiply by 255)",
+                        "confidence": 0.3211
+                    },
+                    {
+                        "value": "No normalization",
+                        "confidence": 0.4331
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Gaussian sampling (std=50km) around top-10k cities, 4 seasons per location",
+                "confidence": 0.3017
+            },
+            "processing_level": {
+                "value": "Sentinel-1 GRD, Sentinel-2 L1C (TOA), Sentinel-2 L2A (surface reflectance)",
+                "confidence": 0.3135
+            },
+            "cloud_cover": {
+                "value": "<10% cloud coverage for S2",
+                "confidence": 0.362
+            },
+            "missing_data": {
+                "value": "Cloudy and overlapping patches removed before download",
+                "confidence": 0.3516
+            },
+            "masking_ratio": {
+                "value": 0.7,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.6507
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.6313
+            },
+            "dataset": {
+                "value": "EuroSAT",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.7344
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 98.0,
+                        "confidence": 0.876
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.9846
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 27000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 27000,
+                "confidence": 0.9817
+            },
+            "sampling_percentage": {
+                "value": 100.0,
+                "confidence": 0.7357
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "AnnualCrop",
+                        "confidence": 0.6916
+                    },
+                    {
+                        "value": "Forest",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "HerbaceousVegetation",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Highway",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Industrial",
+                        "confidence": 0.9985
+                    },
+                    {
+                        "value": "Pasture",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "PermanentCrop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Residential",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "River",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SeaLake",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9955
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9995
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B1",
+                        "confidence": 0.6891
+                    },
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "B9",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 0.65
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.1,
+                "confidence": 0.9063
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "21600/5400 (train/test)",
+                "confidence": 0.5637
+            }
+        },
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.9927
+            },
+            "application": {
+                "value": "Multi-label land cover classification",
+                "confidence": 0.9358
+            },
+            "dataset": {
+                "value": "BigEarthNet",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Mean Average Precision (micro)",
+                        "confidence": 0.7026
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.8,
+                        "confidence": 0.8277
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.9923
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 415611,
+                "confidence": 0.6495
+            },
+            "num_samples": {
+                "value": 415611,
+                "confidence": 0.9986
+            },
+            "sampling_percentage": {
+                "value": 100.0,
+                "confidence": 0.9997
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 0.7355
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Urban fabric",
+                        "confidence": 0.4506
+                    },
+                    {
+                        "value": "Industrial or commercial units",
+                        "confidence": 0.5575
+                    },
+                    {
+                        "value": "Arable land",
+                        "confidence": 0.997
+                    },
+                    {
+                        "value": "Permanent crops",
+                        "confidence": 0.9985
+                    },
+                    {
+                        "value": "Pastures",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Complex cultivation patterns",
+                        "confidence": 0.9906
+                    },
+                    {
+                        "value": "Land principally occupied by agriculture",
+                        "confidence": 0.9974
+                    },
+                    {
+                        "value": "Broad-leaved forest",
+                        "confidence": 0.6106
+                    },
+                    {
+                        "value": "Coniferous forest",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Mixed forest",
+                        "confidence": 0.9863
+                    },
+                    {
+                        "value": "Natural grassland",
+                        "confidence": 0.774
+                    },
+                    {
+                        "value": "Moors and heathland",
+                        "confidence": 0.8873
+                    },
+                    {
+                        "value": "Sclerophyllous vegetation",
+                        "confidence": 0.775
+                    },
+                    {
+                        "value": "Transitional woodland/shrub",
+                        "confidence": 0.6845
+                    },
+                    {
+                        "value": "Beaches, dunes, sands",
+                        "confidence": 0.5171
+                    },
+                    {
+                        "value": "Inland wetlands",
+                        "confidence": 0.8585
+                    },
+                    {
+                        "value": "Coastal wetlands",
+                        "confidence": 0.8319
+                    },
+                    {
+                        "value": "Inland waters",
+                        "confidence": 0.9661
+                    },
+                    {
+                        "value": "Marine waters",
+                        "confidence": 0.9995
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9858
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B1",
+                        "confidence": 0.9646
+                    },
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B9",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 0.9923
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.1,
+                "confidence": 0.9986
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "MultiLabelSoftMarginLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "311667/103944 (train/test)",
+                "confidence": 0.9242
+            }
+        },
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.9981
+            },
+            "application": {
+                "value": "Local climate zone classification",
+                "confidence": 0.9204
+            },
+            "dataset": {
+                "value": "So2Sat-LCZ42",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.9996
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 60.9,
+                        "confidence": 0.9502
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (cities)",
+                        "confidence": 0.3589
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 376485,
+                "confidence": 0.9988
+            },
+            "num_samples": {
+                "value": 376485,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100.0,
+                "confidence": 0.9996
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 0.9889
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Compact high-rise",
+                        "confidence": 0.6467
+                    },
+                    {
+                        "value": "Compact midrise",
+                        "confidence": 0.6499
+                    },
+                    {
+                        "value": "Compact low-rise",
+                        "confidence": 0.9963
+                    },
+                    {
+                        "value": "Open high-rise",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Open midrise",
+                        "confidence": 0.9923
+                    },
+                    {
+                        "value": "Open low-rise",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Lightweight low-rise",
+                        "confidence": 0.9917
+                    },
+                    {
+                        "value": "Large low-rise",
+                        "confidence": 0.9628
+                    },
+                    {
+                        "value": "Sparsely built",
+                        "confidence": 0.9899
+                    },
+                    {
+                        "value": "Heavy industry",
+                        "confidence": 0.8604
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9986
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B1",
+                        "confidence": 0.9925
+                    },
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B9",
+                        "confidence": 0.9913
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 0.9992
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandomResizedCrop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "RandomHorizontalFlip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.1,
+                "confidence": 0.9995
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "352366/24119 (train/test)",
+                "confidence": 0.9808
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9941
+            },
+            "application": {
+                "value": "Land cover segmentation",
+                "confidence": 0.9643
+            },
+            "dataset": {
+                "value": "DFC2020",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.9464
+                    },
+                    {
+                        "value": "Average Accuracy",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Mean IoU",
+                        "confidence": 0.6494
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 89.58,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 64.01,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 54.68,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.6014
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 6114,
+                "confidence": 0.9928
+            },
+            "num_samples": {
+                "value": 6114,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100.0,
+                "confidence": 0.9995
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9382
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B1",
+                        "confidence": 0.9544
+                    },
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B9",
+                        "confidence": 0.9888
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 0.9963
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 0.8441
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 0.9998
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "5128/986 (train/test)",
+                "confidence": 0.9989
+            }
+        },
+        {
+            "task": {
+                "value": "Change detection",
+                "confidence": 0.9306
+            },
+            "application": {
+                "value": "Urban change detection",
+                "confidence": 0.8135
+            },
+            "dataset": {
+                "value": "OSCD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 0.9978
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 70.23,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 23.38,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 35.08,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (urban)",
+                        "confidence": 0.3965
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1112,
+                "confidence": 0.8071
+            },
+            "num_samples": {
+                "value": 1112,
+                "confidence": 0.9999
+            },
+            "sampling_percentage": {
+                "value": 100.0,
+                "confidence": 0.9994
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "No change",
+                        "confidence": 0.4993
+                    },
+                    {
+                        "value": "Change",
+                        "confidence": 0.9963
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "96x96",
+                "confidence": 0.9992
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9967
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B1",
+                        "confidence": 0.979
+                    },
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B5",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "B6",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8A",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B9",
+                        "confidence": 0.9901
+                    },
+                    {
+                        "value": "B11",
+                        "confidence": 0.9991
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 32,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "827/285 (train/test)",
+                "confidence": 0.987
+            }
+        }
+    ]
+}

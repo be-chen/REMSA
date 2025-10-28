@@ -1,0 +1,476 @@
+{
+    "model_id": {
+        "value": "mm-vsf-2024",
+        "confidence": 0.7258
+    },
+    "model_name": {
+        "value": "MM-VSF",
+        "confidence": 0.9996
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.9222
+    },
+    "release_date": {
+        "value": "2024-07-29",
+        "confidence": 0.9988
+    },
+    "last_updated": {
+        "value": "2024-07-29",
+        "confidence": 1.0
+    },
+    "short_description": {
+        "value": "MM-VSF is a knowledge-guided multimodal spatiotemporal foundation model for remote sensing, using both satellite spectral imagery and weather data with a variable step forecasting pretraining objective. It produces temporally flexible, robust embeddings for downstream tasks such as crop mapping.",
+        "confidence": 0.7761
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2407.19660",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Vision Transformer (ViT) encoder, BERT-style temporal transformer, BiLSTM for weather",
+        "confidence": 0.7568
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Variable Step Forecasting (VSF)",
+        "confidence": 0.8743
+    },
+    "masking_strategy": {
+        "value": "Spatiotemporally uniform masking (equal number of masked patches per timestamp and per spatial patch location)",
+        "confidence": 0.8733
+    },
+    "pretraining": {
+        "value": "Multimodal forecasting: predict a future spectral image using a series of past spectral images and weather data up to the forecast date. Masking is applied to spectral imagery.",
+        "confidence": 0.7463
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Knowledge-guided: leverages physical drivers (weather) and their impact on environmental systems",
+                "confidence": 0.5171
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Shared ViT encoder for all timestamps",
+                "confidence": 0.7424
+            },
+            {
+                "value": "Patch positional embedding",
+                "confidence": 0.6172
+            },
+            {
+                "value": "Day-of-year and delta-day embeddings",
+                "confidence": 0.7486
+            },
+            {
+                "value": "Forward-only attention in temporal transformer",
+                "confidence": 0.7187
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9999
+            },
+            {
+                "value": "ERA5 Land",
+                "confidence": 0.9987
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 1.0
+            },
+            {
+                "value": "Weather",
+                "confidence": 0.9413
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.9025
+    },
+    "temporal_alignment": {
+        "value": "full",
+        "confidence": 0.9997
+    },
+    "spatial_resolution": {
+        "value": "10m (Sentinel-2), 11km (ERA5 Land)",
+        "confidence": 0.8782
+    },
+    "temporal_resolution": {
+        "value": "variable (Sentinel-2: up to 70/year in US, 40/year in India; ERA5 Land: daily)",
+        "confidence": 0.7388
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "B2",
+                "confidence": 0.9989
+            },
+            {
+                "value": "B3",
+                "confidence": 1.0
+            },
+            {
+                "value": "B4",
+                "confidence": 1.0
+            },
+            {
+                "value": "B8",
+                "confidence": 1.0
+            },
+            {
+                "value": "B9",
+                "confidence": 1.0
+            },
+            {
+                "value": "B12",
+                "confidence": 1.0
+            },
+            {
+                "value": "temperature 2m min",
+                "confidence": 0.8895
+            },
+            {
+                "value": "temperature 2m max",
+                "confidence": 1.0
+            },
+            {
+                "value": "total precipitation sum",
+                "confidence": 0.9968
+            },
+            {
+                "value": "u-component of wind 10m",
+                "confidence": 0.9159
+            },
+            {
+                "value": "v-component of wind 10m",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Sentinel-2 (spectral imagery) and ERA5 Land (weather)",
+                "confidence": 0.3633
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global land areas (10000 random locations)",
+                        "confidence": 0.3292
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "1 year per location",
+                "confidence": 0.408
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": "patch size 8",
+                "confidence": 0.6147
+            },
+            "image_resolution": {
+                "value": "128x128 (Sentinel-2)",
+                "confidence": 0.4987
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Random sampling of locations",
+                        "confidence": 0.3399
+                    },
+                    {
+                        "value": "Collect all Sentinel-2 images for each region in the year",
+                        "confidence": 0.3015
+                    },
+                    {
+                        "value": "Collect ERA5 Land daily aggregates",
+                        "confidence": 0.3209
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling of 10000 locations globally",
+                "confidence": 0.385
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": "Regions with missing data or improper coverage have fewer samples",
+                "confidence": 0.3222
+            },
+            "masking_ratio": {
+                "value": 0.5,
+                "confidence": 0.9995
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Semantic segmentation (pixel-wise classification)",
+                "confidence": 0.4077
+            },
+            "application": {
+                "value": "Crop mapping",
+                "confidence": 0.8052
+            },
+            "dataset": {
+                "value": "Sentinel-2 + ERA5 Land (T11SKA tile, California Central Valley), Cropland Data Layer (CDL) labels",
+                "confidence": 0.3004
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Per-class F1 score",
+                        "confidence": 0.3875
+                    },
+                    {
+                        "value": "Average F1 score",
+                        "confidence": 0.9199
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.8102,
+                        "confidence": 0.6824
+                    },
+                    {
+                        "value": 0.6233,
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ERA5 Land",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "T11SKA tile, California Central Valley, USA",
+                        "confidence": 0.5509
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 11,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Corn",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Cotton",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Winter_Wheat",
+                        "confidence": 0.994
+                    },
+                    {
+                        "value": "Tomatoes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grapes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Almonds",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Walnut",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Pistachio",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Alfalfa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grass",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Urban",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 0.9965
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9997
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B9",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B12",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "temperature 2m min",
+                        "confidence": 0.9914
+                    },
+                    {
+                        "value": "temperature 2m max",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "total precipitation sum",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "u-component of wind 10m",
+                        "confidence": 0.9943
+                    },
+                    {
+                        "value": "v-component of wind 10m",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 0.9902
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Mean Squared Error (pretraining), Cross-entropy (finetuning)",
+                "confidence": 0.3111
+            },
+            "split_ratio": {
+                "value": "Grid-based split (train/val/test) as in WSTATT [23]",
+                "confidence": 0.3022
+            }
+        }
+    ]
+}

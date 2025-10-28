@@ -1,0 +1,428 @@
+{
+    "model_id": {
+        "value": "aiearth-seg",
+        "confidence": 0.5916
+    },
+    "model_name": {
+        "value": "AIE-SEG",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": "2022-03-01",
+        "confidence": 0.9635
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "AIE-SEG is a large vision segmentation model for remote sensing imagery, deployed on the AI Earth cloud platform. It supports interactive annotation via text, point, or bounding box prompts, enabling batch segmentation and zero-shot extraction of objects across multiple images. The model is trained on tens of millions of remote sensing images with 1.3 billion labels, covering nearly a hundred semantic categories.",
+        "confidence": 0.8244
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2312.16385",
+        "confidence": 0.9997
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://aiearth.aliyun.com",
+        "confidence": 0.9975
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "SEEM (Segment Everything Everywhere Model)",
+        "confidence": 0.8406
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Vision-language pretraining with interactive prompts (points, boxes, text)",
+        "confidence": 0.7876
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Fine-tuned from SEEM using proprietary remote sensing training data (tens of millions of images, 1.3 billion labels, nearly 100 semantic categories)",
+        "confidence": 0.8034
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Remote sensing semantic categories",
+                "confidence": 0.7849
+            },
+            {
+                "value": "Interactive annotation",
+                "confidence": 0.6195
+            },
+            {
+                "value": "Vision-language modeling",
+                "confidence": 0.6633
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Adapted SEEM for remote sensing imagery",
+                "confidence": 0.5773
+            },
+            {
+                "value": "Supports batch segmentation across multiple images",
+                "confidence": 0.4863
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Landsat-5",
+                "confidence": 0.8434
+            },
+            {
+                "value": "Landsat-7",
+                "confidence": 1.0
+            },
+            {
+                "value": "Landsat-8",
+                "confidence": 1.0
+            },
+            {
+                "value": "Landsat-9",
+                "confidence": 0.9999
+            },
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.9997
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-3",
+                "confidence": 0.9986
+            },
+            {
+                "value": "Sentinel-5P",
+                "confidence": 0.9997
+            },
+            {
+                "value": "MODIS",
+                "confidence": 0.998
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.9999
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.6927
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.4693
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.6935
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9999
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.9233
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 1.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Red",
+                "confidence": 0.9076
+            },
+            {
+                "value": "Green",
+                "confidence": 1.0
+            },
+            {
+                "value": "Blue",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Proprietary remote sensing dataset (tens of millions of images, 1.3 billion labels)",
+                "confidence": 0.4325
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.7535
+                    },
+                    {
+                        "value": "China",
+                        "confidence": 0.968
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Segmentation",
+                "confidence": 0.5707
+            },
+            "application": {
+                "value": "Arbitrary target extraction, land cover classification, binary and multi-class change detection",
+                "confidence": 0.3608
+            },
+            "dataset": {
+                "value": "Proprietary remote sensing dataset (tens of millions of images, 1.3 billion labels)",
+                "confidence": 0.3562
+            },
+            "metrics": {
+                "value": []
+            },
+            "metrics_value": {
+                "value": []
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Landsat-5",
+                        "confidence": 0.6622
+                    },
+                    {
+                        "value": "Landsat-7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Landsat-8",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Landsat-9",
+                        "confidence": 0.9738
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9972
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-3",
+                        "confidence": 0.9922
+                    },
+                    {
+                        "value": "Sentinel-5P",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "MODIS",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "SRTM",
+                        "confidence": 0.9951
+                    },
+                    {
+                        "value": "ASTER GDEM",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "AW3D30",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Copernicus DEM",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "TanDEM-X",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NOAA VIIRS",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "DMSP OLS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8963
+                    },
+                    {
+                        "value": "China",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.8066
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

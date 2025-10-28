@@ -1,0 +1,1510 @@
+{
+    "model_id": {
+        "value": "OmniGeo",
+        "confidence": 0.626
+    },
+    "model_name": {
+        "value": "OmniGeo",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.8441
+    },
+    "release_date": {
+        "value": "2025-03-20",
+        "confidence": 0.9411
+    },
+    "last_updated": {
+        "value": "2025-03-20",
+        "confidence": 0.9857
+    },
+    "short_description": {
+        "value": "OmniGeo is a multimodal large language model (MLLM) tailored for geospatial artificial intelligence (GeoAI), capable of processing and analyzing heterogeneous data sources including satellite imagery, geospatial metadata, and textual descriptions. It covers five core GeoAI tasks: health geography, urban geography, remote sensing, urban perception, and geospatial semantics.",
+        "confidence": 0.885
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2503.16326",
+        "confidence": 0.9753
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "LLaVA1.5-7B and Qwen2-VL-7B",
+        "confidence": 0.947
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Multimodal instruction fine-tuning (LoRA and full-supervision)",
+        "confidence": 0.812
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Multimodal instruction fine-tuning on 12 constructed datasets covering text, RS images, street view images, POI, and geospatial vector data.",
+        "confidence": 0.6958
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Geospatial semantics",
+                "confidence": 0.8408
+            },
+            {
+                "value": "Health geography",
+                "confidence": 0.8596
+            },
+            {
+                "value": "Urban geography",
+                "confidence": 0.9923
+            },
+            {
+                "value": "Urban perception",
+                "confidence": 0.8243
+            },
+            {
+                "value": "Remote sensing",
+                "confidence": 0.993
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "WorldView",
+                "confidence": 1.0
+            },
+            {
+                "value": "Google Maps",
+                "confidence": 0.7986
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.9972
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Text",
+                "confidence": 0.7351
+            },
+            {
+                "value": "Multispectral",
+                "confidence": 0.9206
+            },
+            {
+                "value": "Street View Images",
+                "confidence": 0.7822
+            },
+            {
+                "value": "Geospatial Vector Data",
+                "confidence": 0.5355
+            },
+            {
+                "value": "POI",
+                "confidence": 0.6026
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.7357
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.6929
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.8871
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9996
+    },
+    "bands": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Self-constructed multimodal instruction dataset (from CDC Wonder, Gaode Maps, WorldView, Google Maps, city government websites)",
+                "confidence": 0.3011
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "United States (state and county level)",
+                        "confidence": 0.3841
+                    },
+                    {
+                        "value": "Beijing",
+                        "confidence": 0.9939
+                    },
+                    {
+                        "value": "Shenzhen",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "1999-2019 (for health geography); other datasets not specified",
+                "confidence": 0.3005
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Convert vector data to text",
+                        "confidence": 0.3135
+                    },
+                    {
+                        "value": "Crop RS images by region",
+                        "confidence": 0.7348
+                    },
+                    {
+                        "value": "Generate captions for RS and street view images",
+                        "confidence": 0.4117
+                    },
+                    {
+                        "value": "Align data with geographic entities",
+                        "confidence": 0.4229
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Proportional mixing of multimodal instruction data from multiple tasks",
+                "confidence": 0.3029
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Time series forecasting",
+                "confidence": 0.6786
+            },
+            "application": {
+                "value": "Health Geography - Dementia Death Counts Time Series Forecasting",
+                "confidence": 0.5051
+            },
+            "dataset": {
+                "value": "CDC Wonder (US state-level)",
+                "confidence": 0.5531
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "MSE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MAE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MAPE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "R2",
+                        "confidence": 0.9993
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 25329.8182,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 117.6364,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.03,
+                        "confidence": 0.7357
+                    },
+                    {
+                        "value": 0.9993,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView",
+                        "confidence": 0.9857
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States (state-level)",
+                        "confidence": 0.4959
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 0.9999
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 0.6345
+            }
+        },
+        {
+            "task": {
+                "value": "Time series forecasting",
+                "confidence": 0.9996
+            },
+            "application": {
+                "value": "Health Geography - Dementia Death Counts Time Series Forecasting",
+                "confidence": 0.9999
+            },
+            "dataset": {
+                "value": "CDC Wonder (US county-level)",
+                "confidence": 0.7357
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "MSE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MAE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MAPE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "R2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 462.3494,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 11.6622,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.15,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.9947,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States (county-level)",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 1.0
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.7019
+            },
+            "application": {
+                "value": "Urban Geography - Urban Region Function Classification",
+                "confidence": 0.984
+            },
+            "dataset": {
+                "value": "UG-Shenzhen",
+                "confidence": 0.9935
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.7838
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 0.9668
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Weighted-F1",
+                        "confidence": 0.7355
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.8268,
+                        "confidence": 1.2995
+                    },
+                    {
+                        "value": 0.8872,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.8268,
+                        "confidence": 1.3
+                    },
+                    {
+                        "value": 0.8559,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Gaode Maps (POI)",
+                        "confidence": 0.5787
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Shenzhen",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 11,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Administrative office space",
+                        "confidence": 0.9858
+                    },
+                    {
+                        "value": "Airport facility land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Commercial office space",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Commercial service land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Education and scientific research land",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Industrial land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Medical and health land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Parks and green space",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Residential land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sports and cultural land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Transportation station land",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 0.9997
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.9728
+            },
+            "application": {
+                "value": "Remote Sensing Image Scene Classification",
+                "confidence": 0.7378
+            },
+            "dataset": {
+                "value": "AID",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Weighted-F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.9303,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": 10000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 8000,
+                "confidence": 0.9998
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "airport",
+                        "confidence": 0.7665
+                    },
+                    {
+                        "value": "bare land",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "baseball field",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "basketball court",
+                        "confidence": 0.6236
+                    },
+                    {
+                        "value": "beach",
+                        "confidence": 0.997
+                    },
+                    {
+                        "value": "bridge",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "center",
+                        "confidence": 0.9344
+                    },
+                    {
+                        "value": "church",
+                        "confidence": 0.9965
+                    },
+                    {
+                        "value": "commercial",
+                        "confidence": 0.9956
+                    },
+                    {
+                        "value": "dense residential",
+                        "confidence": 0.9608
+                    },
+                    {
+                        "value": "desert",
+                        "confidence": 0.9949
+                    },
+                    {
+                        "value": "farmland",
+                        "confidence": 0.9321
+                    },
+                    {
+                        "value": "forest",
+                        "confidence": 0.9449
+                    },
+                    {
+                        "value": "industrial",
+                        "confidence": 0.7092
+                    },
+                    {
+                        "value": "meadow",
+                        "confidence": 0.9476
+                    },
+                    {
+                        "value": "medium residential",
+                        "confidence": 0.9988
+                    },
+                    {
+                        "value": "mountain",
+                        "confidence": 0.9759
+                    },
+                    {
+                        "value": "park",
+                        "confidence": 0.9177
+                    },
+                    {
+                        "value": "parking",
+                        "confidence": 0.9946
+                    },
+                    {
+                        "value": "playground",
+                        "confidence": 0.9752
+                    },
+                    {
+                        "value": "pond",
+                        "confidence": 0.9626
+                    },
+                    {
+                        "value": "port",
+                        "confidence": 0.9991
+                    },
+                    {
+                        "value": "railway station",
+                        "confidence": 0.9324
+                    },
+                    {
+                        "value": "rectangular farmland",
+                        "confidence": 0.7853
+                    },
+                    {
+                        "value": "river",
+                        "confidence": 0.9844
+                    },
+                    {
+                        "value": "roundabout",
+                        "confidence": 0.7296
+                    },
+                    {
+                        "value": "sparse residential",
+                        "confidence": 0.6229
+                    },
+                    {
+                        "value": "square",
+                        "confidence": 0.9379
+                    },
+                    {
+                        "value": "stadium",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "storage tanks",
+                        "confidence": 0.9954
+                    },
+                    {
+                        "value": "viaduct",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 0.9998
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.9958
+            },
+            "application": {
+                "value": "Urban Perception Prediction",
+                "confidence": 0.5326
+            },
+            "dataset": {
+                "value": "Noise-SG",
+                "confidence": 0.8142
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Weighted-F1",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.4407,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Google Maps (Street View)",
+                        "confidence": 0.9293
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Singapore",
+                        "confidence": 0.9465
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 4,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Very Quiet",
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": "Quiet",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Noisy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Very Noisy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 0.9999
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.8841
+            },
+            "application": {
+                "value": "Urban Perception Prediction",
+                "confidence": 0.9962
+            },
+            "dataset": {
+                "value": "GS-Beautiful",
+                "confidence": 0.9962
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Weighted-F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.5438,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Google Maps (Street View)",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 4,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Very Ugly",
+                        "confidence": 0.9835
+                    },
+                    {
+                        "value": "Ugly",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Beautiful",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Very Beautiful",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 0.9999
+            }
+        },
+        {
+            "task": {
+                "value": "Sequence labeling",
+                "confidence": 0.64
+            },
+            "application": {
+                "value": "Geospatial Semantics - Toponym Recognition",
+                "confidence": 0.989
+            },
+            "dataset": {
+                "value": "LGL",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 0.9971
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1-score",
+                        "confidence": 0.999
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.714,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6722,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6925,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": []
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 0.9947
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "B-LOC",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "I-LOC",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "O",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 0.9996
+            }
+        },
+        {
+            "task": {
+                "value": "Sequence labeling",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Geospatial Semantics - Toponym Recognition",
+                "confidence": 0.9165
+            },
+            "dataset": {
+                "value": "GeoVirus",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1-score",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.8917,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.8425,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.8664,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": []
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "B-LOC",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "I-LOC",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "O",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 1.0
+            }
+        },
+        {
+            "task": {
+                "value": "Sequence labeling",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Geospatial Semantics - Location Description Recognition",
+                "confidence": 0.9995
+            },
+            "dataset": {
+                "value": "HaveyTweet2017",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1-score",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.7366,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.8022,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.768,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": []
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "B-LDR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "I-LDR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "O",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80% train / 20% test",
+                "confidence": 1.0
+            }
+        }
+    ]
+}

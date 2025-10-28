@@ -1,0 +1,606 @@
+{
+    "model_id": {
+        "value": "PIEViT",
+        "confidence": 0.9196
+    },
+    "model_name": {
+        "value": "PIEViT",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "Pattern Integration and Enhancement Vision Transformer (PIEViT) is a self-supervised learning framework for remote sensing imagery, utilizing a teacher-student architecture with Geospatial Pattern Cohesion (GPC) and Feature Integration Projection (FIP) modules to enhance patch-level and image-level feature representation.",
+        "confidence": 0.8362
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2411.06091",
+        "confidence": 0.9909
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ViT-B/16",
+        "confidence": 0.9688
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 88200000,
+        "confidence": 0.9975
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised masked image modeling with teacher-student architecture",
+        "confidence": 0.8293
+    },
+    "masking_strategy": {
+        "value": "Random masking of input patches with mask ratio randomly chosen between 0.1 and 0.5",
+        "confidence": 0.852
+    },
+    "pretraining": {
+        "value": "Pretrained from scratch on Million-AID for 100 epochs with batch size 256, AdamW optimizer, learning rate warmed up to 1e-4, cosine decay, weight decay 0.04 to 0.4, LayerScale 1e-5, teacher momentum 0.994 to 1, data augmentations including color jittering, Gaussian blur, multi-crop, random MIM.",
+        "confidence": 0.7594
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Geospatial Pattern Cohesion (GPC)",
+                "confidence": 0.8289
+            },
+            {
+                "value": "Feature Integration Projection (FIP)",
+                "confidence": 0.906
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Adapter for downstream tasks",
+                "confidence": 0.6094
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.8946
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9164
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9997
+    },
+    "spatial_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "R",
+                "confidence": 0.5187
+            },
+            {
+                "value": "G",
+                "confidence": 0.8
+            },
+            {
+                "value": "B",
+                "confidence": 0.8
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Million-AID",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "warmed up to 1e-4, cosine decay",
+                "confidence": 0.3786
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "color jittering",
+                        "confidence": 0.9946
+                    },
+                    {
+                        "value": "Gaussian blur",
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": "multi-crop",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "random MIM",
+                        "confidence": 0.4381
+                    }
+                ]
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Object Detection",
+                "confidence": 0.6184
+            },
+            "application": {
+                "value": "Object detection in optical remote sensing images",
+                "confidence": 0.583
+            },
+            "dataset": {
+                "value": "DIOR",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP50",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 76.92,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 23463,
+                "confidence": 0.9994
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 6,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 12,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "5862 train / 5863 val / 11738 test",
+                "confidence": 0.5297
+            }
+        },
+        {
+            "task": {
+                "value": "Land Cover Classification",
+                "confidence": 0.8058
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.6673
+            },
+            "dataset": {
+                "value": "Potsdam",
+                "confidence": 0.994
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mF1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 92.72,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 3456,
+                "confidence": 0.6804
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "impervious surfaces",
+                        "confidence": 0.9122
+                    },
+                    {
+                        "value": "buildings",
+                        "confidence": 0.9994
+                    },
+                    {
+                        "value": "low vegetation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "trees",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "cars",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "clutter/background",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.9603
+            },
+            "spatial_resolution": {
+                "value": "0.05m",
+                "confidence": 0.912
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-06,
+                "confidence": 0.9996
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "3456 train / 2016 test",
+                "confidence": 0.7618
+            }
+        },
+        {
+            "task": {
+                "value": "Change Detection",
+                "confidence": 0.9999
+            },
+            "application": {
+                "value": "Building change detection",
+                "confidence": 0.9426
+            },
+            "dataset": {
+                "value": "LevirCD",
+                "confidence": 0.9848
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mF1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.94,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 1189,
+                "confidence": 0.9896
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "change",
+                        "confidence": 0.5958
+                    },
+                    {
+                        "value": "no change",
+                        "confidence": 0.9354
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.5m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "1189 train / 168 val / 353 test",
+                "confidence": 0.9974
+            }
+        }
+    ]
+}

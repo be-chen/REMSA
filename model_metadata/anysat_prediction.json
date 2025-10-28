@@ -1,0 +1,1730 @@
+{
+    "model_id": {
+        "value": "AnySat",
+        "confidence": 0.9622
+    },
+    "model_name": {
+        "value": "AnySat",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "AnySat is a multimodal Earth Observation foundation model based on a joint embedding predictive architecture (JEPA) and scale-adaptive spatial encoders, enabling training on highly heterogeneous data (resolutions, scales, modalities) in a self-supervised manner. It is pretrained on GeoPlex, a collection of 5 multimodal datasets with 11 sensors, and achieves state-of-the-art results on a wide range of downstream tasks and external datasets.",
+        "confidence": 0.792
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2412.14123",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/gastruc/AnySat",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Vision Transformer (ViT) template with scale-adaptive patch encoder and modality-specific projectors",
+        "confidence": 0.7886
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 125000000,
+        "confidence": 0.8874
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised learning with Joint Embedding Predictive Architecture (JEPA) and contrastive loss",
+        "confidence": 0.8182
+    },
+    "masking_strategy": {
+        "value": "Block masking (patch dropping), modality and temporal masking",
+        "confidence": 0.6973
+    },
+    "pretraining": {
+        "value": "Self-supervised pretraining on GeoPlex, a curated collection of 5 multimodal EO datasets with 11 modalities, using JEPA and contrastive loss. Over 75% of parameters are shared across modalities and resolutions.",
+        "confidence": 0.7205
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Scale-adaptive spatial encoding",
+                "confidence": 0.604
+            },
+            {
+                "value": "Spatial alignment of modalities",
+                "confidence": 0.5323
+            },
+            {
+                "value": "Contrastive loss for modality consistency",
+                "confidence": 0.6303
+            },
+            {
+                "value": "Sensor-specific missing data handling",
+                "confidence": 0.4296
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Scale-adaptive patch encoder",
+                "confidence": 0.9314
+            },
+            {
+                "value": "Modality-specific projectors",
+                "confidence": 0.8312
+            },
+            {
+                "value": "Cross-attention-based modality combiner",
+                "confidence": 0.7454
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Aerial",
+                "confidence": 0.6915
+            },
+            {
+                "value": "Aerial+NMS",
+                "confidence": 0.8463
+            },
+            {
+                "value": "NAIP",
+                "confidence": 0.9874
+            },
+            {
+                "value": "SPOT6",
+                "confidence": 0.9
+            },
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.9723
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.997
+            },
+            {
+                "value": "ALOS-2",
+                "confidence": 0.9914
+            },
+            {
+                "value": "Landsat-7",
+                "confidence": 0.9942
+            },
+            {
+                "value": "Landsat-8",
+                "confidence": 0.9
+            },
+            {
+                "value": "Landsat-9",
+                "confidence": 0.9
+            },
+            {
+                "value": "MODIS",
+                "confidence": 1.0
+            },
+            {
+                "value": "HLS",
+                "confidence": 0.9616
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.9991
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9101
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.892
+            },
+            {
+                "value": "Aerial RGB+NIR",
+                "confidence": 0.6592
+            },
+            {
+                "value": "Elevation",
+                "confidence": 0.3447
+            },
+            {
+                "value": "Time series",
+                "confidence": 0.6974
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.9438
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.9469
+    },
+    "spatial_resolution": {
+        "value": "0.2m to 250m",
+        "confidence": 0.9472
+    },
+    "temporal_resolution": {
+        "value": "variable (from single-date to weekly time series, up to 140 time steps)",
+        "confidence": 0.7818
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9691
+            },
+            {
+                "value": "NIR",
+                "confidence": 0.9989
+            },
+            {
+                "value": "Elevation",
+                "confidence": 0.723
+            },
+            {
+                "value": "VV/VH polarization",
+                "confidence": 0.784
+            },
+            {
+                "value": "Sentinel-2 10 bands",
+                "confidence": 0.689
+            },
+            {
+                "value": "ALOS-2 3 bands",
+                "confidence": 0.6167
+            },
+            {
+                "value": "Landsat 6/8/9 bands",
+                "confidence": 0.615
+            },
+            {
+                "value": "MODIS 7 bands",
+                "confidence": 0.8996
+            },
+            {
+                "value": "HLS 6 bands",
+                "confidence": 0.8976
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "GeoPlex (TreeSatAI-TS, PASTIS-HD, FLAIR, PLANTED, S2NAIP-URBAN)",
+                "confidence": 0.58
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.5632
+                    },
+                    {
+                        "value": "US",
+                        "confidence": 0.6885
+                    },
+                    {
+                        "value": "Global",
+                        "confidence": 0.7112
+                    },
+                    {
+                        "value": "Germany",
+                        "confidence": 0.7334
+                    },
+                    {
+                        "value": "France",
+                        "confidence": 0.9941
+                    },
+                    {
+                        "value": "India",
+                        "confidence": 0.7458
+                    },
+                    {
+                        "value": "Amazon",
+                        "confidence": 0.731
+                    },
+                    {
+                        "value": "Slovenia",
+                        "confidence": 0.9683
+                    },
+                    {
+                        "value": "Worldwide",
+                        "confidence": 0.6256
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": "Variable, depends on patch/subpatch size and modality",
+                "confidence": 0.3004
+            },
+            "image_resolution": {
+                "value": "0.2m to 250m",
+                "confidence": 0.8131
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": "5e-5",
+                "confidence": 0.9705
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Scale-adaptive positional encoding",
+                        "confidence": 0.542
+                    },
+                    {
+                        "value": "Handling of missing modalities",
+                        "confidence": 0.3319
+                    },
+                    {
+                        "value": "Random patch size selection per batch",
+                        "confidence": 0.3102
+                    },
+                    {
+                        "value": "Random dataset selection per batch",
+                        "confidence": 0.3159
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling of dataset, patch size, and tiles per batch",
+                "confidence": 0.3121
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": "Sensor-specific scalar value for missing data; new projectors initialized for unseen sensors",
+                "confidence": 0.3017
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Multilabel classification",
+                "confidence": 0.6962
+            },
+            "application": {
+                "value": "Tree species identification",
+                "confidence": 0.9827
+            },
+            "dataset": {
+                "value": "TreeSatAI-TS",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "weighted F1",
+                        "confidence": 0.8364
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 75.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "VHR",
+                        "confidence": 0.5961
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9903
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Germany",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 50381,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 50381,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "0.2m",
+                "confidence": 0.9892
+            },
+            "spatial_resolution": {
+                "value": "0.2m",
+                "confidence": 0.9945
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9965
+                    },
+                    {
+                        "value": "NIR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.3607
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.6525
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 384,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 0.9988
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Multilabel classification",
+                "confidence": 0.866
+            },
+            "application": {
+                "value": "Crop type classification",
+                "confidence": 0.5852
+            },
+            "dataset": {
+                "value": "PASTIS-HD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "macro F1",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 72.8,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "SPOT6/7",
+                        "confidence": 0.5619
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "France",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2433,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2433,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 18,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "1.5m",
+                "confidence": 0.9984
+            },
+            "spatial_resolution": {
+                "value": "1.5m",
+                "confidence": 0.9727
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.828
+                    },
+                    {
+                        "value": "NIR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.9069
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.9974
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9412
+            },
+            "application": {
+                "value": "Crop type segmentation",
+                "confidence": 0.4799
+            },
+            "dataset": {
+                "value": "PASTIS-HD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.9037
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 66.5,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "SPOT6/7",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "France",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2433,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2433,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 18,
+                "confidence": 0.9996
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "1.5m",
+                "confidence": 0.9989
+            },
+            "spatial_resolution": {
+                "value": "1.5m",
+                "confidence": 0.9997
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9972
+                    },
+                    {
+                        "value": "NIR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.9726
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.8724
+            },
+            "application": {
+                "value": "Land cover mapping",
+                "confidence": 0.6114
+            },
+            "dataset": {
+                "value": "FLAIR",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 55.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial VHR",
+                        "confidence": 0.8888
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "France",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 77762,
+                "confidence": 0.9997
+            },
+            "num_samples": {
+                "value": 77762,
+                "confidence": 0.9998
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 13,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "0.2m",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.2m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "NIR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Elevation",
+                        "confidence": 0.9677
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.9947
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 96,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Multilabel classification",
+                "confidence": 0.7707
+            },
+            "application": {
+                "value": "Tree species identification",
+                "confidence": 0.9037
+            },
+            "dataset": {
+                "value": "PLANTED",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "macro F1",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 61.5,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9361
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Landsat-7",
+                        "confidence": 0.9524
+                    },
+                    {
+                        "value": "ALOS-2",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "MODIS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9945
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1346662,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 1346662,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 0.9999
+            },
+            "num_classes": {
+                "value": 40,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "10m-250m",
+                "confidence": 0.463
+            },
+            "spatial_resolution": {
+                "value": "10m-250m",
+                "confidence": 0.8037
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.8011
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.9887
+                    },
+                    {
+                        "value": "Landsat-7 (6 bands)",
+                        "confidence": 0.8217
+                    },
+                    {
+                        "value": "ALOS-2 (3 bands)",
+                        "confidence": 0.9803
+                    },
+                    {
+                        "value": "MODIS (7 bands)",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 2048,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9955
+            },
+            "application": {
+                "value": "Crop mapping",
+                "confidence": 0.784
+            },
+            "dataset": {
+                "value": "SICKLE",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "IoU",
+                        "confidence": 0.844
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 89.3,
+                        "confidence": 0.9795
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.7035
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Landsat-8",
+                        "confidence": 0.9866
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "India",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 34848,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 34848,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "paddy",
+                        "confidence": 0.8841
+                    },
+                    {
+                        "value": "non-paddy",
+                        "confidence": 0.9971
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "10m",
+                "confidence": 0.993
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.8586
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.9974
+                    },
+                    {
+                        "value": "Landsat-8 (8 bands)",
+                        "confidence": 0.9863
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.8441
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Change detection",
+                "confidence": 0.9636
+            },
+            "application": {
+                "value": "Deforestation detection",
+                "confidence": 0.9577
+            },
+            "dataset": {
+                "value": "BraDD-S1TS",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "IoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 80.9,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Amazon",
+                        "confidence": 0.9795
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 13234,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 13234,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "deforested",
+                        "confidence": 0.6172
+                    },
+                    {
+                        "value": "not-deforested",
+                        "confidence": 0.7208
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.9602
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Multiclass classification",
+                "confidence": 0.6508
+            },
+            "application": {
+                "value": "Crop type classification",
+                "confidence": 0.9263
+            },
+            "dataset": {
+                "value": "TimeSen2Crop",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 0.9597
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 92.2,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Slovenia",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1212224,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 1212224,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "10m",
+                "confidence": 0.9998
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 0.9965
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9997
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9999
+            },
+            "application": {
+                "value": "Flood segmentation",
+                "confidence": 0.841
+            },
+            "dataset": {
+                "value": "Sen1Floods11",
+                "confidence": 0.9893
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9754
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 4831,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 4831,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "flooded",
+                        "confidence": 0.8407
+                    },
+                    {
+                        "value": "not-flooded",
+                        "confidence": 0.9809
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "10m",
+                "confidence": 0.9997
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.9958
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9983
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.8011
+            },
+            "application": {
+                "value": "Burn scar detection",
+                "confidence": 0.7367
+            },
+            "dataset": {
+                "value": "HLS Burn Scar",
+                "confidence": 0.9995
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 90.6,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "HLS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States",
+                        "confidence": 0.6932
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 804,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 804,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "burned",
+                        "confidence": 0.5901
+                    },
+                    {
+                        "value": "not-burned",
+                        "confidence": 0.8093
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "HLS (6 bands)",
+                        "confidence": 0.995
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Multiclass classification",
+                "confidence": 0.9129
+            },
+            "application": {
+                "value": "Local climate zone classification",
+                "confidence": 0.6779
+            },
+            "dataset": {
+                "value": "So2Sat",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 59.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Worldwide",
+                        "confidence": 0.768
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 400673,
+                "confidence": 0.9998
+            },
+            "num_samples": {
+                "value": 400673,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 17,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "10m",
+                "confidence": 0.9989
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-1 (VV/VH)",
+                        "confidence": 0.9985
+                    },
+                    {
+                        "value": "Sentinel-2 (10 bands)",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

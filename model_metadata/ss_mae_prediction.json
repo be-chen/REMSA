@@ -1,0 +1,654 @@
+{
+    "model_id": {
+        "value": "SS-MAE_TGRS2023",
+        "confidence": 0.7307
+    },
+    "model_name": {
+        "value": "SS-MAE",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.9373
+    },
+    "release_date": {
+        "value": "2023-11-09",
+        "confidence": 0.9997
+    },
+    "last_updated": {
+        "value": "2023-11-29",
+        "confidence": 0.9999
+    },
+    "short_description": {
+        "value": "SS-MAE is a Spatial?Spectral Masked Autoencoder for multisource remote sensing image classification, supporting joint HSI and LiDAR/SAR data. It uses spatialwise and spectralwise masking branches and a hybrid Transformer-CNN architecture for global and local feature modeling.",
+        "confidence": 0.7643
+    },
+    "paper_link": {
+        "value": "https://doi.org/10.1109/TGRS.2023.3331717",
+        "confidence": 0.9861
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/summitgao/SS-MAE",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Dual-attention Transformer with lightweight CNNs (IRBs)",
+        "confidence": 0.7345
+    },
+    "num_layers": {
+        "value": 2,
+        "confidence": 0.9668
+    },
+    "num_parameters": {
+        "value": 4.4,
+        "confidence": 0.9998
+    },
+    "pretext_training_type": {
+        "value": "Masked image modeling (MIM) with spatialwise and spectralwise masking",
+        "confidence": 0.8678
+    },
+    "masking_strategy": {
+        "value": "Spatialwise masking (random patches) and spectralwise masking (random spectral channels)",
+        "confidence": 0.7986
+    },
+    "pretraining": {
+        "value": "Self-supervised pretraining using spatial?spectral masked autoencoding on large-scale unlabeled multisource remote sensing data",
+        "confidence": 0.6891
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spatial?spectral feature modeling",
+                "confidence": 0.7482
+            },
+            {
+                "value": "Multisource data fusion",
+                "confidence": 0.5794
+            },
+            {
+                "value": "Dual-branch architecture",
+                "confidence": 0.5359
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Dual-attention (spatial and spectral) Transformer",
+                "confidence": 0.5758
+            },
+            {
+                "value": "Integration of lightweight CNNs (IRBs) for local feature extraction",
+                "confidence": 0.7362
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "EnMAP (simulated)",
+                "confidence": 0.7345
+            },
+            {
+                "value": "HyMap",
+                "confidence": 0.9591
+            },
+            {
+                "value": "HySpex",
+                "confidence": 0.8433
+            },
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.9997
+            },
+            {
+                "value": "LiDAR",
+                "confidence": 0.5629
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.8768
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Hyperspectral",
+                "confidence": 0.9789
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9221
+            },
+            {
+                "value": "LiDAR",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.9668
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "30m",
+        "confidence": 0.7322
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "All available HSI bands per dataset",
+                "confidence": 0.593
+            },
+            {
+                "value": "SAR polarization features",
+                "confidence": 0.509
+            },
+            {
+                "value": "LiDAR bands",
+                "confidence": 0.7368
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Berlin, Augsburg, Houston 2018 (unlabeled pixels)",
+                "confidence": 0.3139
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Berlin, Germany",
+                        "confidence": 0.7037
+                    },
+                    {
+                        "value": "Augsburg, Germany",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Houston, USA",
+                        "confidence": 0.9502
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": "7x7 patches, 256-D tokens",
+                "confidence": 0.3117
+            },
+            "image_resolution": {
+                "value": "Varies (e.g., Berlin: 797x220, Augsburg: 332x485, Houston: not specified)",
+                "confidence": 0.3021
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "PCA for HSI bands reduction",
+                        "confidence": 0.3138
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling of pixels for pretraining (e.g., 200000 for Berlin, 50000 for Augsburg/Houston)",
+                "confidence": 0.3056
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.6293
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.8471
+            },
+            "dataset": {
+                "value": "Berlin",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 0.8716
+                    },
+                    {
+                        "value": "AA",
+                        "confidence": 0.8441
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 71.15,
+                        "confidence": 0.9804
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.6
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.6
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "EnMAP (simulated)",
+                        "confidence": 0.7218
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.8149
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Berlin, Germany",
+                        "confidence": 0.9062
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "797x220",
+                "confidence": 0.9963
+            },
+            "spatial_resolution": {
+                "value": "Matched (not specified, but both images matched)",
+                "confidence": 0.3
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "244 HSI bands (400?2500nm)",
+                        "confidence": 0.404
+                    },
+                    {
+                        "value": "SAR dual-Pol",
+                        "confidence": 0.7953
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 0.4234
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "Augsburg",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "AA",
+                        "confidence": 0.9579
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.59,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.6
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.6
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "HySpex",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Augsburg, Germany",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "332x485",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 0.9986
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "80 HSI bands (0.4?2.5?m)",
+                        "confidence": 0.5656
+                    },
+                    {
+                        "value": "SAR (VV, VH, real, imag)",
+                        "confidence": 0.3312
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.9938
+            },
+            "dataset": {
+                "value": "Houston 2018",
+                "confidence": 0.9978
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "AA",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.91,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.6
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.6
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "HSI",
+                        "confidence": 0.7694
+                    },
+                    {
+                        "value": "LiDAR",
+                        "confidence": 0.858
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Houston, USA",
+                        "confidence": 0.9809
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "48 HSI bands (380?1050nm)",
+                        "confidence": 0.9659
+                    },
+                    {
+                        "value": "LiDAR 3 bands",
+                        "confidence": 0.6525
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "CrossEntropyLoss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

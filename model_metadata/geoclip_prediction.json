@@ -1,0 +1,832 @@
+{
+    "model_id": {
+        "value": "GeoCLIP",
+        "confidence": 0.9546
+    },
+    "model_name": {
+        "value": "GeoCLIP",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.8021
+    },
+    "release_date": {
+        "value": "2023-11-21",
+        "confidence": 0.9996
+    },
+    "last_updated": {
+        "value": "2023-11-21",
+        "confidence": 0.9936
+    },
+    "short_description": {
+        "value": "GeoCLIP is a CLIP-inspired model for worldwide image geo-localization, aligning image and GPS location features in a shared embedding space using a CLIP-based image encoder and a hierarchical location encoder with random Fourier features.",
+        "confidence": 0.8158
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2309.16020",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://vicentevivan.github.io/GeoCLIP",
+        "confidence": 0.9994
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "CLIP ViT-L/14",
+        "confidence": 0.9963
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 314400770,
+        "confidence": 0.9996
+    },
+    "pretext_training_type": {
+        "value": "Contrastive learning (CLIP-style, SimCLR-style)",
+        "confidence": 0.7052
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Contrastive learning aligning image and GPS location features using a frozen CLIP ViT-L/14 backbone for images and a hierarchical MLP-based location encoder with random Fourier features and equal earth projection.",
+        "confidence": 0.7266
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Equal Earth Projection",
+                "confidence": 0.7498
+            },
+            {
+                "value": "Random Fourier Features",
+                "confidence": 0.6937
+            },
+            {
+                "value": "Hierarchical representation of GPS",
+                "confidence": 0.4804
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Two trainable linear layers (h1: 768, h2: 512) added after CLIP backbone",
+                "confidence": 0.6505
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "RGB images (Flickr, Google Street View, etc.)",
+                "confidence": 0.4035
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.9955
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral (RGB)",
+                "confidence": 0.7397
+            },
+            {
+                "value": "Text (via CLIP text encoder)",
+                "confidence": 0.7159
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9963
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.839
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "R",
+                "confidence": 0.8747
+            },
+            {
+                "value": "G",
+                "confidence": 1.0
+            },
+            {
+                "value": "B",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "MediaEval Placing Task 2016 (MP-16)",
+                "confidence": 0.756
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Worldwide",
+                        "confidence": 0.8993
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 4720000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 512,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "3e-5",
+                "confidence": 0.9955
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random crop",
+                        "confidence": 0.5268
+                    },
+                    {
+                        "value": "Random flip",
+                        "confidence": 0.4802
+                    },
+                    {
+                        "value": "Color jitter",
+                        "confidence": 0.7029
+                    },
+                    {
+                        "value": "Gaussian blur",
+                        "confidence": 0.5316
+                    },
+                    {
+                        "value": "SimCLR augmentations",
+                        "confidence": 0.3603
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Equal Earth Projection for GPS",
+                        "confidence": 0.5041
+                    },
+                    {
+                        "value": "Random Fourier Features positional encoding",
+                        "confidence": 0.4082
+                    },
+                    {
+                        "value": "Hierarchical representation",
+                        "confidence": 0.3969
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling from MP-16 dataset",
+                "confidence": 0.31
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Geo-localization (image-to-GPS retrieval)",
+                "confidence": 0.6291
+            },
+            "application": {
+                "value": "Worldwide image geo-localization",
+                "confidence": 0.866
+            },
+            "dataset": {
+                "value": "Im2GPS3k",
+                "confidence": 0.9995
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy@1km",
+                        "confidence": 0.4925
+                    },
+                    {
+                        "value": "Accuracy@25km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@200km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@750km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@2500km",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 14.11,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 34.47,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 50.65,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 69.67,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 83.82,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9767
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Worldwide",
+                        "confidence": 0.9936
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9999
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Ten Crop (5 crops + flips)",
+                        "confidence": 0.3785
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 512,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 3e-05,
+                "confidence": 0.9975
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Contrastive loss (CLIP-style)",
+                "confidence": 0.524
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Geo-localization (image-to-GPS retrieval)",
+                "confidence": 0.9999
+            },
+            "application": {
+                "value": "Worldwide image geo-localization",
+                "confidence": 0.9995
+            },
+            "dataset": {
+                "value": "GWS15k",
+                "confidence": 0.8939
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy@1km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@25km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@200km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@750km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@2500km",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.6,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 3.1,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 16.9,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 45.7,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 74.1,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Worldwide",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Ten Crop (5 crops + flips)",
+                        "confidence": 0.9938
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 0.9991
+            },
+            "batch_size": {
+                "value": 512,
+                "confidence": 0.9888
+            },
+            "learning_rate": {
+                "value": 3e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Contrastive loss (CLIP-style)",
+                "confidence": 0.9997
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Geo-localization (image-to-GPS retrieval)",
+                "confidence": 0.9994
+            },
+            "application": {
+                "value": "Worldwide image geo-localization",
+                "confidence": 0.9999
+            },
+            "dataset": {
+                "value": "YFCC26k",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy@1km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@25km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@200km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@750km",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Accuracy@2500km",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 11.61,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 22.19,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 36.69,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 57.47,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 76.02,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Worldwide",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Ten Crop (5 crops + flips)",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 512,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 3e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Contrastive loss (CLIP-style)",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Image classification",
+                "confidence": 0.7567
+            },
+            "application": {
+                "value": "Geo-aware image classification",
+                "confidence": 0.515
+            },
+            "dataset": {
+                "value": "NUS-WIDE",
+                "confidence": 0.9892
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.9777
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.249,
+                        "confidence": 0.9795
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9861
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Worldwide",
+                        "confidence": 0.8649
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 0.8845
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

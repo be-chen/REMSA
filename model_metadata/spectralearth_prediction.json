@@ -1,0 +1,1170 @@
+{
+    "model_id": {
+        "value": "SpectralEarth-2024",
+        "confidence": 0.5322
+    },
+    "model_name": {
+        "value": "SpectralEarth",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.9284
+    },
+    "release_date": {
+        "value": "2024-08-15",
+        "confidence": 0.9995
+    },
+    "last_updated": {
+        "value": "2024-08-15",
+        "confidence": 0.9999
+    },
+    "short_description": {
+        "value": "SpectralEarth is a hyperspectral foundation model pre-trained on a large-scale, globally distributed EnMAP dataset using self-supervised learning (SSL) algorithms (MoCo-V2, DINO, MAE) with spectral adapters integrated into ResNet and ViT backbones. It is designed for generalizable hyperspectral image analysis and evaluated on multiple downstream land cover and crop type mapping tasks.",
+        "confidence": 0.7443
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2408.08447",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ResNet-50, ViT-S, ViT-B, ViT-L, ViT-H, ViT-g",
+        "confidence": 0.8992
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised learning (MoCo-V2, DINO, MAE)",
+        "confidence": 0.8571
+    },
+    "masking_strategy": {
+        "value": "For MAE: random masking of 90% of tokens (patches)",
+        "confidence": 0.7236
+    },
+    "pretraining": {
+        "value": "Pre-trained on SpectralEarth, a large-scale EnMAP hyperspectral dataset, using SSL algorithms (MoCo-V2, DINO, MAE) with spectral adapters for spectral feature extraction.",
+        "confidence": 0.6998
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spectral adapter for spectral feature extraction",
+                "confidence": 0.562
+            },
+            {
+                "value": "Temporal positives for contrastive learning",
+                "confidence": 0.5864
+            },
+            {
+                "value": "Cloud cover filtering",
+                "confidence": 0.6418
+            },
+            {
+                "value": "Patch-based spatial sampling",
+                "confidence": 0.5201
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Replace stem layers with 1D spectral adapter (3x Conv1D+BN+ReLU)",
+                "confidence": 0.5711
+            },
+            {
+                "value": "No initial downscaling in ResNet",
+                "confidence": 0.5123
+            },
+            {
+                "value": "Patch size 4x4 in ViT",
+                "confidence": 0.6006
+            },
+            {
+                "value": "Input channel adaptation for 202 bands",
+                "confidence": 0.362
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "EnMAP",
+                "confidence": 1.0
+            },
+            {
+                "value": "DESIS",
+                "confidence": 0.8992
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Hyperspectral",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.8723
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.9991
+    },
+    "spatial_resolution": {
+        "value": "30m",
+        "confidence": 1.0
+    },
+    "temporal_resolution": {
+        "value": "variable (April 2022 - April 2024, multi-temporal for 17.5% locations)",
+        "confidence": 0.6943
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "202 EnMAP bands (after water absorption bands removed)",
+                "confidence": 0.7834
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "SpectralEarth (EnMAP)",
+                "confidence": 0.9328
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (415,153 unique locations, 11,636 scenes)",
+                        "confidence": 0.3055
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "April 2022 - April 2024",
+                "confidence": 0.7832
+            },
+            "num_images": {
+                "value": 538974,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": "4x4 patches for ViT; 128x128 patch size",
+                "confidence": 0.3027
+            },
+            "image_resolution": {
+                "value": "128x128 pixels",
+                "confidence": 0.6724
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 0.6935
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "searched per experiment; StepLR for MoCo-V2, CosineAnnealingLR for DINO/MAE",
+                "confidence": 0.304
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random resized crop",
+                        "confidence": 0.7239
+                    },
+                    {
+                        "value": "Horizontal flip",
+                        "confidence": 0.7584
+                    },
+                    {
+                        "value": "Vertical flip",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Radiometric correction",
+                        "confidence": 0.6608
+                    },
+                    {
+                        "value": "Geometric correction",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "Atmospheric correction (Level-2A)",
+                        "confidence": 0.46
+                    },
+                    {
+                        "value": "Removal of water absorption bands",
+                        "confidence": 0.4715
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Manual selection for cloud cover <10%, patchification to 128x128, non-overlapping for single timestamp, overlap for multi-temporal",
+                "confidence": 0.3
+            },
+            "processing_level": {
+                "value": "Level-2A",
+                "confidence": 0.8421
+            },
+            "cloud_cover": {
+                "value": "<10% cloud coverage",
+                "confidence": 0.3866
+            },
+            "missing_data": {
+                "value": "Bands with frequent missing values (water absorption) removed",
+                "confidence": 0.3513
+            },
+            "masking_ratio": {
+                "value": 0.9,
+                "confidence": 0.9874
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Multi-label classification",
+                "confidence": 0.9014
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.6598
+            },
+            "dataset": {
+                "value": "EnMAP-CORINE",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "F1-score",
+                        "confidence": 0.839
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 79.18,
+                        "confidence": 0.8068
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "EnMAP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 11000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 11000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Urban fabric",
+                        "confidence": 0.7754
+                    },
+                    {
+                        "value": "Industrial/commercial units",
+                        "confidence": 0.9947
+                    },
+                    {
+                        "value": "Arable land",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "Permanent crops",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Pastures",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Complex cultivation patterns",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Agriculture & vegetation",
+                        "confidence": 0.9992
+                    },
+                    {
+                        "value": "Agro-forestry areas",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Broad-leaved forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Coniferous forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Mixed forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grassland & vegetation",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Moors, heathland",
+                        "confidence": 0.997
+                    },
+                    {
+                        "value": "Transitional woodland, shrub",
+                        "confidence": 0.8834
+                    },
+                    {
+                        "value": "Beaches, dunes, sands",
+                        "confidence": 0.9987
+                    },
+                    {
+                        "value": "Inland wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Coastal wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Inland waters",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Marine waters",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "202 EnMAP bands",
+                        "confidence": 0.9311
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random resized crop",
+                        "confidence": 0.9991
+                    },
+                    {
+                        "value": "Horizontal flip",
+                        "confidence": 0.9929
+                    },
+                    {
+                        "value": "Vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Binary Cross-Entropy",
+                "confidence": 0.9646
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9973
+            },
+            "application": {
+                "value": "Crop type segmentation",
+                "confidence": 0.9408
+            },
+            "dataset": {
+                "value": "EnMAP-CDL",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.9331
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 58.19,
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "EnMAP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States",
+                        "confidence": 0.6923
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Corn",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Soybeans",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sunflower",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Spring Wheat",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Winter Wheat",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Alfalfa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Other Hay/Non Alfalfa",
+                        "confidence": 0.9976
+                    },
+                    {
+                        "value": "Sugarcane",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Fallow/Idle Cropland",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Grapes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Almonds",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Walnuts",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Barren",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Deciduous Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Evergreen Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Mixed Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Shrubland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grasland/Pasture",
+                        "confidence": 0.7559
+                    },
+                    {
+                        "value": "Woody Wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Herbaceous Wetlands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "202 EnMAP bands",
+                        "confidence": 0.9996
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random resized crop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 32,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-Entropy",
+                "confidence": 0.9959
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover segmentation",
+                "confidence": 0.9992
+            },
+            "dataset": {
+                "value": "EnMAP-NLCD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 48.37,
+                        "confidence": 0.9995
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "EnMAP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States",
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 15000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 15000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 15,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Open Water",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Developed, Open Space",
+                        "confidence": 0.9974
+                    },
+                    {
+                        "value": "Developed, Low Intensity",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Developed, Medium Intensity",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Developed, High Intensity",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Barren Land (Rock/Sand/Clay)",
+                        "confidence": 0.8587
+                    },
+                    {
+                        "value": "Deciduous Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Evergreen Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Mixed Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Shrub/Scrub",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grassland/Herbaceous",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Pasture/Hay",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Cultivated Crops",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Woody Wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Emergent Herbaceous Wetlands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "202 EnMAP bands",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random resized crop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 64,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-Entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9974
+            },
+            "application": {
+                "value": "Crop type segmentation",
+                "confidence": 0.9998
+            },
+            "dataset": {
+                "value": "DESIS-CDL",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 60.55,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "DESIS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States",
+                        "confidence": 0.9906
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 1000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Corn",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Rice",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Soybeans",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Winter Wheat",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Alfalfa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Other Hay/Non Alfalfa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Potatoes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Tomatoes",
+                        "confidence": 0.8964
+                    },
+                    {
+                        "value": "Fallow/Idle Cropland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Apples",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grapes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Almonds",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Walnuts",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Deciduous Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Evergreen Forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Shrubland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Grasland/Pasture",
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": "Herbaceous Wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Pistachios",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 0.9725
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "235 DESIS bands",
+                        "confidence": 0.9773
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random resized crop",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9839
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-Entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Regression",
+                "confidence": 0.9559
+            },
+            "application": {
+                "value": "Soil parameter estimation",
+                "confidence": 0.9349
+            },
+            "dataset": {
+                "value": "Hyperview",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Normalized MSE",
+                        "confidence": 0.9831
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 90.08,
+                        "confidence": 0.9986
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "HySpex",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": 1732,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 1732,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 4,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Potassium (K)",
+                        "confidence": 0.8272
+                    },
+                    {
+                        "value": "Phosphorus pentoxide (P2O5)",
+                        "confidence": 0.9558
+                    },
+                    {
+                        "value": "Magnesium (Mg)",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Acidity (pH)",
+                        "confidence": 0.5038
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 0.9996
+            },
+            "spatial_resolution": {
+                "value": "2m",
+                "confidence": 0.9977
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "150 HySpex bands",
+                        "confidence": 0.9676
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random resized crop",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Normalized MSE",
+                "confidence": 0.924
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

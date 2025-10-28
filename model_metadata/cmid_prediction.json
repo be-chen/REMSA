@@ -1,0 +1,878 @@
+{
+    "model_id": {
+        "value": "CMID",
+        "confidence": 0.9661
+    },
+    "model_name": {
+        "value": "CMID",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8773
+    },
+    "release_date": {
+        "value": "2023-04-19",
+        "confidence": 0.9306
+    },
+    "last_updated": {
+        "value": "2023-05-03",
+        "confidence": 0.999
+    },
+    "short_description": {
+        "value": "CMID (Contrastive Mask Image Distillation) is a unified self-supervised learning framework for remote sensing image understanding, combining contrastive learning and masked image modeling in a teacher-student self-distillation architecture. It is architecture-agnostic and effective for both CNNs and ViTs, learning representations with both global semantic separability and local spatial perceptibility.",
+        "confidence": 0.8725
+    },
+    "paper_link": {
+        "value": "https://doi.org/10.1109/TGRS.2023.3268232",
+        "confidence": 0.9826
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/NJU-LHRS/official-CMID",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://github.com/NJU-LHRS/official-CMID",
+        "confidence": 0.9624
+    },
+    "backbone": {
+        "value": "ResNet-50 or Swin Transformer-B",
+        "confidence": 0.8617
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Self-supervised learning combining contrastive learning (CL) and masked image modeling (MIM) in a teacher-student self-distillation framework",
+        "confidence": 0.8628
+    },
+    "masking_strategy": {
+        "value": "Mask patches filled with mean spectral value and add learnable mask token to patch embedding",
+        "confidence": 0.827
+    },
+    "pretraining": {
+        "value": "Teacher-student self-distillation with three branches: MIM branch (local spatial perceptibility), global branch (contrastive learning for global semantic separability), and local branch (object-level alignment via prototypes)",
+        "confidence": 0.7537
+    },
+    "domain_knowledge": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Added MIM head (1x1 conv)",
+                "confidence": 0.473
+            },
+            {
+                "value": "Global projector (1-hidden layer MLP)",
+                "confidence": 0.5858
+            },
+            {
+                "value": "Local projector (2-hidden layer MLP)",
+                "confidence": 0.781
+            },
+            {
+                "value": "EMA for teacher-student weights",
+                "confidence": 0.3592
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Various sensors (MillionAID images from Google Earth, multiple sensors)",
+                "confidence": 0.618
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9894
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.8808
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.7754
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9999
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.9869
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9976
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9095
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "MillionAID",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (images from Google Earth, various locations)",
+                        "confidence": 0.3151
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 1000848,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "224x224",
+                "confidence": 0.9481
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 512,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "0.0088 (ResNet-50), 0.002 (Swin-B)",
+                "confidence": 0.6846
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random crop",
+                        "confidence": 0.5118
+                    },
+                    {
+                        "value": "Random resize",
+                        "confidence": 0.3995
+                    },
+                    {
+                        "value": "RandAug",
+                        "confidence": 0.706
+                    },
+                    {
+                        "value": "Mixup",
+                        "confidence": 0.995
+                    },
+                    {
+                        "value": "Cutmix",
+                        "confidence": 0.8723
+                    },
+                    {
+                        "value": "Label smoothing",
+                        "confidence": 0.9663
+                    },
+                    {
+                        "value": "Random erasing",
+                        "confidence": 0.9996
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Resize to 224x224",
+                        "confidence": 0.6497
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "All images used",
+                "confidence": 0.597
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 0.6,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.7488
+            },
+            "application": {
+                "value": "Land use classification",
+                "confidence": 0.6381
+            },
+            "dataset": {
+                "value": "UC Merced Land Use (UCM)",
+                "confidence": 0.8988
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.8089
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.995,
+                        "confidence": 0.3917
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.4256
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "United States",
+                        "confidence": 0.4492
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2100,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2100,
+                "confidence": 0.7357
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 21,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.3m",
+                "confidence": 0.9165
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "RandAug",
+                        "confidence": 0.9983
+                    },
+                    {
+                        "value": "Mixup",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Cutmix",
+                        "confidence": 0.9987
+                    },
+                    {
+                        "value": "Label smoothing",
+                        "confidence": 0.9969
+                    },
+                    {
+                        "value": "Random erasing",
+                        "confidence": 0.9992
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "Adan",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 64,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.003125,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "8:2 (train:test)",
+                "confidence": 0.6264
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9971
+            },
+            "application": {
+                "value": "Urban land cover segmentation",
+                "confidence": 0.5416
+            },
+            "dataset": {
+                "value": "ISPRS Potsdam",
+                "confidence": 0.9888
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.5589
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.6494
+                    },
+                    {
+                        "value": "mF1",
+                        "confidence": 0.8272
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.95,
+                        "confidence": 0.3214
+                    },
+                    {
+                        "value": 0.857,
+                        "confidence": 0.3194
+                    },
+                    {
+                        "value": 0.912,
+                        "confidence": 0.343
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.9709
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Potsdam, Germany",
+                        "confidence": 0.8354
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 38,
+                "confidence": 0.9971
+            },
+            "num_samples": {
+                "value": 21888,
+                "confidence": 0.9995
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 6,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "low vegetation",
+                        "confidence": 0.6335
+                    },
+                    {
+                        "value": "tree",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "building",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "impervious surface",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "car",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "clutter",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.8261
+            },
+            "spatial_resolution": {
+                "value": "0.5m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.996
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.01,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "default mmsegmentation split",
+                "confidence": 0.4589
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9953
+            },
+            "application": {
+                "value": "Urban land cover segmentation",
+                "confidence": 0.999
+            },
+            "dataset": {
+                "value": "ISPRS Vaihingen",
+                "confidence": 0.9998
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.999
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mF1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.93,
+                        "confidence": 0.3324
+                    },
+                    {
+                        "value": 0.8,
+                        "confidence": 0.3306
+                    },
+                    {
+                        "value": 0.87,
+                        "confidence": 0.5282
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Vaihingen, Germany",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 33,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 6,
+                "confidence": 0.9998
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.9m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9991
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 0.9164
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.01,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "default mmsegmentation split",
+                "confidence": 0.9996
+            }
+        },
+        {
+            "task": {
+                "value": "Object detection",
+                "confidence": 0.9782
+            },
+            "application": {
+                "value": "Oriented bounding box detection",
+                "confidence": 0.7589
+            },
+            "dataset": {
+                "value": "DOTA",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.9905
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.753,
+                        "confidence": 0.3194
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.9782
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.5341
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2806,
+                "confidence": 0.9994
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 15,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "1024x1024",
+                "confidence": 0.9925
+            },
+            "spatial_resolution": {
+                "value": "0.3m-1.0m",
+                "confidence": 0.3065
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 12,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "official DOTA split",
+                "confidence": 0.3979
+            }
+        },
+        {
+            "task": {
+                "value": "Change detection",
+                "confidence": 0.998
+            },
+            "application": {
+                "value": "Bitemporal change detection",
+                "confidence": 0.8454
+            },
+            "dataset": {
+                "value": "CDD",
+                "confidence": 0.9987
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mF1",
+                        "confidence": 0.7958
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.893,
+                        "confidence": 0.3221
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Google Earth imagery",
+                        "confidence": 0.527
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.6108
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 11,
+                "confidence": 0.897
+            },
+            "num_samples": {
+                "value": 16000,
+                "confidence": 0.8049
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "change",
+                        "confidence": 0.7386
+                    },
+                    {
+                        "value": "no change",
+                        "confidence": 0.937
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.03m-1.0m",
+                "confidence": 0.6902
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "SGD",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "10000 train / 3000 val / 3000 test",
+                "confidence": 0.4096
+            }
+        }
+    ]
+}

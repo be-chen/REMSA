@@ -1,0 +1,22 @@
+name: fms-agent
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - langchain
+      - langchain-community
+      - langchain-openai
+      - langchain-huggingface
+      - openai
+      - sentence-transformers
+      - faiss-cpu
+      - pydantic
+      - tqdm
+      - pandas
+      - numpy
+      - scikit-learn
+      - pyyaml
+      - rich

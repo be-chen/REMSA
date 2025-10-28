@@ -1,0 +1,925 @@
+{
+    "model_id": {
+        "value": "RS-LLaVA",
+        "confidence": 0.9823
+    },
+    "model_name": {
+        "value": "RS-LLaVA",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8783
+    },
+    "release_date": {
+        "value": "2024-04-23",
+        "confidence": 1.0
+    },
+    "last_updated": {
+        "value": "2024-04-23",
+        "confidence": 0.9994
+    },
+    "short_description": {
+        "value": "RS-LLaVA is a large vision-language model for joint captioning and question answering in remote sensing imagery. It adapts the LLaVA architecture for remote sensing via LoRA fine-tuning and is trained on a multi-task RS-instructions dataset.",
+        "confidence": 0.8071
+    },
+    "paper_link": {
+        "value": "https://doi.org/10.3390/rs16091477",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/BigData-KSU/RS-LLaVA",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "CLIP-ViT (large) + Vicuna-v1.5 (7B/13B)",
+        "confidence": 0.8351
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Instruction tuning with LoRA",
+        "confidence": 0.7356
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Two-step: pre-train projection network between frozen image encoder and LLM on general image-language data, then LoRA-based fine-tuning of LLM on RS-instructions dataset.",
+        "confidence": 0.748
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Low-rank adaptation (LoRA)",
+                "confidence": 0.5172
+            },
+            {
+                "value": "Instruction tuning",
+                "confidence": 0.5813
+            },
+            {
+                "value": "Remote sensing-specific instruction dataset",
+                "confidence": 0.4617
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Added projection network between image encoder and LLM",
+                "confidence": 0.53
+            },
+            {
+                "value": "LoRA adaptation on LLM",
+                "confidence": 0.5254
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9683
+            },
+            {
+                "value": "UAV (EOS 550D)",
+                "confidence": 0.7411
+            },
+            {
+                "value": "Aerial RGB",
+                "confidence": 0.5035
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.8985
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9922
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.8648
+            },
+            {
+                "value": "Text",
+                "confidence": 0.9539
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.7753
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.8988
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9972
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.828
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "General image-language dataset for text?image pairs (not RS-specific)",
+                "confidence": 0.315
+            },
+            "regions_coverage": {
+                "value": []
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "336x336",
+                "confidence": 0.8367
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Image Captioning",
+                "confidence": 0.5859
+            },
+            "application": {
+                "value": "Remote sensing scene captioning",
+                "confidence": 0.3512
+            },
+            "dataset": {
+                "value": "UCM-caption",
+                "confidence": 0.9063
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "BLEU1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BLEU2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BLEU3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BLEU4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "METEOR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ROUGH",
+                        "confidence": 0.794
+                    },
+                    {
+                        "value": "CIDEr",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 90.0,
+                        "confidence": 0.8471
+                    },
+                    {
+                        "value": 84.88,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 80.3,
+                        "confidence": 0.9987
+                    },
+                    {
+                        "value": 76.03,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 49.21,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 85.78,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 355.61,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9084
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "California, USA",
+                        "confidence": 0.5514
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2100,
+                "confidence": 0.9997
+            },
+            "num_samples": {
+                "value": 2100,
+                "confidence": 0.5694
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 21,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "agricultural",
+                        "confidence": 0.5842
+                    },
+                    {
+                        "value": "airplane",
+                        "confidence": 0.9987
+                    },
+                    {
+                        "value": "baseballdiamond",
+                        "confidence": 0.9164
+                    },
+                    {
+                        "value": "beach",
+                        "confidence": 0.992
+                    },
+                    {
+                        "value": "buildings",
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": "chaparral",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "denseresidential",
+                        "confidence": 0.9959
+                    },
+                    {
+                        "value": "forest",
+                        "confidence": 0.9994
+                    },
+                    {
+                        "value": "freeway",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "golfcourse",
+                        "confidence": 0.9992
+                    },
+                    {
+                        "value": "harbor",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "intersection",
+                        "confidence": 0.9786
+                    },
+                    {
+                        "value": "mediumresidential",
+                        "confidence": 0.9807
+                    },
+                    {
+                        "value": "mobilehomepark",
+                        "confidence": 0.9896
+                    },
+                    {
+                        "value": "overpass",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "parkinglot",
+                        "confidence": 0.9906
+                    },
+                    {
+                        "value": "river",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "runway",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "sparseresidential",
+                        "confidence": 0.9949
+                    },
+                    {
+                        "value": "storagetanks",
+                        "confidence": 0.9974
+                    },
+                    {
+                        "value": "tenniscourt",
+                        "confidence": 0.9977
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9997
+            },
+            "spatial_resolution": {
+                "value": "0.3048m",
+                "confidence": 0.9136
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.8116
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 0.9992
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80/10/10",
+                "confidence": 0.6942
+            }
+        },
+        {
+            "task": {
+                "value": "Image Captioning",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Remote sensing scene captioning",
+                "confidence": 0.4804
+            },
+            "dataset": {
+                "value": "UAV",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "BLEU1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BLEU2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BLEU3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BLEU4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "METEOR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ROUGH",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "CIDEr",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 79.82,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 69.6,
+                        "confidence": 0.9988
+                    },
+                    {
+                        "value": 58.84,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 49.24,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 40.14,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 76.28,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 390.3,
+                        "confidence": 0.9983
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "UAV (EOS 550D)",
+                        "confidence": 0.9036
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Civezzano, Italy",
+                        "confidence": 0.9982
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2628,
+                "confidence": 0.9069
+            },
+            "num_samples": {
+                "value": 2628,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9971
+            },
+            "spatial_resolution": {
+                "value": "0.02m",
+                "confidence": 0.9977
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Visual Question Answering",
+                "confidence": 0.9938
+            },
+            "application": {
+                "value": "Remote sensing VQA",
+                "confidence": 0.585
+            },
+            "dataset": {
+                "value": "RSVQA-LR",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Count Accuracy",
+                        "confidence": 0.5715
+                    },
+                    {
+                        "value": "Presence Accuracy",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Comparisons Accuracy",
+                        "confidence": 0.9667
+                    },
+                    {
+                        "value": "Urban/Rural Accuracy",
+                        "confidence": 0.9984
+                    },
+                    {
+                        "value": "Average Accuracy",
+                        "confidence": 0.6498
+                    },
+                    {
+                        "value": "Overall Accuracy",
+                        "confidence": 0.9971
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.76,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 92.27,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 91.37,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 95.0,
+                        "confidence": 0.9817
+                    },
+                    {
+                        "value": 88.1,
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": 86.58,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Netherlands",
+                        "confidence": 0.9963
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 772,
+                "confidence": 0.9999
+            },
+            "num_samples": {
+                "value": 772,
+                "confidence": 0.994
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 4,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "count",
+                        "confidence": 0.6845
+                    },
+                    {
+                        "value": "presence",
+                        "confidence": 0.9738
+                    },
+                    {
+                        "value": "comparisons",
+                        "confidence": 0.9159
+                    },
+                    {
+                        "value": "urban/rural",
+                        "confidence": 0.9986
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 0.9963
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "572/100/100",
+                "confidence": 0.9493
+            }
+        },
+        {
+            "task": {
+                "value": "Visual Question Answering",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Remote sensing VQA",
+                "confidence": 0.9758
+            },
+            "dataset": {
+                "value": "RSIVQA-DOTA",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Count RMSE",
+                        "confidence": 0.642
+                    },
+                    {
+                        "value": "Presence Precision",
+                        "confidence": 0.6046
+                    },
+                    {
+                        "value": "Presence Recall",
+                        "confidence": 0.9983
+                    },
+                    {
+                        "value": "Presence F1",
+                        "confidence": 0.9901
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 232.75,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 100,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 33.28,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 49.94,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.8401
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": 1868,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 1868,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "count",
+                        "confidence": 0.8016
+                    },
+                    {
+                        "value": "presence",
+                        "confidence": 0.7354
+                    },
+                    {
+                        "value": "other",
+                        "confidence": 0.9929
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "varies",
+                "confidence": 0.7641
+            },
+            "spatial_resolution": {
+                "value": "varies",
+                "confidence": 0.9989
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "Adam",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "80/10/10",
+                "confidence": 0.9968
+            }
+        }
+    ]
+}

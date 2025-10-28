@@ -1,0 +1,2694 @@
+{
+    "model_id": {
+        "value": "GeoLangBind",
+        "confidence": 0.8435
+    },
+    "model_name": {
+        "value": "GeoLangBind",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.5569
+    },
+    "release_date": {
+        "value": "2025-03-08",
+        "confidence": 0.7556
+    },
+    "last_updated": {
+        "value": "2025-03-08",
+        "confidence": 0.8888
+    },
+    "short_description": {
+        "value": "GeoLangBind is an agglomerative vision?language foundation model for Earth Observation (EO) that unifies heterogeneous EO data modalities (RGB, SAR, multispectral, hyperspectral, infrared, elevation, aerial) into a shared language embedding space. It leverages a large-scale multimodal image?text dataset (GeoLangBind-2M, 2M pairs, 6 modalities), a wavelength-aware dynamic encoder, a modality-aware knowledge agglomeration (MaKA) module, and progressive multimodal weight merging. GeoLangBind achieves state-of-the-art zero-shot and fine-tuned performance on classification, segmentation, and cross-modal retrieval across 23 EO datasets.",
+        "confidence": 0.7972
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2503.06312",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ViT-Base (patch size 16) for base, SoViT-400m (patch size 14) for large",
+        "confidence": 0.8709
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Contrastive vision?language pretraining with multi-teacher knowledge distillation",
+        "confidence": 0.7852
+    },
+    "masking_strategy": {
+        "value": "Progressive multimodal weight merging; dynamic patch embedding with wavelength-aware masking",
+        "confidence": 0.6352
+    },
+    "pretraining": {
+        "value": "Initialized with SigLIP weights, trained on GeoLangBind-2M using pairwise sigmoid loss and multi-teacher feature-matching distillation (SigLIP, DINOv2, ViT)",
+        "confidence": 0.7128
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Wavelength-aware dynamic encoder",
+                "confidence": 0.7993
+            },
+            {
+                "value": "Modality-aware knowledge agglomeration (MaKA)",
+                "confidence": 0.878
+            },
+            {
+                "value": "Progressive multimodal weight merging",
+                "confidence": 0.9219
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Wavelength-aware dynamic patch embedding",
+                "confidence": 0.929
+            },
+            {
+                "value": "Modality-aware conditional layer normalization",
+                "confidence": 0.9393
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9657
+            },
+            {
+                "value": "Sentinel-1",
+                "confidence": 0.9996
+            },
+            {
+                "value": "EnMAP",
+                "confidence": 0.9996
+            },
+            {
+                "value": "Aerial",
+                "confidence": 0.7758
+            },
+            {
+                "value": "Infrared",
+                "confidence": 0.6712
+            },
+            {
+                "value": "Elevation",
+                "confidence": 0.7312
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.9975
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.7754
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.6915
+            },
+            {
+                "value": "Multispectral",
+                "confidence": 0.9982
+            },
+            {
+                "value": "Hyperspectral",
+                "confidence": 1.0
+            },
+            {
+                "value": "Infrared",
+                "confidence": 0.9234
+            },
+            {
+                "value": "Elevation",
+                "confidence": 0.9995
+            },
+            {
+                "value": "Aerial",
+                "confidence": 0.9666
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.7357
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9989
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.9539
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 1.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9712
+            },
+            {
+                "value": "Multispectral",
+                "confidence": 0.4688
+            },
+            {
+                "value": "Hyperspectral",
+                "confidence": 0.7937
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9969
+            },
+            {
+                "value": "Infrared",
+                "confidence": 0.9778
+            },
+            {
+                "value": "Elevation",
+                "confidence": 0.9991
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "GeoLangBind-2M",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (datasets cover diverse geographies, e.g., Sentinel-2, Sentinel-1, EnMAP, aerial, elevation, infrared)",
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 2050983,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable (e.g., 224x224 for base, 384x384 for large)",
+                "confidence": 0.439
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 0.9969
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "5e-4",
+                "confidence": 0.9999
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Wavelength-aware dynamic patch embedding",
+                        "confidence": 0.3199
+                    },
+                    {
+                        "value": "Semantic extraction for captioning",
+                        "confidence": 0.3109
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Dataset split into RGB and non-RGB modalities for progressive weight merging",
+                "confidence": 0.302
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.4121
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.4624
+            },
+            "dataset": {
+                "value": "AID",
+                "confidence": 0.9332
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 0.8363
+                    },
+                    {
+                        "value": "Top-5 Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 76.83,
+                        "confidence": 0.9774
+                    },
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.8696
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 2000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.8626
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.8876
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9997
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.6935
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 0.9998
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 0.9973
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 0.3284
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.9813
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.6706
+            },
+            "dataset": {
+                "value": "EuroSAT",
+                "confidence": 0.9831
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 0.9951
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 75.5,
+                        "confidence": 0.7413
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 27000,
+                "confidence": 0.9888
+            },
+            "num_samples": {
+                "value": 2700,
+                "confidence": 0.9998
+            },
+            "sampling_percentage": {
+                "value": 10,
+                "confidence": 0.9963
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.8225
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.8037
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "13 Sentinel-2 bands",
+                        "confidence": 0.3935
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9988
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 0.9998
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 0.9977
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.8215
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.9537
+            },
+            "dataset": {
+                "value": "fMoW",
+                "confidence": 0.825
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 59.04,
+                        "confidence": 0.8958
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9896
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 106081,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9626
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9922
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9963
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.8848
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.9849
+            },
+            "dataset": {
+                "value": "Million-AID",
+                "confidence": 0.8491
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 29.1,
+                        "confidence": 0.9808
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9988
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 10000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 51,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9997
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9984
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.9349
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.9868
+            },
+            "dataset": {
+                "value": "PatternNet",
+                "confidence": 0.9964
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 70.16,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 30400,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 38,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9996
+            },
+            "spatial_resolution": {
+                "value": "6?50cm",
+                "confidence": 0.7545
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.9965
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.9994
+            },
+            "dataset": {
+                "value": "NWPU-RESISC45",
+                "confidence": 0.952
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 80.17,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 31500,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 45,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.2?30m",
+                "confidence": 0.9932
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.9869
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.9996
+            },
+            "dataset": {
+                "value": "RSI-CB",
+                "confidence": 0.9965
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.15,
+                        "confidence": 0.8441
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 24747,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 35,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9999
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9966
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot scene classification",
+                "confidence": 0.8786
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.9829
+            },
+            "dataset": {
+                "value": "SkyScript",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 76.83,
+                        "confidence": 0.9995
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 7000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 70,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9993
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9874
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot fine-grained attribute classification",
+                "confidence": 0.509
+            },
+            "application": {
+                "value": "Roof attribute classification",
+                "confidence": 0.6701
+            },
+            "dataset": {
+                "value": "Roof shape",
+                "confidence": 0.5926
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 Accuracy",
+                        "confidence": 0.9665
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 61.83,
+                        "confidence": 0.9967
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.8482
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9253
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9874
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9982
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9668
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 0.9999
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 0.9998
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot multi-label classification",
+                "confidence": 0.5944
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.6697
+            },
+            "dataset": {
+                "value": "m-bigearthnet",
+                "confidence": 0.9642
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Precision",
+                        "confidence": 0.99
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 47.7,
+                        "confidence": 0.9705
+                    },
+                    {
+                        "value": 20.37,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 23.69,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 22000,
+                "confidence": 0.8138
+            },
+            "num_samples": {
+                "value": 1000,
+                "confidence": 0.8387
+            },
+            "sampling_percentage": {
+                "value": 4.545,
+                "confidence": 0.5885
+            },
+            "num_classes": {
+                "value": 43,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "120x120",
+                "confidence": 0.9901
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.685
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "12 Sentinel-2 bands",
+                        "confidence": 0.9466
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.8964
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 0.9999
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 0.9404
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 0.9988
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot multi-label classification",
+                "confidence": 0.9953
+            },
+            "application": {
+                "value": "Urban land cover classification",
+                "confidence": 0.35
+            },
+            "dataset": {
+                "value": "m-so2sat",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "RGB Top-1",
+                        "confidence": 0.4146
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 17.95,
+                        "confidence": 0.9983
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.9732
+                    },
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 21964,
+                "confidence": 0.8154
+            },
+            "num_samples": {
+                "value": 986,
+                "confidence": 0.997
+            },
+            "sampling_percentage": {
+                "value": 4.49,
+                "confidence": 0.7526
+            },
+            "num_classes": {
+                "value": 17,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "32x32",
+                "confidence": 0.9999
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.998
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "5 Sentinel-2 bands",
+                        "confidence": 0.4126
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Zero-shot multi-label classification",
+                "confidence": 0.9951
+            },
+            "application": {
+                "value": "Forest type classification",
+                "confidence": 0.491
+            },
+            "dataset": {
+                "value": "m-forestnet",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "RGB Top-1",
+                        "confidence": 0.8259
+                    },
+                    {
+                        "value": "5-band Top-1",
+                        "confidence": 0.6994
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 13.6,
+                        "confidence": 0.8834
+                    },
+                    {
+                        "value": 17.02,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Landsat-8",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 8446,
+                "confidence": 0.9304
+            },
+            "num_samples": {
+                "value": 993,
+                "confidence": 0.9959
+            },
+            "sampling_percentage": {
+                "value": 11.76,
+                "confidence": 0.9574
+            },
+            "num_classes": {
+                "value": 12,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "332x332",
+                "confidence": 0.9999
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9989
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "6 Landsat-8 bands",
+                        "confidence": 0.7873
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 140,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 0.9999
+            },
+            "loss_function": {
+                "value": "Pairwise sigmoid loss + feature-matching distillation",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Cross-modal retrieval",
+                "confidence": 0.706
+            },
+            "application": {
+                "value": "Image-to-text and text-to-image retrieval",
+                "confidence": 0.4118
+            },
+            "dataset": {
+                "value": "RSICD",
+                "confidence": 0.9994
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Recall@1",
+                        "confidence": 0.8363
+                    },
+                    {
+                        "value": "Recall@5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall@10",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 8.42,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 25.16,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 37.05,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9758
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9251
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9963
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Cross-modal retrieval",
+                "confidence": 0.7222
+            },
+            "application": {
+                "value": "Image-to-text and text-to-image retrieval",
+                "confidence": 0.996
+            },
+            "dataset": {
+                "value": "RSITMD",
+                "confidence": 0.9959
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Recall@1",
+                        "confidence": 0.9977
+                    },
+                    {
+                        "value": "Recall@5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall@10",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 13.94,
+                        "confidence": 0.997
+                    },
+                    {
+                        "value": 30.31,
+                        "confidence": 0.9978
+                    },
+                    {
+                        "value": 44.47,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 0.9993
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9998
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Cross-modal retrieval",
+                "confidence": 0.9881
+            },
+            "application": {
+                "value": "Image-to-text and text-to-image retrieval",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "UCM-caption",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Recall@1",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Recall@5",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall@10",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 43.33,
+                        "confidence": 0.8089
+                    },
+                    {
+                        "value": 81.43,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 93.81,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.8911
+            },
+            "application": {
+                "value": "Land cover segmentation",
+                "confidence": 0.5358
+            },
+            "dataset": {
+                "value": "m-pv4ger-seg",
+                "confidence": 0.9997
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.9553
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 94.7,
+                        "confidence": 0.9958
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.7352
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 3806,
+                "confidence": 0.7666
+            },
+            "num_samples": {
+                "value": 3806,
+                "confidence": 0.7366
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "320x320",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9252
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9967
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Cattle segmentation",
+                "confidence": 0.487
+            },
+            "dataset": {
+                "value": "m-nz-cattle",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 82.2,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9901
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 655,
+                "confidence": 0.9973
+            },
+            "num_samples": {
+                "value": 655,
+                "confidence": 0.9992
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "500x500",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9997
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Tree crown segmentation",
+                "confidence": 0.5803
+            },
+            "dataset": {
+                "value": "m-NeonTree",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 59.0,
+                        "confidence": 0.9794
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9994
+                    },
+                    {
+                        "value": "Hyperspectral",
+                        "confidence": 0.9973
+                    },
+                    {
+                        "value": "Elevation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 457,
+                "confidence": 0.9709
+            },
+            "num_samples": {
+                "value": 457,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "400x400",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9953
+                    },
+                    {
+                        "value": "Hyperspectral",
+                        "confidence": 0.9634
+                    },
+                    {
+                        "value": "Elevation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Cashew plantation segmentation",
+                "confidence": 0.678
+            },
+            "dataset": {
+                "value": "m-cashew-plant",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 45.8,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1800,
+                "confidence": 0.9982
+            },
+            "num_samples": {
+                "value": 1800,
+                "confidence": 0.998
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 7,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9833
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "13 Sentinel-2 bands",
+                        "confidence": 0.9391
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Crop type segmentation",
+                "confidence": 0.8409
+            },
+            "dataset": {
+                "value": "m-SA-crop",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 32.6,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 5000,
+                "confidence": 0.9993
+            },
+            "num_samples": {
+                "value": 5000,
+                "confidence": 0.9997
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "13 Sentinel-2 bands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover segmentation",
+                "confidence": 0.8812
+            },
+            "dataset": {
+                "value": "m-chesapeake",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 63.0,
+                        "confidence": 0.9975
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "RGBN",
+                        "confidence": 0.9624
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 5000,
+                "confidence": 0.9996
+            },
+            "num_samples": {
+                "value": 5000,
+                "confidence": 0.9912
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 7,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGBN",
+                        "confidence": 0.9473
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

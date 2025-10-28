@@ -1,0 +1,760 @@
+{
+    "model_id": {
+        "value": "msGFM",
+        "confidence": 0.9951
+    },
+    "model_name": {
+        "value": "msGFM",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.5943
+    },
+    "release_date": {
+        "value": "2024-04-01",
+        "confidence": 0.9857
+    },
+    "last_updated": {
+        "value": "2024-04-01",
+        "confidence": 0.9931
+    },
+    "short_description": {
+        "value": "msGFM is a multisensor geospatial foundation model that unifies data from four key sensor modalities (RGB, Sentinel-2, SAR, DSM) using a cross-sensor masked image modeling pretraining paradigm. It is designed to handle both paired and unpaired sensor data and demonstrates strong performance across scene classification, segmentation, cloud removal, and pan-sharpening tasks.",
+        "confidence": 0.8434
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2404.01260",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/boranhan/Geospatial_Foundation_Models",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Swin Transformer (Swin-base)",
+        "confidence": 0.8319
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 89,
+        "confidence": 0.6935
+    },
+    "pretext_training_type": {
+        "value": "Masked Image Modeling (MIM)",
+        "confidence": 0.9703
+    },
+    "masking_strategy": {
+        "value": "Random masking with 0.6 mask ratio; same mask for channels within a sensor, different mask locations across sensors",
+        "confidence": 0.6635
+    },
+    "pretraining": {
+        "value": "Cross-sensor masked image modeling with separate patch embeddings per sensor, shared encoder, and separate decoders for each sensor. Incorporates Mixture-of-Experts (MoE) in encoder MLP layers. Trained from scratch on a large-scale multisensor dataset (GeoPile-2) with both paired and unpaired sensor data.",
+        "confidence": 0.7336
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Cross-sensor representation learning",
+                "confidence": 0.8046
+            },
+            {
+                "value": "Mixture-of-Experts (MoE)",
+                "confidence": 0.8803
+            },
+            {
+                "value": "Sensor-specific patch embeddings",
+                "confidence": 0.7836
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "MoE replaces MLP layers in encoder",
+                "confidence": 0.7452
+            },
+            {
+                "value": "Separate patch embedding layers for each sensor",
+                "confidence": 0.7486
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.6284
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9991
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.8971
+            },
+            {
+                "value": "DSM",
+                "confidence": 0.8999
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.8769
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9553
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9905
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.9028
+            },
+            {
+                "value": "DSM",
+                "confidence": 0.983
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.9891
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "0.1m - 60m",
+        "confidence": 0.7539
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9997
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9591
+            },
+            {
+                "value": "Sentinel-2 (14 bands)",
+                "confidence": 0.876
+            },
+            {
+                "value": "SAR (2 bands)",
+                "confidence": 0.9978
+            },
+            {
+                "value": "DSM (1 band)",
+                "confidence": 0.9935
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "GeoPile-2 (composed of SEN12MS, MDAS, GeoPile, MillionAID)",
+                "confidence": 0.379
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.5992
+                    },
+                    {
+                        "value": "All meteorological seasons",
+                        "confidence": 0.4989
+                    },
+                    {
+                        "value": "Urban (Vaihingen, Germany)",
+                        "confidence": 0.4245
+                    },
+                    {
+                        "value": "Various satellites and airborne sources",
+                        "confidence": 0.3343
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 2000000,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": "16x16 patch size",
+                "confidence": 0.3946
+            },
+            "image_resolution": {
+                "value": "192x192",
+                "confidence": 0.9992
+            },
+            "epochs": {
+                "value": 800,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 2048,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "{1.0e-4, 0.25e-4, 1.0e-5} for RGB, SEN12MS, MDAS",
+                "confidence": 0.3374
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Flipping",
+                        "confidence": 0.5435
+                    },
+                    {
+                        "value": "Cropping",
+                        "confidence": 0.9971
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Ortho-rectification",
+                        "confidence": 0.8904
+                    },
+                    {
+                        "value": "Resizing to 384 for MDAS/RGB",
+                        "confidence": 0.3171
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Sequential loading of all sensor data; heterogeneous batch size proportional to data volume per sensor",
+                "confidence": 0.3039
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 0.6,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.8923
+            },
+            "application": {
+                "value": "Remote sensing scene classification",
+                "confidence": 0.4908
+            },
+            "dataset": {
+                "value": "BigEarthNet (BEN)",
+                "confidence": 0.8441
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.9731
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 92.9,
+                        "confidence": 0.6934
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.7747
+                    },
+                    {
+                        "value": "SAR",
+                        "confidence": 0.9901
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.54
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "10m - 60m",
+                "confidence": 0.5394
+            },
+            "spatial_resolution": {
+                "value": "10m - 60m",
+                "confidence": 0.9958
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-2 (14 bands)",
+                        "confidence": 0.6871
+                    },
+                    {
+                        "value": "SAR (2 bands)",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Land segmentation",
+                "confidence": 0.645
+            },
+            "application": {
+                "value": "Urban semantic segmentation",
+                "confidence": 0.8699
+            },
+            "dataset": {
+                "value": "Vaihingen",
+                "confidence": 0.9996
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIOU",
+                        "confidence": 0.9462
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 75.8,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "DSM",
+                        "confidence": 0.9527
+                    },
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Vaihingen, Germany",
+                        "confidence": 0.9975
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "0.09m",
+                "confidence": 0.9998
+            },
+            "spatial_resolution": {
+                "value": "0.09m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "DSM (1 band)",
+                        "confidence": 0.8376
+                    },
+                    {
+                        "value": "RGB (3 bands)",
+                        "confidence": 0.9933
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Cloud removal",
+                "confidence": 0.9997
+            },
+            "application": {
+                "value": "Cloud removal in Sentinel-2 imagery",
+                "confidence": 0.4717
+            },
+            "dataset": {
+                "value": "SEN12MS-CR",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "MAE",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAM",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SSIM",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.026,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 4.87,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.842,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "SAR",
+                        "confidence": 0.8116
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8101
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "10m - 60m",
+                "confidence": 0.9543
+            },
+            "spatial_resolution": {
+                "value": "10m - 60m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "SAR (2 bands)",
+                        "confidence": 0.6929
+                    },
+                    {
+                        "value": "Sentinel-2 (14 bands)",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Pan-sharpening",
+                "confidence": 0.9816
+            },
+            "application": {
+                "value": "Super-resolution/pan-sharpening",
+                "confidence": 0.3917
+            },
+            "dataset": {
+                "value": "SpaceNet2",
+                "confidence": 0.6534
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "PSNR",
+                        "confidence": 0.994
+                    },
+                    {
+                        "value": "SSIM",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 22.85,
+                        "confidence": 0.7754
+                    },
+                    {
+                        "value": 0.668,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "WorldView-3",
+                        "confidence": 0.933
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "0.1m - 10m",
+                "confidence": 0.9983
+            },
+            "spatial_resolution": {
+                "value": "0.1m - 10m",
+                "confidence": 0.9995
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "8 bands",
+                        "confidence": 0.4802
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

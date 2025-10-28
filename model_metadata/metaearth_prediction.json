@@ -1,0 +1,514 @@
+{
+    "model_id": {
+        "value": "metaearth",
+        "confidence": 0.7753
+    },
+    "model_name": {
+        "value": "MetaEarth",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.9469
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "MetaEarth is a generative foundation model for global-scale remote sensing image generation. It enables the production of worldwide, multi-resolution, unbounded, and virtually limitless remote sensing images using a resolution-guided self-cascading generative framework and innovative noise sampling strategy.",
+        "confidence": 0.8981
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2405.13570",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://jiupinjia.github.io/metaearth/",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "U-Net-like architecture with RRDBNet encoder",
+        "confidence": 0.9164
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 600000000,
+        "confidence": 1.0
+    },
+    "pretext_training_type": {
+        "value": "Denoising diffusion probabilistic modeling",
+        "confidence": 0.7281
+    },
+    "masking_strategy": {
+        "value": "Noise sampling strategy for denoising diffusion models; no explicit masking",
+        "confidence": 0.6591
+    },
+    "pretraining": {
+        "value": "Trained from scratch on a large-scale, multi-resolution global remote sensing dataset collected from Google Earth, using a self-cascading conditional diffusion framework with high-order degradation for low-res simulation.",
+        "confidence": 0.687
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Resolution-guided generation",
+                "confidence": 0.5487
+            },
+            {
+                "value": "Self-cascading framework",
+                "confidence": 0.5869
+            },
+            {
+                "value": "Noise sampling strategy",
+                "confidence": 0.5626
+            },
+            {
+                "value": "High-order degradation for low-res simulation",
+                "confidence": 0.7045
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Resolution embedding via frequency encoding and MLP",
+                "confidence": 0.6358
+            },
+            {
+                "value": "Conditional concatenation of upsampled low-res features",
+                "confidence": 0.4705
+            },
+            {
+                "value": "Integration of RRDBNet encoder for conditional images",
+                "confidence": 0.5347
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Google Earth imagery",
+                "confidence": 0.7448
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Optical RGB",
+                "confidence": 0.6797
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9989
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "4m/pixel, 16m/pixel, 64m/pixel",
+        "confidence": 0.9347
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.8496
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Google Earth multi-resolution global dataset",
+                "confidence": 0.3208
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (all continents, various land cover types)",
+                        "confidence": 0.3028
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 3100000,
+                "confidence": 0.9866
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.999
+            },
+            "epochs": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 0.9626
+            },
+            "learning_rate": {
+                "value": "2e-6",
+                "confidence": 0.9996
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "High-order degradation (blur, scaling, noise, JPEG compression)",
+                        "confidence": 0.4718
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Cloud and noise removal",
+                        "confidence": 0.3188
+                    },
+                    {
+                        "value": "Deduplication of repetitive ocean images",
+                        "confidence": 0.3526
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Random sampling of non-overlapping images at each resolution",
+                "confidence": 0.3584
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": "Images with significant cloud cover removed",
+                "confidence": 0.581
+            },
+            "missing_data": {
+                "value": "Images with noise or significant missing data removed",
+                "confidence": 0.3222
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Image Generation",
+                "confidence": 0.5308
+            },
+            "application": {
+                "value": "Remote sensing image synthesis",
+                "confidence": 0.3992
+            },
+            "dataset": {
+                "value": "Google Earth multi-resolution dataset (test set)",
+                "confidence": 0.3077
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "FID",
+                        "confidence": 0.9941
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 23.97,
+                        "confidence": 0.9737
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Google Earth",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8709
+                    },
+                    {
+                        "value": "Americas",
+                        "confidence": 0.7781
+                    },
+                    {
+                        "value": "Europe",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Asia",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Northern Hemisphere",
+                        "confidence": 0.7277
+                    },
+                    {
+                        "value": "Southern Hemisphere",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 3100000,
+                "confidence": 0.9622
+            },
+            "num_samples": {
+                "value": 140000,
+                "confidence": 0.9929
+            },
+            "sampling_percentage": {
+                "value": 4.52,
+                "confidence": 0.5873
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9973
+            },
+            "spatial_resolution": {
+                "value": "4m/pixel, 16m/pixel, 64m/pixel",
+                "confidence": 0.8716
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9839
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 0.9469
+            },
+            "learning_rate": {
+                "value": 2e-06,
+                "confidence": 0.9987
+            },
+            "epochs": {
+                "value": 30,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Perception Prioritized (P2) weighted MSE loss",
+                "confidence": 0.3455
+            },
+            "split_ratio": {
+                "value": "train:val:test = (approx) 90:5:5",
+                "confidence": 0.3008
+            }
+        },
+        {
+            "task": {
+                "value": "Image Classification",
+                "confidence": 0.7641
+            },
+            "application": {
+                "value": "Remote sensing scene classification (downstream task)",
+                "confidence": 0.3578
+            },
+            "dataset": {
+                "value": "MetaEarth-generated 4m/pixel images (7-class dataset)",
+                "confidence": 0.3014
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9478
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 97.28,
+                        "confidence": 0.8253
+                    },
+                    {
+                        "value": 99.22,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 94.55,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 95.33,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Google Earth",
+                        "confidence": 0.6861
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9412
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1050,
+                "confidence": 0.9941
+            },
+            "num_samples": {
+                "value": 5250,
+                "confidence": 0.9836
+            },
+            "sampling_percentage": {
+                "value": 500,
+                "confidence": 0.9939
+            },
+            "num_classes": {
+                "value": 7,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "beach",
+                        "confidence": 0.9901
+                    },
+                    {
+                        "value": "desert",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "farmland",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "industrial area",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mountain",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "residential area",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "4m/pixel",
+                "confidence": 0.9998
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "MetaEarth-generated data augmentation",
+                        "confidence": 0.3284
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "train:test = 3:1",
+                "confidence": 0.8146
+            }
+        }
+    ]
+}

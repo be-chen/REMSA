@@ -1,0 +1,855 @@
+{
+    "model_id": {
+        "value": "diffusionsat_iclr2024",
+        "confidence": 0.5366
+    },
+    "model_name": {
+        "value": "DiffusionSat",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.7627
+    },
+    "release_date": {
+        "value": "2024-05-25",
+        "confidence": 0.9999
+    },
+    "last_updated": {
+        "value": "2024-05-25",
+        "confidence": 0.9999
+    },
+    "short_description": {
+        "value": "DiffusionSat is a generative foundation model for satellite imagery, based on latent diffusion models, capable of high-resolution image generation, super-resolution, temporal prediction, and inpainting, conditioned on text and numerical metadata.",
+        "confidence": 0.7613
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2312.03606",
+        "confidence": 0.9997
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://samar-khanna.github.io/DiffusionSat/",
+        "confidence": 0.9815
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Stable Diffusion 2.1 (Latent Diffusion Model)",
+        "confidence": 0.8239
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Latent diffusion with metadata and text conditioning",
+        "confidence": 0.7417
+    },
+    "masking_strategy": {
+        "value": "Randomly zero out metadata vector with probability 0.1 during training",
+        "confidence": 0.9163
+    },
+    "pretraining": {
+        "value": "Pretrained on large, high-resolution, multi-source satellite imagery datasets with both text and numerical metadata conditioning. Encoder, decoder, and CLIP text encoder initialized from SD 2.1; only denoising UNet and metadata/timestep embeddings updated.",
+        "confidence": 0.7205
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Metadata conditioning (latitude, longitude, GSD, cloud cover, year, month, day)",
+                "confidence": 0.5909
+            },
+            {
+                "value": "Sinusoidal projection and MLP embedding for numerical metadata",
+                "confidence": 0.5396
+            },
+            {
+                "value": "3D ControlNet for temporal and multi-spectral conditioning",
+                "confidence": 0.4701
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "3D ControlNet extension for temporal and multi-image conditioning",
+                "confidence": 0.4503
+            },
+            {
+                "value": "Sinusoidal projection and MLP embedding for numerical metadata",
+                "confidence": 0.5505
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "DigitalGlobe",
+                "confidence": 0.993
+            },
+            {
+                "value": "NAIP",
+                "confidence": 0.9793
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9656
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9986
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.8565
+            },
+            {
+                "value": "Metadata",
+                "confidence": 0.5714
+            },
+            {
+                "value": "Text",
+                "confidence": 0.9991
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.985
+    },
+    "temporal_alignment": {
+        "value": "full",
+        "confidence": 0.8117
+    },
+    "spatial_resolution": {
+        "value": "0.3m-1.5m (fMoW), 1m (NAIP), 10m-60m (Sentinel-2)",
+        "confidence": 0.9467
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.988
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.9491
+            },
+            {
+                "value": "Sentinel-2 multispectral bands (excluding B1, B9, B10)",
+                "confidence": 0.5549
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "fMoW, Satlas (NAIP), SpaceNet (v1, v2, v5)",
+                "confidence": 0.4099
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.8717
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "512x512, 256x256",
+                "confidence": 0.5915
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "2e-6",
+                "confidence": 0.9946
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 0.1,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Single-image generation",
+                "confidence": 0.762
+            },
+            "application": {
+                "value": "Satellite image synthesis",
+                "confidence": 0.4323
+            },
+            "dataset": {
+                "value": "fMoW",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "FID",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "IS",
+                        "confidence": 0.9923
+                    },
+                    {
+                        "value": "CLIP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 15.8,
+                        "confidence": 0.7754
+                    },
+                    {
+                        "value": 6.69,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 17.2,
+                        "confidence": 0.994
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "DigitalGlobe",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9993
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 10000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 62,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.3m-1.5m",
+                "confidence": 0.9812
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 2e-06,
+                "confidence": 0.9983
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Super-resolution",
+                "confidence": 0.913
+            },
+            "application": {
+                "value": "Multi-spectral to high-res RGB super-resolution",
+                "confidence": 0.3189
+            },
+            "dataset": {
+                "value": "fMoW-Sentinel-fMoW-RGB",
+                "confidence": 0.9852
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "SSIM",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "PSNR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "LPIPS",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "MSE",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.1703,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 10.3924,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6221,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.0928,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.9404
+                    },
+                    {
+                        "value": "DigitalGlobe",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9952
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": 10000,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.7886
+            },
+            "spatial_resolution": {
+                "value": "0.3m-1.5m (target), 10m-60m (input)",
+                "confidence": 0.4782
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Sentinel-2 multispectral (13 bands, excluding B1, B9, B10)",
+                        "confidence": 0.3294
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Super-resolution (temporal)",
+                "confidence": 0.5103
+            },
+            "application": {
+                "value": "Temporal super-resolution of housing imagery",
+                "confidence": 0.312
+            },
+            "dataset": {
+                "value": "Texas Housing",
+                "confidence": 0.9987
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "SSIM",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "PSNR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "LPIPS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.5982,
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": 21.0299,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.3247,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "NAIP",
+                        "confidence": 0.998
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Texas, USA",
+                        "confidence": 0.8381
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 286717,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9995
+            },
+            "spatial_resolution": {
+                "value": "1m (NAIP), 10m (Sentinel-2)",
+                "confidence": 0.8252
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9512
+                    },
+                    {
+                        "value": "Sentinel-2 multispectral",
+                        "confidence": 0.862
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 5e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Temporal generation",
+                "confidence": 0.7904
+            },
+            "application": {
+                "value": "Predicting satellite images at arbitrary times",
+                "confidence": 0.3044
+            },
+            "dataset": {
+                "value": "fMoW-temporal",
+                "confidence": 0.9835
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "SSIM",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "PSNR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "LPIPS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.3983,
+                        "confidence": 0.8587
+                    },
+                    {
+                        "value": 13.7886,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4304,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "DigitalGlobe",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.3m-1.5m",
+                "confidence": 0.9508
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 0.9999
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0004,
+                "confidence": 0.9996
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Inpainting",
+                "confidence": 0.86
+            },
+            "application": {
+                "value": "Disaster damage reconstruction",
+                "confidence": 0.3722
+            },
+            "dataset": {
+                "value": "xBD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "metrics_value": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "DigitalGlobe",
+                        "confidence": 0.915
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global",
+                        "confidence": 0.9047
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9067
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

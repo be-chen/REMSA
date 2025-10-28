@@ -1,0 +1,1366 @@
+{
+    "model_id": {
+        "value": "GeoKR",
+        "confidence": 0.9662
+    },
+    "model_name": {
+        "value": "GeoKR",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": "2021-07-12",
+        "confidence": 0.9306
+    },
+    "last_updated": {
+        "value": "2021-07-12",
+        "confidence": 0.8977
+    },
+    "short_description": {
+        "value": "GeoKR is a geographical knowledge-driven representation learning and network pre-training method for remote sensing images. It leverages global land cover products (GlobeLand30) and geographical location as supervision for representation learning, using a mean-teacher framework to mitigate supervision noise. Pretraining is performed on the Levir-KR dataset (1,431,950 Gaofen satellite images), and the model is evaluated on scene classification, semantic segmentation, object detection, and cloud/snow detection tasks.",
+        "confidence": 0.8018
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2107.05276",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/flyakon/Geographical-Knowledge-driven-Representaion-Learning",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ResNet50, VGG16",
+        "confidence": 0.8827
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Knowledge-driven representation learning using global land cover products and geographical location as supervision",
+        "confidence": 0.7139
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Pretraining is performed by aligning image representations with knowledge representations derived from GlobeLand30 land cover proportions, using a mean-teacher framework with KL loss.",
+        "confidence": 0.7308
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Global land cover products (GlobeLand30)",
+                "confidence": 0.8728
+            },
+            {
+                "value": "Geographical location",
+                "confidence": 0.9818
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Gaofen-1",
+                "confidence": 0.9
+            },
+            {
+                "value": "Gaofen-2",
+                "confidence": 0.9
+            },
+            {
+                "value": "Gaofen-6",
+                "confidence": 0.9
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9865
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.947
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.6934
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9996
+    },
+    "spatial_resolution": {
+        "value": "0.8m, 2m, 16m",
+        "confidence": 0.9523
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Red",
+                "confidence": 0.3792
+            },
+            {
+                "value": "Green",
+                "confidence": 0.8
+            },
+            {
+                "value": "Blue",
+                "confidence": 0.8
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Levir-KR",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (Gaofen satellite coverage)",
+                        "confidence": 0.3107
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "2010-2020",
+                "confidence": 0.8859
+            },
+            "num_images": {
+                "value": 1431950,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": "256x256",
+                "confidence": 0.7681
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9155
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-3, decayed to 90% each epoch",
+                "confidence": 0.3289
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random rotation (0?,90?,180?,270?)",
+                        "confidence": 0.3948
+                    },
+                    {
+                        "value": "Random flip up/down",
+                        "confidence": 0.7012
+                    },
+                    {
+                        "value": "Random flip left/right",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Color jitter",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Cloud filtering (rc>0.5)",
+                        "confidence": 0.3377
+                    },
+                    {
+                        "value": "Low contrast filtering",
+                        "confidence": 0.6137
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Images cut from scenes with 0.2 overlap; class balancing by duplication",
+                "confidence": 0.304
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": "Images with cloud proportion >0.5 discarded",
+                "confidence": 0.3133
+            },
+            "missing_data": {
+                "value": "Low contrast images discarded",
+                "confidence": 0.6399
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 0.8274
+            },
+            "application": {
+                "value": "Land use/scene classification",
+                "confidence": 0.3624
+            },
+            "dataset": {
+                "value": "UCMerced",
+                "confidence": 0.9995
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 accuracy",
+                        "confidence": 0.5563
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.7048,
+                        "confidence": 0.7682
+                    },
+                    {
+                        "value": 0.847,
+                        "confidence": 0.7751
+                    },
+                    {
+                        "value": 0.9092,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.9549,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.9695,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 0.6325
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "UCMerced dataset region",
+                        "confidence": 0.3633
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2100,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 21,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.8438
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 0.7702
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random flip",
+                        "confidence": 0.872
+                    },
+                    {
+                        "value": "Random rotation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "3:1 train:test",
+                "confidence": 0.5962
+            }
+        },
+        {
+            "task": {
+                "value": "Scene classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land use/scene classification",
+                "confidence": 0.9586
+            },
+            "dataset": {
+                "value": "RSSCN7",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Top-1 accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.8448,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.8933,
+                        "confidence": 1.3
+                    },
+                    {
+                        "value": 0.8933,
+                        "confidence": 1.3
+                    },
+                    {
+                        "value": 0.9152,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.9419,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "RSSCN7 dataset region",
+                        "confidence": 0.9665
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 2800,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 7,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9977
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random rotation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "3:1 train:test",
+                "confidence": 0.99
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 0.9992
+            },
+            "application": {
+                "value": "Urban land cover segmentation",
+                "confidence": 0.4749
+            },
+            "dataset": {
+                "value": "Vaihingen",
+                "confidence": 0.9861
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.9894
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.3607,
+                        "confidence": 0.8723
+                    },
+                    {
+                        "value": 0.4138,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4155,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.515,
+                        "confidence": 0.9902
+                    },
+                    {
+                        "value": 0.5665,
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": 0.639,
+                        "confidence": 0.9913
+                    },
+                    {
+                        "value": 0.6397,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6978,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7159,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7268,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 0.9373
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Vaihingen",
+                        "confidence": 0.9663
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 6,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 0.9984
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random flip",
+                        "confidence": 0.9994
+                    },
+                    {
+                        "value": "Random rotation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "3:1:1 train:val:test",
+                "confidence": 0.9906
+            }
+        },
+        {
+            "task": {
+                "value": "Semantic segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Urban land cover segmentation",
+                "confidence": 0.9998
+            },
+            "dataset": {
+                "value": "Potsdam",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.404,
+                        "confidence": 0.9976
+                    },
+                    {
+                        "value": 0.4388,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4812,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4955,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.5537,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.645,
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": 0.6704,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6778,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.6959,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7048,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Potsdam",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 6,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random rotation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "3:1:1 train:val:test",
+                "confidence": 0.9999
+            }
+        },
+        {
+            "task": {
+                "value": "Object detection",
+                "confidence": 0.9971
+            },
+            "application": {
+                "value": "Object detection (airplane, ship, oil-tank)",
+                "confidence": 0.422
+            },
+            "dataset": {
+                "value": "Levir",
+                "confidence": 0.9995
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.0231,
+                        "confidence": 0.9857
+                    },
+                    {
+                        "value": 0.074,
+                        "confidence": 0.9902
+                    },
+                    {
+                        "value": 0.3716,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.5969,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7395,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7632,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Levir dataset region",
+                        "confidence": 0.851
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 3,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "airplane",
+                        "confidence": 0.9738
+                    },
+                    {
+                        "value": "ship",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "oil-tank",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 1000,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "3:1:1 train:val:test",
+                "confidence": 0.9983
+            }
+        },
+        {
+            "task": {
+                "value": "Cloud detection",
+                "confidence": 0.5852
+            },
+            "application": {
+                "value": "Cloud detection",
+                "confidence": 0.7332
+            },
+            "dataset": {
+                "value": "Levir CS",
+                "confidence": 0.9725
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.693,
+                        "confidence": 0.9152
+                    },
+                    {
+                        "value": 0.6989,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7099,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7337,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7233,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.7332,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.751,
+                        "confidence": 0.9994
+                    },
+                    {
+                        "value": 0.7507,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Levir CS dataset region",
+                        "confidence": 0.7583
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 0.9991
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "cloud",
+                        "confidence": 0.9569
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 0.9018
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 0.9972
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Snow detection",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Snow detection",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "Levir CS",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.2532,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.3566,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.3938,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4526,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4006,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4628,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.5055,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.4992,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Gaofen-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaofen-6",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Levir CS dataset region",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "snow",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

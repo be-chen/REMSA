@@ -1,0 +1,812 @@
+{
+    "model_id": {
+        "value": "usat_v1",
+        "confidence": 0.4453
+    },
+    "model_name": {
+        "value": "USat",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "ViT-L",
+        "confidence": 0.9854
+    },
+    "release_date": {
+        "value": "2023-12-02",
+        "confidence": 0.9815
+    },
+    "last_updated": {
+        "value": "2023-12-02",
+        "confidence": 0.9988
+    },
+    "short_description": {
+        "value": "USat is a unified self-supervised encoder for multi-sensor satellite imagery, based on a vision transformer with modified patch projection layers and positional encodings to handle spectral bands with varying spatial scales from multiple sensors. It is pre-trained using a masked autoencoder (MAE) approach and supports flexible input of arbitrary subsets of spectral bands from multiple sensors.",
+        "confidence": 0.7659
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2312.02199",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/stanfordmlgroup/USat",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://github.com/stanfordmlgroup/USat",
+        "confidence": 0.9991
+    },
+    "backbone": {
+        "value": "ViT-L",
+        "confidence": 0.8768
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Masked Autoencoder (MAE)",
+        "confidence": 0.8207
+    },
+    "masking_strategy": {
+        "value": "Inconsistent random spatial masking per band, with masking ratio 0.75 and equal ground cover masked across bands",
+        "confidence": 0.7325
+    },
+    "pretraining": {
+        "value": "Self-supervised masked autoencoding on paired NAIP and Sentinel-2 imagery from the Satlas dataset, using superpositional, spectral group, and sensor encodings to model multi-sensor, multi-spectral data with varying GSDs.",
+        "confidence": 0.7204
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Superpositional encodings for GSD alignment",
+                "confidence": 0.6635
+            },
+            {
+                "value": "Spectral group pooling",
+                "confidence": 0.935
+            },
+            {
+                "value": "Sensor encodings",
+                "confidence": 0.7096
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Separate patch projection per spectral band",
+                "confidence": 0.6187
+            },
+            {
+                "value": "Spectral group pooling layer",
+                "confidence": 0.8677
+            },
+            {
+                "value": "Superpositional positional encodings",
+                "confidence": 0.7968
+            },
+            {
+                "value": "Support for arbitrary subset of bands",
+                "confidence": 0.6665
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9254
+            },
+            {
+                "value": "NAIP",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9995
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9999
+            },
+            {
+                "value": "Aerial RGB",
+                "confidence": 0.7263
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.8117
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "1m, 10m, 20m (native GSDs for NAIP and Sentinel-2 bands)",
+        "confidence": 0.7009
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9314
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Red",
+                "confidence": 0.7632
+            },
+            {
+                "value": "Green",
+                "confidence": 1.0
+            },
+            {
+                "value": "Blue",
+                "confidence": 1.0
+            },
+            {
+                "value": "NIR",
+                "confidence": 0.9843
+            },
+            {
+                "value": "Red Edge 1",
+                "confidence": 0.9946
+            },
+            {
+                "value": "Red Edge 2",
+                "confidence": 1.0
+            },
+            {
+                "value": "Red Edge 3",
+                "confidence": 1.0
+            },
+            {
+                "value": "SWIR-1",
+                "confidence": 0.7564
+            },
+            {
+                "value": "SWIR-2",
+                "confidence": 0.9882
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "Satlas (paired NAIP and Sentinel-2 imagery)",
+                "confidence": 0.515
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Contiguous United States",
+                        "confidence": 0.7209
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 3615184,
+                "confidence": 0.9995
+            },
+            "token_size": {
+                "value": "20x20 (NAIP 1m), 4x4 (Sentinel-2 10m), 2x2 (Sentinel-2 20m)",
+                "confidence": 0.3163
+            },
+            "image_resolution": {
+                "value": "320m x 320m footprint, patches of 16x16 (NAIP), 8x8 (Sentinel-2)",
+                "confidence": 0.3004
+            },
+            "epochs": {
+                "value": 25,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 160,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "0.00015 (cosine scheduler)",
+                "confidence": 0.4641
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random horizontal flip",
+                        "confidence": 0.7971
+                    },
+                    {
+                        "value": "Random vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Paired NAIP and Sentinel-2 by ground area and time",
+                        "confidence": 0.304
+                    },
+                    {
+                        "value": "Cropped Sentinel-2 to NAIP footprint",
+                        "confidence": 0.3461
+                    },
+                    {
+                        "value": "Resized bands to native GSDs (1m, 10m, 20m)",
+                        "confidence": 0.3119
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Paired images by closest time, selected pairs with all required bands",
+                "confidence": 0.3
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": 0.75,
+                "confidence": 1.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Multi-label classification",
+                "confidence": 0.8459
+            },
+            "application": {
+                "value": "Land cover and infrastructure classification",
+                "confidence": 0.3218
+            },
+            "dataset": {
+                "value": "USatlas (modified Satlas)",
+                "confidence": 0.4851
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.8695
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 72.53,
+                        "confidence": 0.8108
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.8284
+                    },
+                    {
+                        "value": "NAIP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Contiguous United States",
+                        "confidence": 0.9868
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 3615184,
+                "confidence": 0.8549
+            },
+            "num_samples": {
+                "value": 3615184,
+                "confidence": 0.6871
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 58,
+                "confidence": 0.7357
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "320m x 320m",
+                "confidence": 0.9421
+            },
+            "spatial_resolution": {
+                "value": "1m, 10m, 20m",
+                "confidence": 0.7662
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 0.7693
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NIR",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Red Edge 1",
+                        "confidence": 0.9992
+                    },
+                    {
+                        "value": "Red Edge 2",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Red Edge 3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SWIR-1",
+                        "confidence": 0.9533
+                    },
+                    {
+                        "value": "SWIR-2",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "NAIP Red",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "NAIP Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "NAIP Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random horizontal flip",
+                        "confidence": 0.9965
+                    },
+                    {
+                        "value": "Random vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 160,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.001,
+                "confidence": 0.9947
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Mean squared error (pretraining), cross-entropy or BCE for classification",
+                "confidence": 0.3006
+            },
+            "split_ratio": {
+                "value": "train/val/test as in Satlas (per [2])",
+                "confidence": 0.3025
+            }
+        },
+        {
+            "task": {
+                "value": "Multi-class classification",
+                "confidence": 0.4309
+            },
+            "application": {
+                "value": "Land use/land cover classification",
+                "confidence": 0.4052
+            },
+            "dataset": {
+                "value": "EuroSAT",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.9621
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 98.37,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.9952
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 27000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 16200,
+                "confidence": 0.6549
+            },
+            "sampling_percentage": {
+                "value": 60,
+                "confidence": 0.9993
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "64x64",
+                "confidence": 0.7645
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9836
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "13 Sentinel-2 bands",
+                        "confidence": 0.5613
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random horizontal flip",
+                        "confidence": 0.6975
+                    },
+                    {
+                        "value": "Random vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy",
+                "confidence": 0.7535
+            },
+            "split_ratio": {
+                "value": "16200/5400/5400 (train/val/test)",
+                "confidence": 0.4296
+            }
+        },
+        {
+            "task": {
+                "value": "Multi-label classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.7258
+            },
+            "dataset": {
+                "value": "BigEarthNet",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "mAP",
+                        "confidence": 0.9945
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 85.82,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "10 European countries",
+                        "confidence": 0.6471
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 590326,
+                "confidence": 0.9999
+            },
+            "num_samples": {
+                "value": 31166,
+                "confidence": 0.9958
+            },
+            "sampling_percentage": {
+                "value": 5.28,
+                "confidence": 0.8853
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 0.7343
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9997
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "10 Sentinel-2 bands (excluding B10, 60m bands)",
+                        "confidence": 0.3566
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random horizontal flip",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Random vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 40,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Binary cross-entropy",
+                "confidence": 0.803
+            },
+            "split_ratio": {
+                "value": "31166/103944/103728 (train/val/test)",
+                "confidence": 0.9436
+            }
+        },
+        {
+            "task": {
+                "value": "Multi-label classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Infrastructure mapping",
+                "confidence": 0.5079
+            },
+            "dataset": {
+                "value": "METER-ML",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "MAP",
+                        "confidence": 0.995
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.95,
+                        "confidence": 0.8284
+                    },
+                    {
+                        "value": 83.5,
+                        "confidence": 0.7792
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "NAIP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Contiguous United States",
+                        "confidence": 0.9983
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 86625,
+                "confidence": 0.9996
+            },
+            "num_samples": {
+                "value": 85065,
+                "confidence": 0.9999
+            },
+            "sampling_percentage": {
+                "value": 98.2,
+                "confidence": 0.6048
+            },
+            "num_classes": {
+                "value": 6,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "720x720",
+                "confidence": 0.9986
+            },
+            "spatial_resolution": {
+                "value": "1m (NAIP), 10m (Sentinel-2)",
+                "confidence": 0.7669
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "NAIP RGB",
+                        "confidence": 0.521
+                    },
+                    {
+                        "value": "Sentinel-2 bands",
+                        "confidence": 0.7225
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "Random horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Random vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 5,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Binary cross-entropy",
+                "confidence": 0.9866
+            },
+            "split_ratio": {
+                "value": "85065/515/1018 (train/val/test)",
+                "confidence": 0.9971
+            }
+        }
+    ]
+}

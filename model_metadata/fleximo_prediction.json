@@ -1,0 +1,962 @@
+{
+    "model_id": {
+        "value": "FlexiMo",
+        "confidence": 0.7355
+    },
+    "model_name": {
+        "value": "FlexiMo",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "FlexiMo is a flexible remote sensing foundation model that enables adaptation to arbitrary spatial resolutions, patch sizes, and channel counts. It features a spatial resolution-aware module using parameter-free alignment embedding and a lightweight channel adaptation module leveraging prior spectral information from sensors. FlexiMo achieves strong generalization and robustness across diverse multimodal, multi-resolution, and multi-scale datasets for tasks such as scene classification, land cover classification, building segmentation, and cloud detection.",
+        "confidence": 0.8372
+    },
+    "paper_link": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ViT-Base",
+        "confidence": 0.9912
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Masked Autoencoder (MAE) with dynamic channel adaptation and spatial resolution-aware scaling",
+        "confidence": 0.7309
+    },
+    "masking_strategy": {
+        "value": "Masked Image Modeling with spatial and channel adaptation",
+        "confidence": 0.5987
+    },
+    "pretraining": {
+        "value": "Pre-trained on large-scale remote sensing datasets using a dynamic weight generator for patch embeddings and a spatial resolution-aware module for flexible adaptation.",
+        "confidence": 0.7104
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Central wavelength embedding",
+                "confidence": 0.6221
+            },
+            {
+                "value": "Spatial resolution-aware scaling",
+                "confidence": 0.5473
+            },
+            {
+                "value": "Parameter-free alignment embedding",
+                "confidence": 0.5425
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Spatial resolution-aware module (parameter-free alignment embedding)",
+                "confidence": 0.6369
+            },
+            {
+                "value": "Lightweight channel adaptation module (wavelength-guided dynamic weight generator)",
+                "confidence": 0.5327
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-2",
+                "confidence": 0.9461
+            },
+            {
+                "value": "Sentinel-1",
+                "confidence": 1.0
+            },
+            {
+                "value": "Aerial",
+                "confidence": 0.9054
+            },
+            {
+                "value": "QuickBird",
+                "confidence": 1.0
+            },
+            {
+                "value": "WorldView",
+                "confidence": 0.5718
+            },
+            {
+                "value": "IKONOS",
+                "confidence": 1.0
+            },
+            {
+                "value": "ZY-3",
+                "confidence": 0.9999
+            },
+            {
+                "value": "GaoFen-1",
+                "confidence": 0.9724
+            },
+            {
+                "value": "GaoFen-2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9845
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9625
+            },
+            {
+                "value": "SAR",
+                "confidence": 0.9923
+            },
+            {
+                "value": "RGB",
+                "confidence": 0.9962
+            },
+            {
+                "value": "Panchromatic",
+                "confidence": 0.6354
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 0.8964
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9999
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.8489
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Variable, depending on sensor (e.g., 12-band MSI, 2-band SAR, 3-band RGB, 4-band MSI, 1-band PAN)",
+                "confidence": 0.5538
+            }
+        ]
+    },
+    "pretraining_phases": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Scene Classification",
+                "confidence": 0.8888
+            },
+            "application": {
+                "value": "Land use/land cover classification",
+                "confidence": 0.3798
+            },
+            "dataset": {
+                "value": "EuroSAT",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 0.7752
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 99.44,
+                        "confidence": 0.9989
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.8219
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 27000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 21600,
+                "confidence": 0.9688
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "industrial buildings",
+                        "confidence": 0.7711
+                    },
+                    {
+                        "value": "residential areas",
+                        "confidence": 0.9658
+                    },
+                    {
+                        "value": "crops",
+                        "confidence": 0.9859
+                    },
+                    {
+                        "value": "permanent crops",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "rivers",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "oceans/lakes",
+                        "confidence": 0.9984
+                    },
+                    {
+                        "value": "herbaceous vegetation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "highways",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "pastures",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "forests",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "64x64",
+                "confidence": 0.9998
+            },
+            "spatial_resolution": {
+                "value": "10m, 20m, 60m",
+                "confidence": 0.828
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B1-B12 (excluding B10)",
+                        "confidence": 0.3367
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "mixup (0.8)",
+                        "confidence": 0.6892
+                    },
+                    {
+                        "value": "cutmix (1.0)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "drop path (0.2)",
+                        "confidence": 0.8917
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "16,200 train / 5,400 val",
+                "confidence": 0.6271
+            }
+        },
+        {
+            "task": {
+                "value": "Scene Classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "SAR scene classification",
+                "confidence": 0.8018
+            },
+            "dataset": {
+                "value": "EuroSAT-SAR",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 89.96,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Europe",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 27000,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 21600,
+                "confidence": 0.9995
+            },
+            "sampling_percentage": {
+                "value": 80,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "industrial buildings",
+                        "confidence": 0.9709
+                    },
+                    {
+                        "value": "residential areas",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "crops",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "permanent crops",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "rivers",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "oceans/lakes",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "herbaceous vegetation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "highways",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "pastures",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "forests",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "64x64",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "VV",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "VH",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "mixup (0.8)",
+                        "confidence": 0.9752
+                    },
+                    {
+                        "value": "cutmix (1.0)",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "drop path (0.2)",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 256,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0005,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 200,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "same as EuroSAT",
+                "confidence": 0.8164
+            }
+        },
+        {
+            "task": {
+                "value": "Land Cover Classification",
+                "confidence": 0.83
+            },
+            "application": {
+                "value": "Semantic segmentation",
+                "confidence": 0.7742
+            },
+            "dataset": {
+                "value": "SegMunich",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 83.4,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 52.7,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Munich, Germany",
+                        "confidence": 0.5339
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 49248,
+                "confidence": 0.8718
+            },
+            "num_samples": {
+                "value": 49248,
+                "confidence": 0.9188
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 13,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "128x128",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "10m, 20m",
+                "confidence": 0.9942
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "10 bands (10m and 20m)",
+                        "confidence": 0.3767
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "horizontal flip",
+                        "confidence": 0.9842
+                    },
+                    {
+                        "value": "vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 128,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 6e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "39,402 train / 9,846 val",
+                "confidence": 0.9487
+            }
+        },
+        {
+            "task": {
+                "value": "Building Extraction",
+                "confidence": 0.9991
+            },
+            "application": {
+                "value": "High-resolution building segmentation",
+                "confidence": 0.4274
+            },
+            "dataset": {
+                "value": "WHU-Building",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 98.9,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 97.2,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 97.4,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 94.8,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "QuickBird",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Worldview",
+                        "confidence": 0.794
+                    },
+                    {
+                        "value": "IKONOS",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ZY-3",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global cities, New Zealand",
+                        "confidence": 0.3751
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 8393,
+                "confidence": 0.8831
+            },
+            "num_samples": {
+                "value": 8393,
+                "confidence": 0.9162
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "building",
+                        "confidence": 0.9511
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 0.9399
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "0.3m to 2.5m",
+                "confidence": 0.9249
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9468
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "4,736 train / 1,036 val / 2,416 test",
+                "confidence": 0.9067
+            }
+        },
+        {
+            "task": {
+                "value": "Cloud Detection",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Cloud segmentation",
+                "confidence": 0.8909
+            },
+            "dataset": {
+                "value": "GF12MS-WHU-GF1",
+                "confidence": 0.723
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 99.1,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 97.0,
+                        "confidence": 0.9579
+                    },
+                    {
+                        "value": 96.5,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 93.8,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GaoFen-1",
+                        "confidence": 0.9986
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "China",
+                        "confidence": 0.9827
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 10419,
+                "confidence": 0.3775
+            },
+            "num_samples": {
+                "value": 10419,
+                "confidence": 0.9993
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "cloud",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "background",
+                        "confidence": 0.9288
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "256x256",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "8m (MS), 2m (PAN)",
+                "confidence": 0.4932
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9913
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "horizontal flip",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "vertical flip",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 4e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "6,434 train / 4,085 val",
+                "confidence": 0.993
+            }
+        }
+    ]
+}
