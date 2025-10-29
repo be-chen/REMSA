@@ -1,0 +1,2700 @@
+-------------
+model_id
+spectralgpt_v1
+SpectralGPT
+0.8873496014974115
+-------------
+model_name
+SpectralGPT+
+SpectralGPT
+0.9536642127785007
+-------------
+version
+1.0
+1.0
+1.0
+-------------
+release_date
+2024-02-12
+2024-02-12
+1.0
+-------------
+last_updated
+2024-04-03
+2024-02-12
+0.7356319309345289
+-------------
+short_description
+A universal remote sensing foundation model using a novel 3D generative pretrained transformer (GPT) purpose-built for spectral RS images. Accommodates varying sizes, resolutions, time series, and regions with 3D token generation for spatial-spectral coupling and multi-target reconstruction. Trained on one million spectral RS images with over 600 million parameters.
+SpectralGPT is the first universal remote sensing foundation model purpose-built for spectral remote sensing images, leveraging a novel 3D generative pretrained transformer (GPT) architecture. It is trained on over one million Sentinel-2 spectral images and supports flexible input sizes, resolutions, time series, and regions, with models up to 600 million parameters.
+0.8408072018353754
+-------------
+paper_link
+https://arxiv.org/abs/2311.07113
+https://arxiv.org/abs/2311.07113
+1.0
+-------------
+citations
+624
+None
+0.0
+-------------
+repository
+https://github.com/danfenghong/IEEE_TPAMI_SpectralGPT
+https://doi.org/10.5281/zenodo.10533809
+0.23217305131125315
+-------------
+weights
+https://zenodo.org/records/8412455/files/SpectralGPT+.pth?download=1
+https://doi.org/10.5281/zenodo.10533809
+0.39841766918416993
+-------------
+base_type
+3D Generative Pretrained Transformer
+transformer
+0.41166068852626286
+-------------
+backbone
+ViT-Base
+ViT (Vision Transformer)
+0.4848873858761752
+-------------
+num_layers
+12
+None
+0.0
+-------------
+pretext_training_type
+Masked Spectral Modeling
+Masked Autoencoding (MAE) with 3D masking and multi-target reconstruction
+0.49892677475497277
+-------------
+masking_strategy
+Random block masking
+3D tensor-shaped spatial-spectral masking with at least 90% masking rate
+0.4661524832785648
+-------------
+pretraining
+Self-supervised masked modeling with progressive training on fMoW-Sentinel and BigEarthNet datasets.
+Progressive pretraining on large-scale Sentinel-2 spectral image datasets (fMoW-S2 and BigEarthNet-S2), using 3D masking and multi-target reconstruction in a ViT-based MAE framework.
+0.6835191327897352
+-------------
+domain_knowledge
+['remote sensing', 'spectral analysis', '3D token generation', 'spatial-spectral coupling']
+[{'value': 'Spatial-spectral coupling', 'confidence': 0.9111}, {'value': 'Spectral sequentiality', 'confidence': 0.9301}, {'value': 'Progressive training for multi-region, multi-resolution, multi-temporal data', 'confidence': 0.4873}]
+0.5021121977333285
+-------------
+backbone_modifications
+['3D token generation', 'spectral sequential patterns', 'multi-target reconstruction']
+[{'value': '3D masking strategy for spectral data', 'confidence': 0.6372}, {'value': 'Multi-target reconstruction decoder', 'confidence': 0.7762}, {'value': 'Dual positional embeddings (spatial and spectral)', 'confidence': 0.7993}]
+0.45184287931329314
+-------------
+supported_sensors
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+modalities
+['spectral']
+[{'value': 'spectral', 'confidence': 0.7165}, {'value': 'optical', 'confidence': 0.5058}]
+0.75
+-------------
+spectral_alignment
+true
+true
+1.0
+-------------
+temporal_alignment
+true
+false
+0.7560694086812247
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2 bands); supports variable input sizes
+0.3139588866665823
+-------------
+temporal_resolution
+variable
+variable (supports time series, e.g., fMoW-S2 time series)
+1.0
+-------------
+bands
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.982}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+dataset
+fMoW-S2
+fMoW-S2 (Functional Map of the World Sentinel-2)
+1.0
+-------------
+regions_coverage
+['global']
+[{'value': 'Global', 'confidence': 0.8813}]
+1.0
+-------------
+time_range
+None
+2015-2018 (Sentinel-2 time series, up to April 2020 for SegMunich)
+0.0
+-------------
+num_images
+712874
+712874
+1.0
+-------------
+token_size
+8x8
+8x8x3
+0.8509831895123695
+-------------
+image_resolution
+96x96
+96x96x12
+0.8724632783104268
+-------------
+epochs
+200
+200
+1.0
+-------------
+batch_size
+64
+None
+0.0
+-------------
+learning_rate
+0.0001
+1e-4 (AdamW, half-cycle cosine decay)
+0.679979842771142
+-------------
+augmentations
+['random cropping (0.2x to 1.0x)', 'horizontal flips']
+[{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.4538}, {'value': 'Resize to 96x96', 'confidence': 0.6865}, {'value': 'Horizontal flip', 'confidence': 0.7274}]
+0.6907992808066462
+-------------
+sampling
+None
+All available images, random cropping
+0.0
+-------------
+processing_level
+None
+None
+0.0
+-------------
+cloud_cover
+None
+Locations with pre-Sentinel-2 images excluded; images with snow/cloud/cloud shadow excluded in BigEarthNet
+0.0
+-------------
+missing_data
+None
+Excluded locations/images with missing data
+0.0
+-------------
+masking_ratio
+0.9
+0.9
+1.0
+-------------
+dataset
+fMoW-S2
+BigEarthNet-S2
+0.3957157497398985
+-------------
+regions_coverage
+['global']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.417}]
+0.37408890214024243
+-------------
+time_range
+None
+None
+0.0
+-------------
+num_images
+712874
+354196
+0.0
+-------------
+token_size
+8x8
+8x8x3
+0.8509831895123695
+-------------
+image_resolution
+96x96
+128x128x12
+0.6301789831396546
+-------------
+epochs
+200
+100
+0.0
+-------------
+batch_size
+64
+None
+0.0
+-------------
+learning_rate
+0.0001
+1e-4 (AdamW, half-cycle cosine decay)
+0.679979842771142
+-------------
+augmentations
+['random cropping (0.2x to 1.0x)', 'horizontal flips']
+[{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.634}, {'value': 'Resize to 128x128', 'confidence': 0.9991}, {'value': 'Horizontal flip', 'confidence': 0.999}]
+0.6883382843844573
+-------------
+sampling
+None
+All available images, random cropping
+0.0
+-------------
+processing_level
+None
+None
+0.0
+-------------
+cloud_cover
+None
+Images with snow/cloud/cloud shadow excluded
+0.0
+-------------
+missing_data
+None
+Excluded images with missing data
+0.0
+-------------
+masking_ratio
+0.9
+0.9
+1.0
+-------------
+dataset
+BigEarthNet
+BigEarthNet-S2
+0.8691692347651133
+-------------
+regions_coverage
+['europe']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.417}]
+1.0
+-------------
+time_range
+None
+None
+0.0
+-------------
+num_images
+354196
+354196
+1.0
+-------------
+token_size
+8x8
+8x8x3
+0.8509831895123695
+-------------
+image_resolution
+128x128
+128x128x12
+0.8793317424368149
+-------------
+epochs
+100
+100
+1.0
+-------------
+batch_size
+None
+None
+0.0
+-------------
+learning_rate
+0.0001
+1e-4 (AdamW, half-cycle cosine decay)
+0.679979842771142
+-------------
+augmentations
+['random cropping (0.2x to 1.0x)', 'horizontal flips']
+[{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.634}, {'value': 'Resize to 128x128', 'confidence': 0.9991}, {'value': 'Horizontal flip', 'confidence': 0.999}]
+0.6883382843844573
+-------------
+processing
+['band-by-band normalization to 0-1 range']
+[{'value': 'Band-wise normalization to [0,1]', 'confidence': 0.997}, {'value': 'Exclude B10 band', 'confidence': 0.9822}]
+0.5939155316345575
+-------------
+sampling
+None
+All available images, random cropping
+0.0
+-------------
+processing_level
+None
+None
+0.0
+-------------
+cloud_cover
+None
+Images with snow/cloud/cloud shadow excluded
+0.0
+-------------
+missing_data
+None
+Excluded images with missing data
+0.0
+-------------
+masking_ratio
+0.9
+0.9
+1.0
+-------------
+dataset
+fMoW-S2
+fMoW-S2 (Functional Map of the World Sentinel-2)
+1.0
+-------------
+regions_coverage
+['global']
+[{'value': 'Global', 'confidence': 0.8813}]
+1.0
+-------------
+time_range
+None
+2015-2018 (Sentinel-2 time series, up to April 2020 for SegMunich)
+0.0
+-------------
+num_images
+712874
+712874
+1.0
+-------------
+token_size
+8x8
+8x8x3
+0.8509831895123695
+-------------
+image_resolution
+96x96
+96x96x12
+0.8724632783104268
+-------------
+epochs
+200
+200
+1.0
+-------------
+batch_size
+64
+None
+0.0
+-------------
+learning_rate
+0.0001
+1e-4 (AdamW, half-cycle cosine decay)
+0.679979842771142
+-------------
+augmentations
+['random cropping (0.2x to 1.0x)', 'horizontal flips']
+[{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.4538}, {'value': 'Resize to 96x96', 'confidence': 0.6865}, {'value': 'Horizontal flip', 'confidence': 0.7274}]
+0.6907992808066462
+-------------
+sampling
+None
+All available images, random cropping
+0.0
+-------------
+processing_level
+None
+None
+0.0
+-------------
+cloud_cover
+None
+Locations with pre-Sentinel-2 images excluded; images with snow/cloud/cloud shadow excluded in BigEarthNet
+0.0
+-------------
+missing_data
+None
+Excluded locations/images with missing data
+0.0
+-------------
+masking_ratio
+0.9
+0.9
+1.0
+-------------
+dataset
+BigEarthNet
+fMoW-S2 (Functional Map of the World Sentinel-2)
+0.1990700018430271
+-------------
+regions_coverage
+['europe']
+[{'value': 'Global', 'confidence': 0.8813}]
+0.37408890214024243
+-------------
+time_range
+None
+2015-2018 (Sentinel-2 time series, up to April 2020 for SegMunich)
+0.0
+-------------
+num_images
+354196
+712874
+0.0
+-------------
+token_size
+8x8
+8x8x3
+0.8509831895123695
+-------------
+image_resolution
+128x128
+96x96x12
+0.6576369561038247
+-------------
+epochs
+100
+200
+0.0
+-------------
+batch_size
+None
+None
+0.0
+-------------
+learning_rate
+0.0001
+1e-4 (AdamW, half-cycle cosine decay)
+0.679979842771142
+-------------
+augmentations
+['random cropping (0.2x to 1.0x)', 'horizontal flips']
+[{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.4538}, {'value': 'Resize to 96x96', 'confidence': 0.6865}, {'value': 'Horizontal flip', 'confidence': 0.7274}]
+0.6907992808066462
+-------------
+processing
+['band-by-band normalization to 0-1 range']
+[{'value': 'Band-wise normalization to [0,1]', 'confidence': 0.369}, {'value': 'Exclude B10 band', 'confidence': 0.3493}]
+0.5939155316345575
+-------------
+sampling
+None
+All available images, random cropping
+0.0
+-------------
+processing_level
+None
+None
+0.0
+-------------
+cloud_cover
+None
+Locations with pre-Sentinel-2 images excluded; images with snow/cloud/cloud shadow excluded in BigEarthNet
+0.0
+-------------
+missing_data
+None
+Excluded locations/images with missing data
+0.0
+-------------
+masking_ratio
+0.9
+0.9
+1.0
+-------------
+dataset
+BigEarthNet
+BigEarthNet-S2
+0.8691692347651133
+-------------
+regions_coverage
+['europe']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.417}]
+1.0
+-------------
+time_range
+None
+None
+0.0
+-------------
+num_images
+354196
+354196
+1.0
+-------------
+token_size
+8x8
+8x8x3
+0.8509831895123695
+-------------
+image_resolution
+128x128
+128x128x12
+0.8793317424368149
+-------------
+epochs
+100
+100
+1.0
+-------------
+batch_size
+None
+None
+0.0
+-------------
+learning_rate
+0.0001
+1e-4 (AdamW, half-cycle cosine decay)
+0.679979842771142
+-------------
+augmentations
+['random cropping (0.2x to 1.0x)', 'horizontal flips']
+[{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.634}, {'value': 'Resize to 128x128', 'confidence': 0.9991}, {'value': 'Horizontal flip', 'confidence': 0.999}]
+0.6883382843844573
+-------------
+processing
+['band-by-band normalization to 0-1 range']
+[{'value': 'Band-wise normalization to [0,1]', 'confidence': 0.997}, {'value': 'Exclude B10 band', 'confidence': 0.9822}]
+0.5939155316345575
+-------------
+sampling
+None
+All available images, random cropping
+0.0
+-------------
+processing_level
+None
+None
+0.0
+-------------
+cloud_cover
+None
+Images with snow/cloud/cloud shadow excluded
+0.0
+-------------
+missing_data
+None
+Excluded images with missing data
+0.0
+-------------
+masking_ratio
+0.9
+0.9
+1.0
+-------------
+pretraining_phases
+[{'dataset': 'fMoW-S2', 'regions_coverage': ['global'], 'time_range': None, 'num_images': 712874, 'token_size': '8x8', 'image_resolution': '96x96', 'epochs': 200, 'batch_size': 64, 'learning_rate': '0.0001', 'augmentations': ['random cropping (0.2x to 1.0x)', 'horizontal flips'], 'sampling': None, 'processing_level': None, 'cloud_cover': None, 'missing_data': None, 'masking_ratio': 0.9}, {'dataset': 'BigEarthNet', 'regions_coverage': ['europe'], 'time_range': None, 'num_images': 354196, 'token_size': '8x8', 'image_resolution': '128x128', 'epochs': 100, 'batch_size': None, 'learning_rate': '0.0001', 'augmentations': ['random cropping (0.2x to 1.0x)', 'horizontal flips'], 'processing': ['band-by-band normalization to 0-1 range'], 'sampling': None, 'processing_level': None, 'cloud_cover': None, 'missing_data': None, 'masking_ratio': 0.9}]
+[{'dataset': {'value': 'fMoW-S2 (Functional Map of the World Sentinel-2)', 'confidence': 0.5067}, 'regions_coverage': {'value': [{'value': 'Global', 'confidence': 0.8813}]}, 'time_range': {'value': '2015-2018 (Sentinel-2 time series, up to April 2020 for SegMunich)', 'confidence': 0.3001}, 'num_images': {'value': 712874, 'confidence': 1.0}, 'token_size': {'value': '8x8x3', 'confidence': 0.9155}, 'image_resolution': {'value': '96x96x12', 'confidence': 0.9707}, 'epochs': {'value': 200, 'confidence': 1.0}, 'batch_size': {'value': None, 'confidence': 0.0}, 'learning_rate': {'value': '1e-4 (AdamW, half-cycle cosine decay)', 'confidence': 0.4151}, 'augmentations': {'value': [{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.4538}, {'value': 'Resize to 96x96', 'confidence': 0.6865}, {'value': 'Horizontal flip', 'confidence': 0.7274}]}, 'processing': {'value': [{'value': 'Band-wise normalization to [0,1]', 'confidence': 0.369}, {'value': 'Exclude B10 band', 'confidence': 0.3493}]}, 'sampling': {'value': 'All available images, random cropping', 'confidence': 0.3003}, 'processing_level': {'value': None, 'confidence': 0.0}, 'cloud_cover': {'value': 'Locations with pre-Sentinel-2 images excluded; images with snow/cloud/cloud shadow excluded in BigEarthNet', 'confidence': 0.3}, 'missing_data': {'value': 'Excluded locations/images with missing data', 'confidence': 0.3033}, 'masking_ratio': {'value': 0.9, 'confidence': 0.9902}}, {'dataset': {'value': 'BigEarthNet-S2', 'confidence': 1.0}, 'regions_coverage': {'value': [{'value': 'Europe (over 10 countries)', 'confidence': 0.417}]}, 'time_range': {'value': None, 'confidence': 0.0}, 'num_images': {'value': 354196, 'confidence': 0.9953}, 'token_size': {'value': '8x8x3', 'confidence': 0.9999}, 'image_resolution': {'value': '128x128x12', 'confidence': 1.0}, 'epochs': {'value': 100, 'confidence': 1.0}, 'batch_size': {'value': None, 'confidence': 0.0}, 'learning_rate': {'value': '1e-4 (AdamW, half-cycle cosine decay)', 'confidence': 0.6901}, 'augmentations': {'value': [{'value': 'Random cropping (0.2x to 1.0x)', 'confidence': 0.634}, {'value': 'Resize to 128x128', 'confidence': 0.9991}, {'value': 'Horizontal flip', 'confidence': 0.999}]}, 'processing': {'value': [{'value': 'Band-wise normalization to [0,1]', 'confidence': 0.997}, {'value': 'Exclude B10 band', 'confidence': 0.9822}]}, 'sampling': {'value': 'All available images, random cropping', 'confidence': 0.5885}, 'processing_level': {'value': None, 'confidence': 0.0}, 'cloud_cover': {'value': 'Images with snow/cloud/cloud shadow excluded', 'confidence': 0.6692}, 'missing_data': {'value': 'Excluded images with missing data', 'confidence': 0.6565}, 'masking_ratio': {'value': 0.9, 'confidence': 1.0}}]
+0.5373612017603671
+-------------
+task
+Single-label scene classification
+Single-label Scene Classification
+1.0
+-------------
+application
+land use classification
+Land use/land cover classification
+0.8818283230325967
+-------------
+dataset
+EuroSAT
+EuroSAT
+1.0
+-------------
+metrics
+['accuracy']
+[{'value': 'Accuracy', 'confidence': 0.7204}]
+1.0
+-------------
+metrics_value
+[0.9921]
+[{'value': 99.21, 'confidence': 0.9067}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Europe (34 countries)', 'confidence': 0.6913}]
+1.0
+-------------
+original_samples
+None
+27000
+0.0
+-------------
+num_samples
+27000
+27000
+1.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+10
+10
+1.0
+-------------
+image_resolution
+64x64x12
+64x64x13 (B10 excluded, so 12 bands)
+0.8665761072700932
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9917}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random cropping', 'confidence': 0.6459}, {'value': 'Resize to 64x64', 'confidence': 0.4735}, {'value': 'Horizontal flip', 'confidence': 0.888}, {'value': 'Weight decay (0.05)', 'confidence': 0.6571}, {'value': 'Drop path (0.1)', 'confidence': 0.9968}, {'value': 'Reprob (0.25)', 'confidence': 0.9748}, {'value': 'Mixup (0.8)', 'confidence': 0.9992}, {'value': 'Cutmix (1.0)', 'confidence': 0.9901}]
+0.6409917215789486
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+512
+1.0
+-------------
+learning_rate
+0.0002
+0.0002
+1.0
+-------------
+epochs
+150
+150
+1.0
+-------------
+loss_function
+Cross-entropy loss
+Cross-entropy
+0.9054529328282483
+-------------
+split_ratio
+3,1,1
+Train/validation as in [40]
+0.1586763603597514
+-------------
+task
+Single-label scene classification
+Multi-label Scene Classification
+0.8947739127903471
+-------------
+application
+land use classification
+Land use/land cover multi-label classification
+0.6986898416888772
+-------------
+dataset
+EuroSAT
+BigEarthNet-S2
+0.3425858028931969
+-------------
+metrics
+['accuracy']
+[{'value': 'macro-mAP', 'confidence': 0.9157}, {'value': 'micro-mAP', 'confidence': 1.0}]
+0.1356761827495626
+-------------
+metrics_value
+[0.9921]
+[{'value': 88.22, 'confidence': 1.0}, {'value': 87.5, 'confidence': 0.9166}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.6041}]
+1.0
+-------------
+original_samples
+None
+590326
+0.0
+-------------
+num_samples
+27000
+35420
+0.0
+-------------
+sampling_percentage
+None
+10.0
+0.0
+-------------
+classes
+10
+19
+0.0
+-------------
+image_resolution
+64x64x12
+128x128x12
+0.722190678598523
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 1.0}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random cropping', 'confidence': 0.7951}, {'value': 'Resize to 128x128', 'confidence': 0.9948}, {'value': 'Horizontal flip', 'confidence': 0.9926}]
+0.24416236219460938
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+None
+0.0
+-------------
+learning_rate
+0.0002
+0.0002
+1.0
+-------------
+epochs
+150
+None
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Multi-label soft margin loss
+0.558517286253376
+-------------
+split_ratio
+3,1,1
+Train/validation as in [40]
+0.1586763603597514
+-------------
+task
+Single-label scene classification
+Semantic Segmentation
+0.4807724676928814
+-------------
+application
+land use classification
+Urban land use/land cover segmentation
+0.5818888609411151
+-------------
+dataset
+EuroSAT
+SegMunich
+0.2790928479974953
+-------------
+metrics
+['accuracy']
+[{'value': 'Overall Accuracy (OA)', 'confidence': 0.6015}, {'value': 'Mean Intersection over Union (mIoU)', 'confidence': 0.8338}]
+0.48075572161622465
+-------------
+metrics_value
+[0.9921]
+[{'value': 82.7, 'confidence': 0.9999}, {'value': 51.0, 'confidence': 0.9997}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Munich, Germany', 'confidence': 0.8165}]
+0.33742027087355725
+-------------
+original_samples
+None
+1
+0.0
+-------------
+num_samples
+27000
+1
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+10
+13
+0.0
+-------------
+image_resolution
+64x64x12
+3847x2958x10 (composite)
+0.5127557479494734
+-------------
+spatial_resolution
+10m
+10m (all bands upsampled to 10m)
+1.0
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9991}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 0.9818}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.8717158787569319
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random flips', 'confidence': 0.7437}, {'value': 'Random rotations', 'confidence': 0.8871}]
+0.2279025669358929
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+96
+0.0
+-------------
+learning_rate
+0.0002
+0.0005
+0.0
+-------------
+epochs
+150
+None
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Cross-entropy
+0.9054529328282483
+-------------
+split_ratio
+3,1,1
+Train/validation 8:2
+0.21624655269511028
+-------------
+task
+Single-label scene classification
+Change Detection
+0.264555522813909
+-------------
+application
+land use classification
+Urban change detection
+0.38930707164767353
+-------------
+dataset
+EuroSAT
+OSCD (Onera Satellite Change Detection)
+0.35908622681840846
+-------------
+metrics
+['accuracy']
+[{'value': 'Precision', 'confidence': 0.9998}, {'value': 'Recall', 'confidence': 1.0}, {'value': 'F1 score', 'confidence': 0.7498}]
+0.4369731609177674
+-------------
+metrics_value
+[0.9921]
+[{'value': 52.39, 'confidence': 0.9999}, {'value': 57.2, 'confidence': 0.9972}, {'value': 54.29, 'confidence': 1.0}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': '24 cities worldwide', 'confidence': 0.6106}]
+0.28318672752141033
+-------------
+original_samples
+None
+24
+0.0
+-------------
+num_samples
+27000
+24
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+10
+2
+0.0
+-------------
+image_resolution
+64x64x12
+128x128x13 (B10 excluded, so 12 bands)
+0.6162628823780012
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9999}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random flips', 'confidence': 0.9577}, {'value': 'Random rotations', 'confidence': 0.9999}]
+0.2279025669358929
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+64
+0.0
+-------------
+learning_rate
+0.0002
+0.001
+0.0
+-------------
+epochs
+150
+60
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Negative log-likelihood loss
+0.6617249270987058
+-------------
+split_ratio
+3,1,1
+14 train / 10 test
+0.24851886975654533
+-------------
+task
+Multi-label scene classification
+Multi-label Scene Classification
+1.0
+-------------
+application
+multi-label land cover classification
+Land use/land cover multi-label classification
+0.8143339193903997
+-------------
+dataset
+BigEarthNet-S2
+BigEarthNet-S2
+1.0
+-------------
+metrics
+['micro-mAP', 'macro-mAP']
+[{'value': 'macro-mAP', 'confidence': 0.9157}, {'value': 'micro-mAP', 'confidence': 1.0}]
+1.0
+-------------
+metrics_value
+[0.8822, 0.875]
+[{'value': 88.22, 'confidence': 1.0}, {'value': 87.5, 'confidence': 0.9166}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.6041}]
+1.0
+-------------
+original_samples
+472261
+590326
+0.0
+-------------
+num_samples
+47226
+35420
+0.0
+-------------
+sampling_percentage
+10
+10.0
+1.0
+-------------
+classes
+19
+19
+1.0
+-------------
+image_resolution
+128x128
+128x128x12
+0.8793317424368149
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 1.0}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random cropping', 'confidence': 0.7951}, {'value': 'Resize to 128x128', 'confidence': 0.9948}, {'value': 'Horizontal flip', 'confidence': 0.9926}]
+0.24416236219460938
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+None
+0.0
+-------------
+learning_rate
+None
+0.0002
+0.0
+-------------
+epochs
+150
+None
+0.0
+-------------
+loss_function
+Multi-label soft margin loss
+Multi-label soft margin loss
+1.0
+-------------
+split_ratio
+3,1,1
+Train/validation as in [40]
+0.1586763603597514
+-------------
+task
+Multi-label scene classification
+Semantic Segmentation
+0.44697453057513076
+-------------
+application
+multi-label land cover classification
+Urban land use/land cover segmentation
+0.613995687624286
+-------------
+dataset
+BigEarthNet-S2
+SegMunich
+0.29117233394752645
+-------------
+metrics
+['micro-mAP', 'macro-mAP']
+[{'value': 'Overall Accuracy (OA)', 'confidence': 0.6015}, {'value': 'Mean Intersection over Union (mIoU)', 'confidence': 0.8338}]
+0.25191584050658666
+-------------
+metrics_value
+[0.8822, 0.875]
+[{'value': 82.7, 'confidence': 0.9999}, {'value': 51.0, 'confidence': 0.9997}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Munich, Germany', 'confidence': 0.8165}]
+0.33742027087355725
+-------------
+original_samples
+472261
+1
+0.0
+-------------
+num_samples
+47226
+1
+0.0
+-------------
+sampling_percentage
+10
+100.0
+0.0
+-------------
+classes
+19
+13
+0.0
+-------------
+image_resolution
+128x128
+3847x2958x10 (composite)
+0.5165854724727348
+-------------
+spatial_resolution
+variable
+10m (all bands upsampled to 10m)
+0.21168547279653144
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9991}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 0.9818}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.8717158787569319
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random flips', 'confidence': 0.7437}, {'value': 'Random rotations', 'confidence': 0.8871}]
+0.2279025669358929
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+96
+0.0
+-------------
+learning_rate
+None
+0.0005
+0.0
+-------------
+epochs
+150
+None
+0.0
+-------------
+loss_function
+Multi-label soft margin loss
+Cross-entropy
+0.4555486060573603
+-------------
+split_ratio
+3,1,1
+Train/validation 8:2
+0.21624655269511028
+-------------
+task
+Multi-label scene classification
+Change Detection
+0.29776110955847934
+-------------
+application
+multi-label land cover classification
+Urban change detection
+0.40724708132789517
+-------------
+dataset
+BigEarthNet-S2
+OSCD (Onera Satellite Change Detection)
+0.2581665556959222
+-------------
+metrics
+['micro-mAP', 'macro-mAP']
+[{'value': 'Precision', 'confidence': 0.9998}, {'value': 'Recall', 'confidence': 1.0}, {'value': 'F1 score', 'confidence': 0.7498}]
+0.2214569625345688
+-------------
+metrics_value
+[0.8822, 0.875]
+[{'value': 52.39, 'confidence': 0.9999}, {'value': 57.2, 'confidence': 0.9972}, {'value': 54.29, 'confidence': 1.0}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': '24 cities worldwide', 'confidence': 0.6106}]
+0.28318672752141033
+-------------
+original_samples
+472261
+24
+0.0
+-------------
+num_samples
+47226
+24
+0.0
+-------------
+sampling_percentage
+10
+100.0
+0.0
+-------------
+classes
+19
+2
+0.0
+-------------
+image_resolution
+128x128
+128x128x13 (B10 excluded, so 12 bands)
+0.8213344920802507
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9999}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random flips', 'confidence': 0.9577}, {'value': 'Random rotations', 'confidence': 0.9999}]
+0.2279025669358929
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+64
+0.0
+-------------
+learning_rate
+None
+0.001
+0.0
+-------------
+epochs
+150
+60
+0.0
+-------------
+loss_function
+Multi-label soft margin loss
+Negative log-likelihood loss
+0.5061623618281078
+-------------
+split_ratio
+3,1,1
+14 train / 10 test
+0.24851886975654533
+-------------
+task
+Semantic segmentation
+Semantic Segmentation
+1.0
+-------------
+application
+urban land cover segmentation
+Urban land use/land cover segmentation
+0.9397370059908964
+-------------
+dataset
+SegMunich
+SegMunich
+1.0
+-------------
+metrics
+['OA', 'mIoU']
+[{'value': 'Overall Accuracy (OA)', 'confidence': 0.6015}, {'value': 'Mean Intersection over Union (mIoU)', 'confidence': 0.8338}]
+0.18532538042201877
+-------------
+metrics_value
+[0.827, 0.51]
+[{'value': 82.7, 'confidence': 0.9999}, {'value': 51.0, 'confidence': 0.9997}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Munich']
+[{'value': 'Munich, Germany', 'confidence': 0.8165}]
+0.9095807351973111
+-------------
+original_samples
+None
+1
+0.0
+-------------
+num_samples
+None
+1
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+13
+13
+1.0
+-------------
+image_resolution
+128x128
+3847x2958x10 (composite)
+0.5165854724727348
+-------------
+spatial_resolution
+10m
+10m (all bands upsampled to 10m)
+1.0
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8A', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9991}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 0.9818}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random flips', 'confidence': 0.7437}, {'value': 'Random rotations', 'confidence': 0.8871}]
+1.0
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+96
+96
+1.0
+-------------
+learning_rate
+0.0005
+0.0005
+1.0
+-------------
+epochs
+None
+None
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Cross-entropy
+0.9054529328282483
+-------------
+split_ratio
+8,2,0
+Train/validation 8:2
+0.3878357391734292
+-------------
+task
+Semantic segmentation
+Change Detection
+0.2525007360526519
+-------------
+application
+urban land cover segmentation
+Urban change detection
+0.6179301119703567
+-------------
+dataset
+SegMunich
+OSCD (Onera Satellite Change Detection)
+0.2832083169768036
+-------------
+metrics
+['OA', 'mIoU']
+[{'value': 'Precision', 'confidence': 0.9998}, {'value': 'Recall', 'confidence': 1.0}, {'value': 'F1 score', 'confidence': 0.7498}]
+0.20316498734219057
+-------------
+metrics_value
+[0.827, 0.51]
+[{'value': 52.39, 'confidence': 0.9999}, {'value': 57.2, 'confidence': 0.9972}, {'value': 54.29, 'confidence': 1.0}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Munich']
+[{'value': '24 cities worldwide', 'confidence': 0.6106}]
+0.2968921244427298
+-------------
+original_samples
+None
+24
+0.0
+-------------
+num_samples
+None
+24
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+13
+2
+0.0
+-------------
+image_resolution
+128x128
+128x128x13 (B10 excluded, so 12 bands)
+0.8213344920802507
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8A', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9999}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.8717158787569319
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random flips', 'confidence': 0.9577}, {'value': 'Random rotations', 'confidence': 0.9999}]
+1.0
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+96
+64
+0.0
+-------------
+learning_rate
+0.0005
+0.001
+0.0
+-------------
+epochs
+None
+60
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Negative log-likelihood loss
+0.6617249270987058
+-------------
+split_ratio
+8,2,0
+14 train / 10 test
+0.29866320336936114
+-------------
+task
+Change detection
+Change Detection
+1.0
+-------------
+application
+urban development change
+Urban change detection
+0.6866370766814022
+-------------
+dataset
+OSCD
+OSCD (Onera Satellite Change Detection)
+1.0
+-------------
+metrics
+['precision', 'recall', 'f1']
+[{'value': 'Precision', 'confidence': 0.9998}, {'value': 'Recall', 'confidence': 1.0}, {'value': 'F1 score', 'confidence': 0.7498}]
+0.9341847210189229
+-------------
+metrics_value
+[0.5239, 0.572, 0.5429]
+[{'value': 52.39, 'confidence': 0.9999}, {'value': 57.2, 'confidence': 0.9972}, {'value': 54.29, 'confidence': 1.0}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+None
+[{'value': '24 cities worldwide', 'confidence': 0.6106}]
+0.0
+-------------
+original_samples
+None
+24
+0.0
+-------------
+num_samples
+24
+24
+1.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+None
+2
+0.0
+-------------
+image_resolution
+128x128
+128x128x13 (B10 excluded, so 12 bands)
+0.8213344920802507
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9999}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.9339420608319756
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random flips', 'confidence': 0.9577}, {'value': 'Random rotations', 'confidence': 0.9999}]
+1.0
+-------------
+optimizer
+None
+AdamW
+0.0
+-------------
+batch_size
+64
+64
+1.0
+-------------
+learning_rate
+0.001
+0.001
+1.0
+-------------
+epochs
+60
+60
+1.0
+-------------
+loss_function
+Negative log-likelihood
+Negative log-likelihood loss
+0.9185249055498796
+-------------
+split_ratio
+7,5,0
+14 train / 10 test
+0.31868253189883367
+-------------
+task
+Single-label scene classification
+Single-label Scene Classification
+1.0
+-------------
+application
+land use classification
+Land use/land cover classification
+0.8818283230325967
+-------------
+dataset
+EuroSAT
+EuroSAT
+1.0
+-------------
+metrics
+['accuracy']
+[{'value': 'Accuracy', 'confidence': 0.7204}]
+1.0
+-------------
+metrics_value
+[0.9921]
+[{'value': 99.21, 'confidence': 0.9067}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Europe (34 countries)', 'confidence': 0.6913}]
+1.0
+-------------
+original_samples
+None
+27000
+0.0
+-------------
+num_samples
+27000
+27000
+1.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+10
+10
+1.0
+-------------
+image_resolution
+64x64x12
+64x64x13 (B10 excluded, so 12 bands)
+0.8665761072700932
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9917}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random cropping', 'confidence': 0.6459}, {'value': 'Resize to 64x64', 'confidence': 0.4735}, {'value': 'Horizontal flip', 'confidence': 0.888}, {'value': 'Weight decay (0.05)', 'confidence': 0.6571}, {'value': 'Drop path (0.1)', 'confidence': 0.9968}, {'value': 'Reprob (0.25)', 'confidence': 0.9748}, {'value': 'Mixup (0.8)', 'confidence': 0.9992}, {'value': 'Cutmix (1.0)', 'confidence': 0.9901}]
+0.6409917215789486
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+512
+1.0
+-------------
+learning_rate
+0.0002
+0.0002
+1.0
+-------------
+epochs
+150
+150
+1.0
+-------------
+loss_function
+Cross-entropy loss
+Cross-entropy
+0.9054529328282483
+-------------
+split_ratio
+3,1,1
+Train/validation as in [40]
+0.1586763603597514
+-------------
+task
+Multi-label scene classification
+Single-label Scene Classification
+0.8947739127903471
+-------------
+application
+multi-label land cover classification
+Land use/land cover classification
+0.6300907160939473
+-------------
+dataset
+BigEarthNet-S2
+EuroSAT
+0.3425858028931969
+-------------
+metrics
+['micro-mAP', 'macro-mAP']
+[{'value': 'Accuracy', 'confidence': 0.7204}]
+0.14496814988354367
+-------------
+metrics_value
+[0.8822, 0.875]
+[{'value': 99.21, 'confidence': 0.9067}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Europe (34 countries)', 'confidence': 0.6913}]
+1.0
+-------------
+original_samples
+472261
+27000
+0.0
+-------------
+num_samples
+47226
+27000
+0.0
+-------------
+sampling_percentage
+10
+100.0
+0.0
+-------------
+classes
+19
+10
+0.0
+-------------
+image_resolution
+128x128
+64x64x13 (B10 excluded, so 12 bands)
+0.5429862018302288
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9917}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random cropping', 'confidence': 0.6459}, {'value': 'Resize to 64x64', 'confidence': 0.4735}, {'value': 'Horizontal flip', 'confidence': 0.888}, {'value': 'Weight decay (0.05)', 'confidence': 0.6571}, {'value': 'Drop path (0.1)', 'confidence': 0.9968}, {'value': 'Reprob (0.25)', 'confidence': 0.9748}, {'value': 'Mixup (0.8)', 'confidence': 0.9992}, {'value': 'Cutmix (1.0)', 'confidence': 0.9901}]
+0.6409917215789486
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+512
+1.0
+-------------
+learning_rate
+None
+0.0002
+0.0
+-------------
+epochs
+150
+150
+1.0
+-------------
+loss_function
+Multi-label soft margin loss
+Cross-entropy
+0.4555486060573603
+-------------
+split_ratio
+3,1,1
+Train/validation as in [40]
+0.1586763603597514
+-------------
+task
+Semantic segmentation
+Single-label Scene Classification
+0.4807724676928814
+-------------
+application
+urban land cover segmentation
+Land use/land cover classification
+0.6452927756739683
+-------------
+dataset
+SegMunich
+EuroSAT
+0.2790928479974953
+-------------
+metrics
+['OA', 'mIoU']
+[{'value': 'Accuracy', 'confidence': 0.7204}]
+0.2030128256893624
+-------------
+metrics_value
+[0.827, 0.51]
+[{'value': 99.21, 'confidence': 0.9067}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Munich']
+[{'value': 'Europe (34 countries)', 'confidence': 0.6913}]
+0.3374821659686008
+-------------
+original_samples
+None
+27000
+0.0
+-------------
+num_samples
+None
+27000
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+13
+10
+0.0
+-------------
+image_resolution
+128x128
+64x64x13 (B10 excluded, so 12 bands)
+0.5429862018302288
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8A', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9917}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.8717158787569319
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random cropping', 'confidence': 0.6459}, {'value': 'Resize to 64x64', 'confidence': 0.4735}, {'value': 'Horizontal flip', 'confidence': 0.888}, {'value': 'Weight decay (0.05)', 'confidence': 0.6571}, {'value': 'Drop path (0.1)', 'confidence': 0.9968}, {'value': 'Reprob (0.25)', 'confidence': 0.9748}, {'value': 'Mixup (0.8)', 'confidence': 0.9992}, {'value': 'Cutmix (1.0)', 'confidence': 0.9901}]
+0.3339746173597315
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+96
+512
+0.0
+-------------
+learning_rate
+0.0005
+0.0002
+0.0
+-------------
+epochs
+None
+150
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Cross-entropy
+0.9054529328282483
+-------------
+split_ratio
+8,2,0
+Train/validation as in [40]
+0.18299005104719926
+-------------
+task
+Change detection
+Single-label Scene Classification
+0.264555522813909
+-------------
+application
+urban development change
+Land use/land cover classification
+0.35743849992582816
+-------------
+dataset
+OSCD
+EuroSAT
+0.35908622681840846
+-------------
+metrics
+['precision', 'recall', 'f1']
+[{'value': 'Accuracy', 'confidence': 0.7204}]
+0.4369731609177674
+-------------
+metrics_value
+[0.5239, 0.572, 0.5429]
+[{'value': 99.21, 'confidence': 0.9067}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+None
+[{'value': 'Europe (34 countries)', 'confidence': 0.6913}]
+0.0
+-------------
+original_samples
+None
+27000
+0.0
+-------------
+num_samples
+24
+27000
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+None
+10
+0.0
+-------------
+image_resolution
+128x128
+64x64x13 (B10 excluded, so 12 bands)
+0.5429862018302288
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9917}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.9339420608319756
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random cropping', 'confidence': 0.6459}, {'value': 'Resize to 64x64', 'confidence': 0.4735}, {'value': 'Horizontal flip', 'confidence': 0.888}, {'value': 'Weight decay (0.05)', 'confidence': 0.6571}, {'value': 'Drop path (0.1)', 'confidence': 0.9968}, {'value': 'Reprob (0.25)', 'confidence': 0.9748}, {'value': 'Mixup (0.8)', 'confidence': 0.9992}, {'value': 'Cutmix (1.0)', 'confidence': 0.9901}]
+0.3339746173597315
+-------------
+optimizer
+None
+AdamW
+0.0
+-------------
+batch_size
+64
+512
+0.0
+-------------
+learning_rate
+0.001
+0.0002
+0.0
+-------------
+epochs
+60
+150
+0.0
+-------------
+loss_function
+Negative log-likelihood
+Cross-entropy
+0.5286355135967366
+-------------
+split_ratio
+7,5,0
+Train/validation as in [40]
+0.22787532262901838
+-------------
+task
+Multi-label scene classification
+Multi-label Scene Classification
+1.0
+-------------
+application
+multi-label land cover classification
+Land use/land cover multi-label classification
+0.8143339193903997
+-------------
+dataset
+BigEarthNet-S2
+BigEarthNet-S2
+1.0
+-------------
+metrics
+['micro-mAP', 'macro-mAP']
+[{'value': 'macro-mAP', 'confidence': 0.9157}, {'value': 'micro-mAP', 'confidence': 1.0}]
+1.0
+-------------
+metrics_value
+[0.8822, 0.875]
+[{'value': 88.22, 'confidence': 1.0}, {'value': 87.5, 'confidence': 0.9166}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Europe']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.6041}]
+1.0
+-------------
+original_samples
+472261
+590326
+0.0
+-------------
+num_samples
+47226
+35420
+0.0
+-------------
+sampling_percentage
+10
+10.0
+1.0
+-------------
+classes
+19
+19
+1.0
+-------------
+image_resolution
+128x128
+128x128x12
+0.8793317424368149
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 1.0}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)']
+[{'value': 'Random cropping', 'confidence': 0.7951}, {'value': 'Resize to 128x128', 'confidence': 0.9948}, {'value': 'Horizontal flip', 'confidence': 0.9926}]
+0.24416236219460938
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+512
+None
+0.0
+-------------
+learning_rate
+None
+0.0002
+0.0
+-------------
+epochs
+150
+None
+0.0
+-------------
+loss_function
+Multi-label soft margin loss
+Multi-label soft margin loss
+1.0
+-------------
+split_ratio
+3,1,1
+Train/validation as in [40]
+0.1586763603597514
+-------------
+task
+Semantic segmentation
+Multi-label Scene Classification
+0.44697453057513076
+-------------
+application
+urban land cover segmentation
+Land use/land cover multi-label classification
+0.5621121952278122
+-------------
+dataset
+SegMunich
+BigEarthNet-S2
+0.29117233394752645
+-------------
+metrics
+['OA', 'mIoU']
+[{'value': 'macro-mAP', 'confidence': 0.9157}, {'value': 'micro-mAP', 'confidence': 1.0}]
+0.28985498058377857
+-------------
+metrics_value
+[0.827, 0.51]
+[{'value': 88.22, 'confidence': 1.0}, {'value': 87.5, 'confidence': 0.9166}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Munich']
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.6041}]
+0.3374821659686008
+-------------
+original_samples
+None
+590326
+0.0
+-------------
+num_samples
+None
+35420
+0.0
+-------------
+sampling_percentage
+None
+10.0
+0.0
+-------------
+classes
+13
+19
+0.0
+-------------
+image_resolution
+128x128
+128x128x12
+0.8793317424368149
+-------------
+spatial_resolution
+10m
+10m, 20m, 60m (Sentinel-2)
+0.6970444239189932
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8A', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 1.0}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.8717158787569319
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random cropping', 'confidence': 0.7951}, {'value': 'Resize to 128x128', 'confidence': 0.9948}, {'value': 'Horizontal flip', 'confidence': 0.9926}]
+0.4163716414808274
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+96
+None
+0.0
+-------------
+learning_rate
+0.0005
+0.0002
+0.0
+-------------
+epochs
+None
+None
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Multi-label soft margin loss
+0.558517286253376
+-------------
+split_ratio
+8,2,0
+Train/validation as in [40]
+0.18299005104719926
+-------------
+task
+Change detection
+Multi-label Scene Classification
+0.29776110955847934
+-------------
+application
+urban development change
+Land use/land cover multi-label classification
+0.25905701904844614
+-------------
+dataset
+OSCD
+BigEarthNet-S2
+0.2581665556959222
+-------------
+metrics
+['precision', 'recall', 'f1']
+[{'value': 'macro-mAP', 'confidence': 0.9157}, {'value': 'micro-mAP', 'confidence': 1.0}]
+0.23461856413905752
+-------------
+metrics_value
+[0.5239, 0.572, 0.5429]
+[{'value': 88.22, 'confidence': 1.0}, {'value': 87.5, 'confidence': 0.9166}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+None
+[{'value': 'Europe (over 10 countries)', 'confidence': 0.6041}]
+0.0
+-------------
+original_samples
+None
+590326
+0.0
+-------------
+num_samples
+24
+35420
+0.0
+-------------
+sampling_percentage
+None
+10.0
+0.0
+-------------
+classes
+None
+19
+0.0
+-------------
+image_resolution
+128x128
+128x128x12
+0.8793317424368149
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 1.0}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.9339420608319756
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random cropping', 'confidence': 0.7951}, {'value': 'Resize to 128x128', 'confidence': 0.9948}, {'value': 'Horizontal flip', 'confidence': 0.9926}]
+0.4163716414808274
+-------------
+optimizer
+None
+AdamW
+0.0
+-------------
+batch_size
+64
+None
+0.0
+-------------
+learning_rate
+0.001
+0.0002
+0.0
+-------------
+epochs
+60
+None
+0.0
+-------------
+loss_function
+Negative log-likelihood
+Multi-label soft margin loss
+0.42290784875839466
+-------------
+split_ratio
+7,5,0
+Train/validation as in [40]
+0.22787532262901838
+-------------
+task
+Semantic segmentation
+Semantic Segmentation
+1.0
+-------------
+application
+urban land cover segmentation
+Urban land use/land cover segmentation
+0.9397370059908964
+-------------
+dataset
+SegMunich
+SegMunich
+1.0
+-------------
+metrics
+['OA', 'mIoU']
+[{'value': 'Overall Accuracy (OA)', 'confidence': 0.6015}, {'value': 'Mean Intersection over Union (mIoU)', 'confidence': 0.8338}]
+0.18532538042201877
+-------------
+metrics_value
+[0.827, 0.51]
+[{'value': 82.7, 'confidence': 0.9999}, {'value': 51.0, 'confidence': 0.9997}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+['Munich']
+[{'value': 'Munich, Germany', 'confidence': 0.8165}]
+0.9095807351973111
+-------------
+original_samples
+None
+1
+0.0
+-------------
+num_samples
+None
+1
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+13
+13
+1.0
+-------------
+image_resolution
+128x128
+3847x2958x10 (composite)
+0.5165854724727348
+-------------
+spatial_resolution
+10m
+10m (all bands upsampled to 10m)
+1.0
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8A', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9991}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 0.9818}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+1.0
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random flips', 'confidence': 0.7437}, {'value': 'Random rotations', 'confidence': 0.8871}]
+1.0
+-------------
+optimizer
+AdamW
+AdamW
+1.0
+-------------
+batch_size
+96
+96
+1.0
+-------------
+learning_rate
+0.0005
+0.0005
+1.0
+-------------
+epochs
+None
+None
+0.0
+-------------
+loss_function
+Cross-entropy loss
+Cross-entropy
+0.9054529328282483
+-------------
+split_ratio
+8,2,0
+Train/validation 8:2
+0.3878357391734292
+-------------
+task
+Change detection
+Semantic Segmentation
+0.2525007360526519
+-------------
+application
+urban development change
+Urban land use/land cover segmentation
+0.5286920417063254
+-------------
+dataset
+OSCD
+SegMunich
+0.2832083169768036
+-------------
+metrics
+['precision', 'recall', 'f1']
+[{'value': 'Overall Accuracy (OA)', 'confidence': 0.6015}, {'value': 'Mean Intersection over Union (mIoU)', 'confidence': 0.8338}]
+0.25466182548342775
+-------------
+metrics_value
+[0.5239, 0.572, 0.5429]
+[{'value': 82.7, 'confidence': 0.9999}, {'value': 51.0, 'confidence': 0.9997}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+None
+[{'value': 'Munich, Germany', 'confidence': 0.8165}]
+0.0
+-------------
+original_samples
+None
+1
+0.0
+-------------
+num_samples
+24
+1
+0.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+None
+13
+0.0
+-------------
+image_resolution
+128x128
+3847x2958x10 (composite)
+0.5165854724727348
+-------------
+spatial_resolution
+variable
+10m (all bands upsampled to 10m)
+0.21168547279653144
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9991}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 0.9818}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.8431223496217832
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random flips', 'confidence': 0.7437}, {'value': 'Random rotations', 'confidence': 0.8871}]
+1.0
+-------------
+optimizer
+None
+AdamW
+0.0
+-------------
+batch_size
+64
+96
+0.0
+-------------
+learning_rate
+0.001
+0.0005
+0.0
+-------------
+epochs
+60
+None
+0.0
+-------------
+loss_function
+Negative log-likelihood
+Cross-entropy
+0.5286355135967366
+-------------
+split_ratio
+7,5,0
+Train/validation 8:2
+0.31644122670427527
+-------------
+task
+Change detection
+Change Detection
+1.0
+-------------
+application
+urban development change
+Urban change detection
+0.6866370766814022
+-------------
+dataset
+OSCD
+OSCD (Onera Satellite Change Detection)
+1.0
+-------------
+metrics
+['precision', 'recall', 'f1']
+[{'value': 'Precision', 'confidence': 0.9998}, {'value': 'Recall', 'confidence': 1.0}, {'value': 'F1 score', 'confidence': 0.7498}]
+0.9341847210189229
+-------------
+metrics_value
+[0.5239, 0.572, 0.5429]
+[{'value': 52.39, 'confidence': 0.9999}, {'value': 57.2, 'confidence': 0.9972}, {'value': 54.29, 'confidence': 1.0}]
+0.0
+-------------
+sensor
+['Sentinel-2']
+[{'value': 'Sentinel-2', 'confidence': 1.0}]
+1.0
+-------------
+regions
+None
+[{'value': '24 cities worldwide', 'confidence': 0.6106}]
+0.0
+-------------
+original_samples
+None
+24
+0.0
+-------------
+num_samples
+24
+24
+1.0
+-------------
+sampling_percentage
+None
+100.0
+0.0
+-------------
+classes
+None
+2
+0.0
+-------------
+image_resolution
+128x128
+128x128x13 (B10 excluded, so 12 bands)
+0.8213344920802507
+-------------
+spatial_resolution
+variable
+10m, 20m, 60m (Sentinel-2)
+0.16634186089875308
+-------------
+bands_used
+['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+[{'value': 'B1', 'confidence': 0.9999}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]
+0.9339420608319756
+-------------
+augmentations
+['random flips', 'random rotations']
+[{'value': 'Random flips', 'confidence': 0.9577}, {'value': 'Random rotations', 'confidence': 0.9999}]
+1.0
+-------------
+optimizer
+None
+AdamW
+0.0
+-------------
+batch_size
+64
+64
+1.0
+-------------
+learning_rate
+0.001
+0.001
+1.0
+-------------
+epochs
+60
+60
+1.0
+-------------
+loss_function
+Negative log-likelihood
+Negative log-likelihood loss
+0.9185249055498796
+-------------
+split_ratio
+7,5,0
+14 train / 10 test
+0.31868253189883367
+-------------
+benchmarks
+[{'task': 'Single-label scene classification', 'application': 'land use classification', 'dataset': 'EuroSAT', 'metrics': ['accuracy'], 'metrics_value': [0.9921], 'sensor': ['Sentinel-2'], 'regions': ['Europe'], 'original_samples': None, 'num_samples': 27000, 'sampling_percentage': None, 'classes': 10, 'image_resolution': '64x64x12', 'spatial_resolution': '10m', 'bands_used': ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12'], 'augmentations': ['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)'], 'optimizer': 'AdamW', 'batch_size': 512, 'learning_rate': 0.0002, 'epochs': 150, 'loss_function': 'Cross-entropy loss', 'split_ratio': '3,1,1'}, {'task': 'Multi-label scene classification', 'application': 'multi-label land cover classification', 'dataset': 'BigEarthNet-S2', 'metrics': ['micro-mAP', 'macro-mAP'], 'metrics_value': [0.8822, 0.875], 'sensor': ['Sentinel-2'], 'regions': ['Europe'], 'original_samples': 472261, 'num_samples': 47226, 'sampling_percentage': 10, 'classes': 19, 'image_resolution': '128x128', 'spatial_resolution': 'variable', 'bands_used': ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12'], 'augmentations': ['weight decay (0.05)', 'drop path (0.1)', 'reprob (0.25)', 'mixup (0.8)', 'cutmix (1.0)'], 'optimizer': 'AdamW', 'batch_size': 512, 'learning_rate': None, 'epochs': 150, 'loss_function': 'Multi-label soft margin loss', 'split_ratio': '3,1,1'}, {'task': 'Semantic segmentation', 'application': 'urban land cover segmentation', 'dataset': 'SegMunich', 'metrics': ['OA', 'mIoU'], 'metrics_value': [0.827, 0.51], 'sensor': ['Sentinel-2'], 'regions': ['Munich'], 'original_samples': None, 'num_samples': None, 'sampling_percentage': None, 'classes': 13, 'image_resolution': '128x128', 'spatial_resolution': '10m', 'bands_used': ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8A', 'B11', 'B12'], 'augmentations': ['random flips', 'random rotations'], 'optimizer': 'AdamW', 'batch_size': 96, 'learning_rate': 0.0005, 'epochs': None, 'loss_function': 'Cross-entropy loss', 'split_ratio': '8,2,0'}, {'task': 'Change detection', 'application': 'urban development change', 'dataset': 'OSCD', 'metrics': ['precision', 'recall', 'f1'], 'metrics_value': [0.5239, 0.572, 0.5429], 'sensor': ['Sentinel-2'], 'regions': None, 'original_samples': None, 'num_samples': 24, 'sampling_percentage': None, 'classes': None, 'image_resolution': '128x128', 'spatial_resolution': 'variable', 'bands_used': ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12'], 'augmentations': ['random flips', 'random rotations'], 'optimizer': None, 'batch_size': 64, 'learning_rate': 0.001, 'epochs': 60, 'loss_function': 'Negative log-likelihood', 'split_ratio': '7,5,0'}]
+[{'task': {'value': 'Single-label Scene Classification', 'confidence': 0.6711}, 'application': {'value': 'Land use/land cover classification', 'confidence': 0.6165}, 'dataset': {'value': 'EuroSAT', 'confidence': 1.0}, 'metrics': {'value': [{'value': 'Accuracy', 'confidence': 0.7204}]}, 'metrics_value': {'value': [{'value': 99.21, 'confidence': 0.9067}]}, 'sensor': {'value': [{'value': 'Sentinel-2', 'confidence': 1.0}]}, 'regions': {'value': [{'value': 'Europe (34 countries)', 'confidence': 0.6913}]}, 'original_samples': {'value': 27000, 'confidence': 1.0}, 'num_samples': {'value': 27000, 'confidence': 0.9996}, 'sampling_percentage': {'value': 100.0, 'confidence': 0.7559}, 'classes': {'value': 10, 'confidence': 1.0}, 'image_resolution': {'value': '64x64x13 (B10 excluded, so 12 bands)', 'confidence': 0.3525}, 'spatial_resolution': {'value': '10m, 20m, 60m (Sentinel-2)', 'confidence': 0.3882}, 'bands_used': {'value': [{'value': 'B1', 'confidence': 0.9917}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]}, 'augmentations': {'value': [{'value': 'Random cropping', 'confidence': 0.6459}, {'value': 'Resize to 64x64', 'confidence': 0.4735}, {'value': 'Horizontal flip', 'confidence': 0.888}, {'value': 'Weight decay (0.05)', 'confidence': 0.6571}, {'value': 'Drop path (0.1)', 'confidence': 0.9968}, {'value': 'Reprob (0.25)', 'confidence': 0.9748}, {'value': 'Mixup (0.8)', 'confidence': 0.9992}, {'value': 'Cutmix (1.0)', 'confidence': 0.9901}]}, 'optimizer': {'value': 'AdamW', 'confidence': 1.0}, 'batch_size': {'value': 512, 'confidence': 1.0}, 'learning_rate': {'value': 0.0002, 'confidence': 0.9994}, 'epochs': {'value': 150, 'confidence': 1.0}, 'loss_function': {'value': 'Cross-entropy', 'confidence': 0.9381}, 'split_ratio': {'value': 'Train/validation as in [40]', 'confidence': 0.3188}}, {'task': {'value': 'Multi-label Scene Classification', 'confidence': 0.9999}, 'application': {'value': 'Land use/land cover multi-label classification', 'confidence': 0.4585}, 'dataset': {'value': 'BigEarthNet-S2', 'confidence': 0.9999}, 'metrics': {'value': [{'value': 'macro-mAP', 'confidence': 0.9157}, {'value': 'micro-mAP', 'confidence': 1.0}]}, 'metrics_value': {'value': [{'value': 88.22, 'confidence': 1.0}, {'value': 87.5, 'confidence': 0.9166}]}, 'sensor': {'value': [{'value': 'Sentinel-2', 'confidence': 1.0}]}, 'regions': {'value': [{'value': 'Europe (over 10 countries)', 'confidence': 0.6041}]}, 'original_samples': {'value': 590326, 'confidence': 0.9971}, 'num_samples': {'value': 35420, 'confidence': 0.7453}, 'sampling_percentage': {'value': 10.0, 'confidence': 0.9703}, 'classes': {'value': 19, 'confidence': 1.0}, 'image_resolution': {'value': '128x128x12', 'confidence': 0.9984}, 'spatial_resolution': {'value': '10m, 20m, 60m (Sentinel-2)', 'confidence': 0.4301}, 'bands_used': {'value': [{'value': 'B1', 'confidence': 1.0}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]}, 'augmentations': {'value': [{'value': 'Random cropping', 'confidence': 0.7951}, {'value': 'Resize to 128x128', 'confidence': 0.9948}, {'value': 'Horizontal flip', 'confidence': 0.9926}]}, 'optimizer': {'value': 'AdamW', 'confidence': 1.0}, 'batch_size': {'value': None, 'confidence': 0.0}, 'learning_rate': {'value': 0.0002, 'confidence': 1.0}, 'epochs': {'value': None, 'confidence': 0.0}, 'loss_function': {'value': 'Multi-label soft margin loss', 'confidence': 0.986}, 'split_ratio': {'value': 'Train/validation as in [40]', 'confidence': 0.4363}}, {'task': {'value': 'Semantic Segmentation', 'confidence': 1.0}, 'application': {'value': 'Urban land use/land cover segmentation', 'confidence': 0.4385}, 'dataset': {'value': 'SegMunich', 'confidence': 1.0}, 'metrics': {'value': [{'value': 'Overall Accuracy (OA)', 'confidence': 0.6015}, {'value': 'Mean Intersection over Union (mIoU)', 'confidence': 0.8338}]}, 'metrics_value': {'value': [{'value': 82.7, 'confidence': 0.9999}, {'value': 51.0, 'confidence': 0.9997}]}, 'sensor': {'value': [{'value': 'Sentinel-2', 'confidence': 1.0}]}, 'regions': {'value': [{'value': 'Munich, Germany', 'confidence': 0.8165}]}, 'original_samples': {'value': 1, 'confidence': 0.9986}, 'num_samples': {'value': 1, 'confidence': 0.9971}, 'sampling_percentage': {'value': 100.0, 'confidence': 0.9901}, 'classes': {'value': 13, 'confidence': 1.0}, 'image_resolution': {'value': '3847x2958x10 (composite)', 'confidence': 0.4014}, 'spatial_resolution': {'value': '10m (all bands upsampled to 10m)', 'confidence': 0.3975}, 'bands_used': {'value': [{'value': 'B1', 'confidence': 0.9991}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 0.9818}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]}, 'augmentations': {'value': [{'value': 'Random flips', 'confidence': 0.7437}, {'value': 'Random rotations', 'confidence': 0.8871}]}, 'optimizer': {'value': 'AdamW', 'confidence': 0.9426}, 'batch_size': {'value': 96, 'confidence': 1.0}, 'learning_rate': {'value': 0.0005, 'confidence': 1.0}, 'epochs': {'value': None, 'confidence': 0.0}, 'loss_function': {'value': 'Cross-entropy', 'confidence': 0.951}, 'split_ratio': {'value': 'Train/validation 8:2', 'confidence': 0.4521}}, {'task': {'value': 'Change Detection', 'confidence': 0.9998}, 'application': {'value': 'Urban change detection', 'confidence': 0.8666}, 'dataset': {'value': 'OSCD (Onera Satellite Change Detection)', 'confidence': 0.6192}, 'metrics': {'value': [{'value': 'Precision', 'confidence': 0.9998}, {'value': 'Recall', 'confidence': 1.0}, {'value': 'F1 score', 'confidence': 0.7498}]}, 'metrics_value': {'value': [{'value': 52.39, 'confidence': 0.9999}, {'value': 57.2, 'confidence': 0.9972}, {'value': 54.29, 'confidence': 1.0}]}, 'sensor': {'value': [{'value': 'Sentinel-2', 'confidence': 1.0}]}, 'regions': {'value': [{'value': '24 cities worldwide', 'confidence': 0.6106}]}, 'original_samples': {'value': 24, 'confidence': 1.0}, 'num_samples': {'value': 24, 'confidence': 0.9971}, 'sampling_percentage': {'value': 100.0, 'confidence': 0.9971}, 'classes': {'value': 2, 'confidence': 1.0}, 'image_resolution': {'value': '128x128x13 (B10 excluded, so 12 bands)', 'confidence': 0.3273}, 'spatial_resolution': {'value': '10m, 20m, 60m (Sentinel-2)', 'confidence': 0.7312}, 'bands_used': {'value': [{'value': 'B1', 'confidence': 0.9999}, {'value': 'B2', 'confidence': 1.0}, {'value': 'B3', 'confidence': 1.0}, {'value': 'B4', 'confidence': 1.0}, {'value': 'B5', 'confidence': 1.0}, {'value': 'B6', 'confidence': 1.0}, {'value': 'B7', 'confidence': 1.0}, {'value': 'B8', 'confidence': 1.0}, {'value': 'B8A', 'confidence': 1.0}, {'value': 'B9', 'confidence': 1.0}, {'value': 'B11', 'confidence': 1.0}, {'value': 'B12', 'confidence': 1.0}]}, 'augmentations': {'value': [{'value': 'Random flips', 'confidence': 0.9577}, {'value': 'Random rotations', 'confidence': 0.9999}]}, 'optimizer': {'value': 'AdamW', 'confidence': 0.9558}, 'batch_size': {'value': 64, 'confidence': 1.0}, 'learning_rate': {'value': 0.001, 'confidence': 1.0}, 'epochs': {'value': 60, 'confidence': 1.0}, 'loss_function': {'value': 'Negative log-likelihood loss', 'confidence': 0.6855}, 'split_ratio': {'value': '14 train / 10 test', 'confidence': 0.5452}}]
+0.6552092979680193
