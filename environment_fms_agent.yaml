@@ -1,4 +1,4 @@
-name: fms-agent
+name: fms
 channels:
   - defaults
   - conda-forge
@@ -20,3 +20,8 @@ dependencies:
       - scikit-learn
       - pyyaml
       - rich
+      - structured_logprobs
+      - nltk==3.9.1 
+      - json5
+      - RapidFuzz==3.10.1
+      - neo4j==5.28.1

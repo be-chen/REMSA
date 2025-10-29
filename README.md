@@ -10,7 +10,7 @@ Clone the repository and set up your virtual environment using Conda:
 
 ```bash
 conda env create -f environment_fms_agent.yaml
-conda activate fms_agent
+conda activate fms
 ```
 
 This installs all dependencies defined in the environment file.
@@ -47,3 +47,29 @@ You will be prompted to provide input through the terminal. Follow the instructi
 - `model_metadata/`: Contains raw metadata for available foundation models in remote sensing.
 
 You can update or extend these files to include new models or metadata.
+
+
+# Foundation Model Metadata Generation
+
+This tool allows you to extract structured model metadata from your foundation model PDF files.
+
+## Usage
+
+If you want to upload your model PDF file and generate structured metadata, follow these steps:
+
+```bash
+# Navigate to the directory
+cd file_to_db
+
+# Run the script with your configuration and file path
+python src/run.py --config FoundationModels.yaml --file_path path_to_your_pdf
+```
+
+## Output
+
+After running the command, your model metadata will be automatically stored as a JSON file under:
+
+```bash
+/file_to_db/model_metadata
+```
+
