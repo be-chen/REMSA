@@ -73,3 +73,19 @@ After running the command, your model metadata will be automatically stored as a
 /file_to_db/model_metadata
 ```
 
+# Creating a Vector Database from a JSONL File
+
+To build the vector database, run the following command:
+
+```bash
+python build_vectorstore.py
+```
+
+## Configuration
+
+You can customize the following parameters in the `config.py` file:
+
+- **`FMD_JSONL_PATH`** — Path to your `.jsonl` file.  
+- **`EMBEDDING_MODEL_NAME`** — Name of the embedding model to use.  
+- **`VECTOR_INDEX_PATH`** — Path where the generated vector database will be stored.  
+
