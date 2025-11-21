@@ -1,5 +1,5 @@
 # === OpenAI ===
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = <your_key>
 OPENAI_MODEL_NAME = "gpt-4.1"
 
 # === Foundation Model Database ===
