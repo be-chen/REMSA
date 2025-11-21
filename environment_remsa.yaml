@@ -1,4 +1,4 @@
-name: fms
+name: remsa
 channels:
   - defaults
   - conda-forge

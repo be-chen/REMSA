@@ -1,61 +1,99 @@
 # RESMA: Foundation Model Selection Agent for Remote Sensing
 
-**RESMA** is a LLM agent that assists in selecting foundation models specifically for remote sensing applications. It uses a reasoning-driven approach based on model metadata to suggest the most appropriate models for your task.
+![Alt text](remsa.png?raw=true "Architecture of REMSA")
 
----
+This repository contains the code of the paper [RESMA: Foundation Model Selection Agent for Remote Sensing](https://arxiv.org/abs/xxx). The work introduces RS-FMD, the first structured database of Remote Sensing Foundation Models (RSFMs), and REMSA, the first LLM-based agent designed to automatically select suitable foundation models for a given remote sensing task.
 
-## 📦 Installation
+This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) and [BIFOLD](https://www.bifold.berlin/) by [Binger Chen](https://rsim.berlin/team/members/binger-chen), [Tacettin Emre Bök](https://rsim.berlin/team/members/tacettin-bok), [Behnood Rasti](https://rsim.berlin/team/members/behnood-rasti), [Volker Markl](https://www.bifold.berlin/people/prof-dr-volker-markl.html), and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
-Clone the repository and set up your virtual environment using Conda:
+If you use this code, please cite our paper given below:
 
-```bash
-conda env create -f environment_fms_agent.yaml
-conda activate fms
+> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[RESMA: Foundation Model Selection Agent for Remote Sensing](https://arxiv.org/abs/xxx)", IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2024.3517150, 2024
+
+```bibtex
+@article{hackstein2024exploring,
+    author={Hackstein, Jakob and Sumbul, Gencer and Clasen, Kai Norman and Demir, Begüm},
+    journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+    title={Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing},
+    year={2024},
+    doi={10.1109/TGRS.2024.3517150}
+}
 ```
 
-This installs all dependencies defined in the environment file.
+---
+
+## Overview
+
+**RESMA** REMSA automates RS foundation model selection by combining:
+
+- A structured database (RS-FMD) containing metadata for 150+ RSFMs
+- A modular agent architecture with:
+    - query interpretation
+    - metadata-grounded retrieval
+    - LLM-based candidate ranking
+    - clarification loops
+    - transparent explanations
+
+The system supports diverse RS tasks and modalities and provides reproducible, user-tailored model recommendations.
 
 ---
 
-## ⚙️ Configuration
+## Environment Setup
 
-RESMA is configurable through the `config.py` file. Here, you can:
+Set up the environment using Conda:
 
-- Select the LLM backend
-- Config the LLM settings
-- Specify your database
-- Setup output threshold and customize the output
+```bash
+conda env create -f environment_remsa.yaml
+conda activate remsa
+```
 
----
+This installs all required dependencies defined in the environment file.
 
-## 🚀 Usage
+## Configuration
 
-To run RESMA, simply execute:
+RESMA is fully configurable via the `config.py` file. The following parameters can be adjusted:
+
+- LLM backend selection
+- LLM inference settings
+- Database and vector index paths
+- Output formatting and thresholds
+
+Adjust these parameters to suit your runtime environment and model preferences.
+
+## Running the Agent
+
+To launch the agent REMSA:
 
 ```bash
 python main.py
 ```
 
-You will be prompted to provide input through the terminal. Follow the instructions and RESMA will return foundation model recommendations based on your criteria.
+You will be prompted to provide a natural-language query describing your RS application, data modality, constraints, and requirements.
+
+REMSA then interprets your input, retrieves suitable candidate models from RS-FMD, ranks them, and outputs recommendations with explanations.
 
 ---
 
-## 📂 Data
+## Data Structure
 
-- `/data/`: Contains the processed internal database used during runtime.
-- `/data/queries.txt`: Contains all the example queries we drafted for our experiments.
-- `model_metadata/`: Contains raw metadata for available foundation models in remote sensing.
+### RS-FMD Model Metadata
 
-You can update or extend these files to include new models or metadata.
+- Located in `model_metadata/`
+- Contains structured JSON model metadata extracted from papers, repositories, and model cards
+- Supports 150+ Remote Sensing Foundation Models
 
+### Internal Runtime Data
 
-# Foundation Model Metadata Generation
+- `data/`: processed database used at runtime
+- `data/queries.txt`: example queries used for experiments
 
-This tool allows you to extract structured model metadata from your foundation model PDF files.
+You may extend these files with additional models or metadata.
 
-## Usage
+---
 
-If you want to upload your model PDF file and generate structured metadata, follow these steps:
+## RS-FMD: Generating Foundation Model Metadata
+
+To extract structured metadata for a new foundation model from its documentation:
 
 ```bash
 # Navigate to the directory
@@ -65,27 +103,47 @@ cd file_to_db
 python src/run.py --config FoundationModels.yaml --file_path path_to_your_pdf
 ```
 
-## Output
-
-After running the command, your model metadata will be automatically stored as a JSON file under:
+The resulting JSON metadata file will be stored under:
 
 ```bash
 /file_to_db/model_metadata
 ```
 
-# Creating a Vector Database from a JSONL File
+## Building a Vector Database
 
-To build the vector database, run the following command:
+To build the vectorstore from your `.jsonl` metadata file:
 
 ```bash
 python build_vectorstore.py
 ```
 
-## Configuration
+Configurable parameters in `config.py` include:
 
-You can customize the following parameters in the `config.py` file:
+- **`FMD_JSONL_PATH`**: Path to your `.jsonl` file.  
+- **`EMBEDDING_MODEL_NAME`**: Name of the embedding model to use.  
+- **`VECTOR_INDEX_PATH`**: Path where the generated vector database will be stored. 
 
-- **`FMD_JSONL_PATH`** — Path to your `.jsonl` file.  
-- **`EMBEDDING_MODEL_NAME`** — Name of the embedding model to use.  
-- **`VECTOR_INDEX_PATH`** — Path where the generated vector database will be stored.  
+---
 
+## Authors
+**Binger Chen**
+https://rsim.berlin/team/members/binger-chen
+
+**Tacettin Emre Bök**
+https://rsim.berlin/team/members/tacettin-bok
+
+**Behnood Rasti**
+https://rsim.berlin/team/members/behnood-rasti
+
+**Volker Markl**
+https://www.bifold.berlin/people/prof-dr-volker-markl.html
+
+**Begüm Demir**
+https://rsim.berlin/team/members/begum-demir
+
+For questions, requests and concerns, please contact [Binger Chen](mailto:chen@tu-berlin.de)
+
+## License
+
+The code in this repository is licensed under the **MIT License**.  
+See the `LICENSE` file for more details.
