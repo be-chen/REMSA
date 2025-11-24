@@ -2,21 +2,23 @@
 
 ![Alt text](remsa.png?raw=true "Architecture of REMSA")
 
-This repository contains the code of the paper [RESMA: Foundation Model Selection Agent for Remote Sensing](https://arxiv.org/abs/xxx). The work introduces RS-FMD, the first structured database of Remote Sensing Foundation Models (RSFMs), and REMSA, the first LLM-based agent designed to automatically select suitable foundation models for a given remote sensing task.
+This repository contains the code of the paper [RESMA: Foundation Model Selection Agent for Remote Sensing](https://arxiv.org/abs/2511.17442). The work introduces RS-FMD, the first structured database of Remote Sensing Foundation Models (RSFMs), and REMSA, the first LLM-based agent designed to automatically select suitable foundation models for a given remote sensing task.
 
 This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) and [BIFOLD](https://www.bifold.berlin/) by [Binger Chen](https://rsim.berlin/team/members/binger-chen), [Tacettin Emre Bök](https://rsim.berlin/team/members/tacettin-bok), [Behnood Rasti](https://rsim.berlin/team/members/behnood-rasti), [Volker Markl](https://www.bifold.berlin/people/prof-dr-volker-markl.html), and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
 If you use this code, please cite our paper given below:
 
-> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[RESMA: Foundation Model Selection Agent for Remote Sensing](https://arxiv.org/abs/xxx)", IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2024.3517150, 2024
+> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[RESMA: Foundation Model Selection Agent for Remote Sensing](https://arxiv.org/abs/2511.17442)", IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2024.3517150, 2024
 
 ```bibtex
-@article{hackstein2024exploring,
-    author={Hackstein, Jakob and Sumbul, Gencer and Clasen, Kai Norman and Demir, Begüm},
-    journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-    title={Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing},
-    year={2024},
-    doi={10.1109/TGRS.2024.3517150}
+@misc{chen2025remsallmagentfoundation,
+      title={REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing}, 
+      author={Binger Chen and Tacettin Emre Bök and Behnood Rasti and Volker Markl and Begüm Demir},
+      year={2025},
+      eprint={2511.17442},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.17442}, 
 }
 ```
 
