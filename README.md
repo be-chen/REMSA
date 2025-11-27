@@ -8,7 +8,7 @@ This work has been done at the [Remote Sensing Image Analysis group](https://rsi
 
 If you use this code, please cite our paper given below:
 
-> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing](https://arxiv.org/abs/2511.17442)", IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2024.3517150, 2024
+> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing](https://arxiv.org/abs/2511.17442)", arXiv preprint arXiv:2511.17442 (2025).
 
 ```bibtex
 @misc{chen2025remsallmagentfoundation,
