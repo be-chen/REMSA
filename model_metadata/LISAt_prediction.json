@@ -1,0 +1,874 @@
+{
+    "model_id": {
+        "value": "LISA-T",
+        "confidence": 0.7455
+    },
+    "model_name": {
+        "value": "LISA T",
+        "confidence": 0.9961
+    },
+    "version": {
+        "value": "2025",
+        "confidence": 0.6487
+    },
+    "release_date": {
+        "value": "2025-05-05",
+        "confidence": 0.9984
+    },
+    "last_updated": {
+        "value": "2025-05-05",
+        "confidence": 0.998
+    },
+    "short_description": {
+        "value": "LISA T is an open-source, open-data vision-language foundation model for geospatial reasoning segmentation. It can describe, answer questions about, and segment objects in complex remote-sensing images, trained on the GRES and PreGRES datasets.",
+        "confidence": 0.8093
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2505.02829",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "backbone": {
+        "value": "Remote-CLIP ViT-L/14 (visual encoder) + Vicuna-7B (language model)",
+        "confidence": 0.8153
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Vision-language pretraining with next-token prediction and embedding-as-mask for segmentation",
+        "confidence": 0.7305
+    },
+    "masking_strategy": {
+        "value": "Embedding-as-mask paradigm with <SEG> token projected to segmentation query space",
+        "confidence": 0.7359
+    },
+    "pretraining": {
+        "value": "Stage 1: Pretrain a Remote-CLIP-based multimodal LLM (Vicuna-7B + Remote-CLIP ViT-L/14) on PreGRES (over 1M QA pairs) using LoRA and next-token prediction loss. Stage 2: Fine-tune on GRES for reasoning segmentation with combined text and segmentation losses.",
+        "confidence": 0.7153
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Remote sensing-specific visual encoder (Remote-CLIP)",
+                "confidence": 0.5284
+            },
+            {
+                "value": "Geospatial datasets (xView, NWPU-Captions, etc.)",
+                "confidence": 0.4502
+            },
+            {
+                "value": "Segmentation decoder adapted for satellite imagery",
+                "confidence": 0.3931
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Linear projection to align visual features with language embedding space",
+                "confidence": 0.5046
+            },
+            {
+                "value": "Expansion of LLM vocabulary with <SEG> token",
+                "confidence": 0.5783
+            },
+            {
+                "value": "MLP-based adapter for segmentation query",
+                "confidence": 0.5719
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Satellite RGB imagery (xView, NWPU, etc.)",
+                "confidence": 0.4723
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9769
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral (RGB)",
+                "confidence": 0.871
+            },
+            {
+                "value": "Text",
+                "confidence": 0.9952
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.8962
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "variable (xView: high-resolution, 512x512 chips)",
+        "confidence": 0.6269
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9922
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "R",
+                "confidence": 0.8025
+            },
+            {
+                "value": "G",
+                "confidence": 1.0
+            },
+            {
+                "value": "B",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "PreGRES (aggregated from NWPU-Captions, RSICD, RSITMD, Sydney-Captions, UCM-Captions, RSVQA LR, RSVQA HR, FloodNet, RSIVQA, DIOR-RSVG, NWPU-RESISC45)",
+                "confidence": 0.3197
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (various geographies from source datasets)",
+                        "confidence": 0.3003
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 119279,
+                "confidence": 0.9999
+            },
+            "token_size": {
+                "value": "2048 (context length)",
+                "confidence": 0.5835
+            },
+            "image_resolution": {
+                "value": "variable (typically 224x224 to 512x512)",
+                "confidence": 0.3076
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "3e-4",
+                "confidence": 0.9988
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": []
+            },
+            "sampling": {
+                "value": "Aggregated from multiple datasets; no explicit sampling",
+                "confidence": 0.3031
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Reasoning segmentation",
+                "confidence": 0.4988
+            },
+            "application": {
+                "value": "Remote sensing referring segmentation",
+                "confidence": 0.3666
+            },
+            "dataset": {
+                "value": "GRES",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "cIoU",
+                        "confidence": 0.9468
+                    },
+                    {
+                        "value": "gIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.245,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.275,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Commercial satellite imagery (xView)",
+                        "confidence": 0.4236
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Global (xView coverage)",
+                        "confidence": 0.3349
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 26541,
+                "confidence": 0.9885
+            },
+            "num_samples": {
+                "value": 9205,
+                "confidence": 0.714
+            },
+            "sampling_percentage": {
+                "value": 34.7,
+                "confidence": 0.8483
+            },
+            "num_classes": {
+                "value": 36,
+                "confidence": 0.5996
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Truck w/Trailer Bed",
+                        "confidence": 0.9997
+                    },
+                    {
+                        "value": "Dump/Haul Truck",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Bus",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Facility",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Car",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Truck",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Small Plane",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Shed",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Hut/Tent",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Storage Tank",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Truck w/Liquid Tank",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Building",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Helicopter",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Passenger/Cargo Plane",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Aircraft Hangar",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Aircraft",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Container Ship",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Motor/Sail/Small Boat",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Maritime Vessel",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Crane Truck",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Container Crane",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Tower Crane",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Engineering Vehicle",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Excavator",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Straddle Carrier",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Passenger Vehicle",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Pylon",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Helipad",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Loader/Dozer/Tractor",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Damaged Building",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Railway Vehicle",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Locomotive",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Tower Structure",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Barge",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Passenger Car",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.9992
+            },
+            "spatial_resolution": {
+                "value": "0.3m (xView)",
+                "confidence": 0.6408
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 0.9983
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0003,
+                "confidence": 0.9999
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Weighted sum of autoregressive cross-entropy (text), binary cross-entropy (mask), and Dice loss",
+                "confidence": 0.303
+            },
+            "split_ratio": {
+                "value": "train: 7205, val: 500, test: 1500",
+                "confidence": 0.4616
+            }
+        },
+        {
+            "task": {
+                "value": "Image captioning",
+                "confidence": 0.6234
+            },
+            "application": {
+                "value": "Remote sensing image captioning",
+                "confidence": 0.5729
+            },
+            "dataset": {
+                "value": "UCM-Captions",
+                "confidence": 0.9996
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "BLEU-4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "CIDEr",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 72.34,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 355.32,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.8998
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "UCM dataset coverage",
+                        "confidence": 0.337
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 1680,
+                "confidence": 0.7668
+            },
+            "num_samples": {
+                "value": 1680,
+                "confidence": 0.8846
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.5937
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.7305
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "train: 1680, test: 210",
+                "confidence": 0.8854
+            }
+        },
+        {
+            "task": {
+                "value": "Image captioning",
+                "confidence": 0.9939
+            },
+            "application": {
+                "value": "Remote sensing image captioning",
+                "confidence": 0.9981
+            },
+            "dataset": {
+                "value": "NWPU-Captions",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "BLEU-4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SPICE",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 65.8,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 32.2,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.8471
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "NWPU dataset coverage",
+                        "confidence": 0.9209
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 25200,
+                "confidence": 0.9898
+            },
+            "num_samples": {
+                "value": 25200,
+                "confidence": 0.9999
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9995
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "train: 25200, test: 3150",
+                "confidence": 0.9881
+            }
+        },
+        {
+            "task": {
+                "value": "Visual question answering",
+                "confidence": 0.7657
+            },
+            "application": {
+                "value": "Remote sensing VQA",
+                "confidence": 0.856
+            },
+            "dataset": {
+                "value": "RSVQA-LR",
+                "confidence": 0.9739
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Count",
+                        "confidence": 0.9785
+                    },
+                    {
+                        "value": "Presence",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Comparison",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 70.24,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 92.36,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 92.2,
+                        "confidence": 0.9469
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Aerial imagery",
+                        "confidence": 0.6894
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "RSVQA dataset coverage",
+                        "confidence": 0.6373
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 572,
+                "confidence": 0.9069
+            },
+            "num_samples": {
+                "value": 572,
+                "confidence": 0.993
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.9989
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "R",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "G",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": "train: 572, test: 100",
+                "confidence": 0.9963
+            }
+        }
+    ]
+}

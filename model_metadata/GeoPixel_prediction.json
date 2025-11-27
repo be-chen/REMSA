@@ -1,0 +1,512 @@
+{
+    "model_id": {
+        "value": "GeoPixel",
+        "confidence": 0.9159
+    },
+    "model_name": {
+        "value": "GeoPixel",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "release_date": {
+        "value": "2025-01-23",
+        "confidence": 0.977
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "GeoPixel is the first end-to-end high-resolution remote sensing large multimodal model (RS-LMM) supporting pixel-level grounding, enabling fine-grained visual perception by generating interleaved masks in conversation. It supports up to 4K HD resolution and is designed for high-precision RS image analysis, outperforming existing LMMs in single-target and multi-target segmentation tasks.",
+        "confidence": 0.8273
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2501.13925",
+        "confidence": 0.9999
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/mbzuai-oryx/GeoPixel",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "CLIP ViT-L/14 (scaled, base resolution 560)",
+        "confidence": 0.8358
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 7000000000,
+        "confidence": 0.9996
+    },
+    "pretext_training_type": {
+        "value": "Grounded conversation generation with pixel-level grounding",
+        "confidence": 0.7838
+    },
+    "masking_strategy": {
+        "value": "Adaptive image partitioning with instance and semantic masks; <SEG> token for mask association",
+        "confidence": 0.6499
+    },
+    "pretraining": {
+        "value": "Pretrained on InternLM-XComposer-2.5 (7B) with LoRA for LLM, fixed CLIP ViT-L vision encoder, grounded vision encoder initialized from SAM2 weights. Pixel decoder, LoRA parameters, vision projector, and language projector are trainable.",
+        "confidence": 0.7356
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spatial priors for RS data",
+                "confidence": 0.4133
+            },
+            {
+                "value": "Set-of-marks prompting",
+                "confidence": 0.7787
+            },
+            {
+                "value": "Hierarchical annotation (scene, instance, group)",
+                "confidence": 0.557
+            },
+            {
+                "value": "Quadrant-based localization",
+                "confidence": 0.5766
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Scaled CLIP ViT-L/14 to base resolution 560",
+                "confidence": 0.5855
+            },
+            {
+                "value": "Adaptive image divider for dynamic partitioning",
+                "confidence": 0.7363
+            },
+            {
+                "value": "Partial LoRA applied to vision tokens",
+                "confidence": 0.7354
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.8243
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.875
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.8425
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "up to 4K HD (dynamic, e.g., 560x560 patches)",
+        "confidence": 0.6609
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "RGB",
+                "confidence": 0.8736
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "GeoPixelD (derived from iSAID)",
+                "confidence": 0.646
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "up to 4K HD, 800x800 patches, 560x560 global view",
+                "confidence": 0.3053
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "linear warmup to 0.0003, then cosine decay",
+                "confidence": 0.3419
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Cropped to 800x800 patches",
+                        "confidence": 0.3987
+                    },
+                    {
+                        "value": "Area threshold for instance selection",
+                        "confidence": 0.3279
+                    },
+                    {
+                        "value": "Marker placement based on mask area/shape",
+                        "confidence": 0.3135
+                    }
+                ]
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Grounded Conversation Generation (RS-GCG)",
+                "confidence": 0.5655
+            },
+            "application": {
+                "value": "Remote sensing image understanding with pixel-level grounding",
+                "confidence": 0.3029
+            },
+            "dataset": {
+                "value": "GeoPixelD",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "CIDEr",
+                        "confidence": 0.9888
+                    },
+                    {
+                        "value": "METEOR",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "AP50",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 0.9979
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 0.992
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 21.6,
+                        "confidence": 0.8585
+                    },
+                    {
+                        "value": 24.0,
+                        "confidence": 0.9923
+                    },
+                    {
+                        "value": 25.5,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 50.8,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 55.6,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 53816,
+                "confidence": 0.742
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "up to 4K HD",
+                "confidence": 0.9637
+            },
+            "spatial_resolution": {
+                "value": "variable, up to 4K HD",
+                "confidence": 0.3317
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0003,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Referring Remote Sensing Image Segmentation (RRSIS)",
+                "confidence": 0.6884
+            },
+            "application": {
+                "value": "Referring expression segmentation in aerial imagery",
+                "confidence": 0.3478
+            },
+            "dataset": {
+                "value": "RRSIS-D",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "P@0.5",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "oIoU",
+                        "confidence": 0.7722
+                    },
+                    {
+                        "value": "mIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 83.33,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 84.9,
+                        "confidence": 0.9668
+                    },
+                    {
+                        "value": 67.3,
+                        "confidence": 0.9978
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "RGB",
+                        "confidence": 0.9229
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

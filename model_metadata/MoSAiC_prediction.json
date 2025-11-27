@@ -1,0 +1,624 @@
+{
+    "model_id": {
+        "value": "MoSAiC",
+        "confidence": 0.6925
+    },
+    "model_name": {
+        "value": "MoSAiC",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.8132
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "short_description": {
+        "value": "MoSAiC is a unified framework for multi-label land cover classification from multi-modal Earth observation imagery, jointly optimizing intra- and inter-modality contrastive learning with supervised multi-label objectives. It is designed for Sentinel-1 SAR and Sentinel-2 multispectral data, and achieves state-of-the-art results in low-label and high-class-overlap scenarios.",
+        "confidence": 0.8434
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2507.08683",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "ResNet-34",
+        "confidence": 0.9998
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.2
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Joint self-supervised and supervised contrastive learning",
+        "confidence": 0.8083
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Joint optimization of intra- and inter-modality contrastive learning with multi-label supervised contrastive loss, using both self-supervised and supervised objectives.",
+        "confidence": 0.7691
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Multi-label land cover classification",
+                "confidence": 0.4033
+            },
+            {
+                "value": "Multi-modal (Sentinel-1 SAR and Sentinel-2 optical) data fusion",
+                "confidence": 0.4594
+            },
+            {
+                "value": "Geospatial alignment",
+                "confidence": 0.6522
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Separate encoders for each modality",
+                "confidence": 0.7243
+            },
+            {
+                "value": "Feature concatenation for fusion",
+                "confidence": 0.7805
+            },
+            {
+                "value": "Shallow two-layer projection head",
+                "confidence": 0.9028
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "Sentinel-1",
+                "confidence": 1.0
+            },
+            {
+                "value": "Sentinel-2",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9461
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "SAR",
+                "confidence": 0.7696
+            },
+            {
+                "value": "Multispectral",
+                "confidence": 0.9996
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "partial",
+        "confidence": 0.94
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9332
+    },
+    "spatial_resolution": {
+        "value": "10m",
+        "confidence": 0.9981
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "B2",
+                "confidence": 0.9738
+            },
+            {
+                "value": "B3",
+                "confidence": 1.0
+            },
+            {
+                "value": "B4",
+                "confidence": 1.0
+            },
+            {
+                "value": "B8",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "BigEarthNet V2.0 (reBEN)",
+                "confidence": 0.6366
+            },
+            "regions_coverage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 549488,
+                "confidence": 0.7357
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "1200x1200 m patch",
+                "confidence": 0.3589
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 0.9187
+                    },
+                    {
+                        "value": "random rotation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaussian blur",
+                        "confidence": 0.9994
+                    }
+                ]
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Atmospheric correction (Sen2Cor v2.11)",
+                        "confidence": 0.4623
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Stratified random sampling (10% of training data)",
+                "confidence": 0.3235
+            },
+            "processing_level": {
+                "value": "Sentinel-2 L2A",
+                "confidence": 0.3886
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Multi-label classification",
+                "confidence": 0.834
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.9184
+            },
+            "dataset": {
+                "value": "BigEarthNet V2.0 (reBEN)",
+                "confidence": 0.9901
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Macro Average Precision",
+                        "confidence": 0.6236
+                    },
+                    {
+                        "value": "Macro F1-score",
+                        "confidence": 0.7472
+                    },
+                    {
+                        "value": "Micro Average Precision",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "Micro F1-score",
+                        "confidence": 0.9971
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 64.0,
+                        "confidence": 0.6952
+                    },
+                    {
+                        "value": 54.46,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 74.04,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 70.67,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": 237871,
+                "confidence": 0.9967
+            },
+            "num_samples": {
+                "value": 23787,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 10.0,
+                "confidence": 0.9527
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Agro-forestry areas",
+                        "confidence": 0.9991
+                    },
+                    {
+                        "value": "Arable land",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Beaches, dunes, sands",
+                        "confidence": 0.9995
+                    },
+                    {
+                        "value": "Broad-leaved forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Coastal wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Complex cultivation patterns",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Coniferous forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Industrial or commercial units",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Inland waters",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Inland wetlands",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Land principally occupied by agriculture with significant areas of natural vegetation",
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": "Marine waters",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Mixed forest",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Moors, heathland and sclerophyllous vegetation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Natural grassland and sparsely vegetated areas",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Pastures",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Permanent crops",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Transitional woodland, shrub",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Urban fabric",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1200x1200 m patch",
+                "confidence": 0.9651
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "B2",
+                        "confidence": 0.9883
+                    },
+                    {
+                        "value": "B3",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B4",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "B8",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "random rotation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaussian blur",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Multi-label supervised contrastive loss (MulSupCon), Binary Cross-Entropy",
+                "confidence": 0.3347
+            },
+            "split_ratio": {
+                "value": "Train: 237871, Val: 122342, Test: 119825",
+                "confidence": 0.4482
+            }
+        },
+        {
+            "task": {
+                "value": "Multi-label classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.9997
+            },
+            "dataset": {
+                "value": "SENT12MS",
+                "confidence": 0.7356
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Macro Average Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Macro F1-score",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Micro Average Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Micro F1-score",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 56.83,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 54.27,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 74.52,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 76.26,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Sentinel-1",
+                        "confidence": 0.9962
+                    },
+                    {
+                        "value": "Sentinel-2",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "original_samples": {
+                "value": 75849,
+                "confidence": 0.9999
+            },
+            "num_samples": {
+                "value": 7584,
+                "confidence": 0.9999
+            },
+            "sampling_percentage": {
+                "value": 10.0,
+                "confidence": 0.9997
+            },
+            "num_classes": {
+                "value": 10,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": "10m",
+                "confidence": 0.7347
+            },
+            "bands_used": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": "random cropping",
+                        "confidence": 0.8963
+                    },
+                    {
+                        "value": "random rotation",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Gaussian blur",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Multi-label supervised contrastive loss (MulSupCon), Binary Cross-Entropy",
+                "confidence": 0.9986
+            },
+            "split_ratio": {
+                "value": "Train: 75849, Test: 8110",
+                "confidence": 0.9837
+            }
+        }
+    ]
+}

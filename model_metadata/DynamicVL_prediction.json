@@ -1,0 +1,520 @@
+{
+    "model_id": {
+        "value": "DVLChat-7B",
+        "confidence": 0.779
+    },
+    "model_name": {
+        "value": "DVLChat",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "7B",
+        "confidence": 1.0
+    },
+    "release_date": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "last_updated": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "short_description": {
+        "value": "DVLChat is a baseline multimodal large language model for dynamic city understanding, capable of both image-level question-answering and pixel-level segmentation, trained on the DVL-Instruct dataset for multi-temporal urban analysis and referring change detection.",
+        "confidence": 0.8232
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2505.21076",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/weihao1115/dynamicvl",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Qwen2.5-VL",
+        "confidence": 0.9289
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 7000000000,
+        "confidence": 0.8331
+    },
+    "pretext_training_type": {
+        "value": "Instruction tuning",
+        "confidence": 0.9197
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Instruction tuning on DVL-Instruct, a specialized dataset for dynamic city understanding in remote sensing, enabling multi-temporal urban analysis and referring change detection.",
+        "confidence": 0.7819
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Urban dynamics",
+                "confidence": 0.647
+            },
+            {
+                "value": "Remote sensing",
+                "confidence": 0.8767
+            },
+            {
+                "value": "Multi-temporal analysis",
+                "confidence": 0.6531
+            },
+            {
+                "value": "Change detection",
+                "confidence": 0.672
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Task-specific routing mechanism with LoRA modules for VQA and segmentation",
+                "confidence": 0.7769
+            },
+            {
+                "value": "Interleaving image features from multiple temporal images",
+                "confidence": 0.6783
+            },
+            {
+                "value": "Frozen vision backbone (SAM) with unfrozen decoder for segmentation",
+                "confidence": 0.5485
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "NAIP",
+                "confidence": 0.9989
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Homogeneous Multimodal",
+        "confidence": 0.9564
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.9224
+            },
+            {
+                "value": "Text",
+                "confidence": 0.9322
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.7354
+    },
+    "temporal_alignment": {
+        "value": "full",
+        "confidence": 0.7354
+    },
+    "spatial_resolution": {
+        "value": "1.0m",
+        "confidence": 0.9998
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.8917
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "Red",
+                "confidence": 0.6126
+            },
+            {
+                "value": "Green",
+                "confidence": 0.9
+            },
+            {
+                "value": "Blue",
+                "confidence": 0.9
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "DVL-Instruct",
+                "confidence": 0.9999
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "42 major U.S. cities",
+                        "confidence": 0.7204
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "2005-2023",
+                "confidence": 0.8856
+            },
+            "num_images": {
+                "value": 11402,
+                "confidence": 0.7368
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "1024x1024",
+                "confidence": 0.987
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Geo-referencing",
+                        "confidence": 0.859
+                    },
+                    {
+                        "value": "Spatial resampling to 1.0m GSD",
+                        "confidence": 0.3724
+                    },
+                    {
+                        "value": "Expert annotation",
+                        "confidence": 0.4032
+                    },
+                    {
+                        "value": "GPT4.1 instruction generation",
+                        "confidence": 0.4109
+                    }
+                ]
+            },
+            "sampling": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Multi-task (QA, segmentation, captioning)",
+                "confidence": 0.3174
+            },
+            "application": {
+                "value": "Dynamic city understanding, urban change analysis",
+                "confidence": 0.3117
+            },
+            "dataset": {
+                "value": "DVL-Bench",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy (single-choice)",
+                        "confidence": 0.3478
+                    },
+                    {
+                        "value": "Accuracy (multi-choice)",
+                        "confidence": 0.9332
+                    },
+                    {
+                        "value": "LCT",
+                        "confidence": 0.6185
+                    },
+                    {
+                        "value": "TPA",
+                        "confidence": 0.9566
+                    },
+                    {
+                        "value": "CQA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "CRP",
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": "CPA",
+                        "confidence": 0.9943
+                    },
+                    {
+                        "value": "IoU",
+                        "confidence": 0.5926
+                    },
+                    {
+                        "value": "TC",
+                        "confidence": 0.7152
+                    },
+                    {
+                        "value": "SA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "PF",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "RC",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 33.3,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 64.9,
+                        "confidence": 0.9884
+                    },
+                    {
+                        "value": 21.3,
+                        "confidence": 0.6707
+                    },
+                    {
+                        "value": 31.3,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 18.6,
+                        "confidence": 0.7357
+                    },
+                    {
+                        "value": 30.6,
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": 3.47,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 3.41,
+                        "confidence": 1.6
+                    },
+                    {
+                        "value": 4.72,
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": 2.28,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 2.51,
+                        "confidence": 0.9991
+                    },
+                    {
+                        "value": 1.48,
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": 3.41,
+                        "confidence": 1.589
+                    },
+                    {
+                        "value": 2.65,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 3.98,
+                        "confidence": 0.9785
+                    },
+                    {
+                        "value": 4.33,
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": 3.28,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 3.41,
+                        "confidence": 1.6
+                    },
+                    {
+                        "value": 4.92,
+                        "confidence": 0.9888
+                    },
+                    {
+                        "value": 3.4,
+                        "confidence": 0.9404
+                    },
+                    {
+                        "value": 4.04,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 3.13,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 3.02,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 29.06,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "NAIP",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "42 major U.S. cities",
+                        "confidence": 0.9282
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 3469,
+                "confidence": 0.7336
+            },
+            "num_samples": {
+                "value": 3469,
+                "confidence": 1.0
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 5,
+                "confidence": 0.9998
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Vegetation",
+                        "confidence": 0.8709
+                    },
+                    {
+                        "value": "Non-vegetation",
+                        "confidence": 0.7559
+                    },
+                    {
+                        "value": "Building",
+                        "confidence": 0.7294
+                    },
+                    {
+                        "value": "Water",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Playground",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1024x1024",
+                "confidence": 1.0
+            },
+            "spatial_resolution": {
+                "value": "1.0m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "Red",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Green",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Blue",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

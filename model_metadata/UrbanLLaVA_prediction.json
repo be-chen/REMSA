@@ -1,0 +1,1289 @@
+{
+    "model_id": {
+        "value": "UrbanLLaVA-v1",
+        "confidence": 0.71
+    },
+    "model_name": {
+        "value": "UrbanLLaVA",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "v1",
+        "confidence": 0.7754
+    },
+    "release_date": {
+        "value": "2025-06-29",
+        "confidence": 0.9998
+    },
+    "last_updated": {
+        "value": "2025-06-29",
+        "confidence": 0.9988
+    },
+    "short_description": {
+        "value": "UrbanLLaVA is a multi-modal large language model designed for unified modeling of four major types of urban data (structured geospatial, trajectory, satellite image, street view image), supporting spatial reasoning and diverse urban intelligence tasks across cities.",
+        "confidence": 0.8059
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2506.23219",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/tsinghua-fib-lab/UrbanLLaVA",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "VILA1.5-8B",
+        "confidence": 0.9995
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": 8000000000,
+        "confidence": 0.7817
+    },
+    "pretext_training_type": {
+        "value": "Multi-stage instruction tuning (task alignment, knowledge learning, mixture tuning)",
+        "confidence": 0.8362
+    },
+    "masking_strategy": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretraining": {
+        "value": "Three-stage pipeline: task alignment with urban task instructions, knowledge learning from multi-modal urban data, and mixture learning with domain-specific and general instruction data.",
+        "confidence": 0.7392
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Urban spatial reasoning",
+                "confidence": 0.7613
+            },
+            {
+                "value": "Geospatial data integration",
+                "confidence": 0.5214
+            },
+            {
+                "value": "Trajectory modeling",
+                "confidence": 0.718
+            },
+            {
+                "value": "Cross-modal alignment",
+                "confidence": 0.4811
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "GoogleEarth",
+                "confidence": 0.8124
+            },
+            {
+                "value": "GoogleMap",
+                "confidence": 0.9292
+            },
+            {
+                "value": "BaiduMap",
+                "confidence": 0.9997
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Heterogeneous Multimodal",
+        "confidence": 0.9961
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.8403
+            },
+            {
+                "value": "Street View",
+                "confidence": 0.6747
+            },
+            {
+                "value": "Trajectory",
+                "confidence": 0.5719
+            },
+            {
+                "value": "Structured Geospatial",
+                "confidence": 0.7127
+            },
+            {
+                "value": "Satellite Image",
+                "confidence": 0.6473
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9469
+    },
+    "temporal_alignment": {
+        "value": "partial",
+        "confidence": 0.8937
+    },
+    "spatial_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "UData (Beijing)",
+                "confidence": 0.4386
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Beijing",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 28798,
+                "confidence": 0.977
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 0.9963
+            },
+            "learning_rate": {
+                "value": "1e-5",
+                "confidence": 0.9992
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Data quality checks",
+                        "confidence": 0.4887
+                    },
+                    {
+                        "value": "Filtering",
+                        "confidence": 0.9639
+                    },
+                    {
+                        "value": "Synthetic instruction generation",
+                        "confidence": 0.3826
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Full dataset, with 1/3 domain-specific and 1/3 general instruction data for mixture tuning",
+                "confidence": 0.3
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "dataset": {
+                "value": "UData (London)",
+                "confidence": 1.0
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "London",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 3125,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-5",
+                "confidence": 1.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Data quality checks",
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": "Filtering",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Synthetic instruction generation",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Full dataset, with 1/3 domain-specific and 1/3 general instruction data for mixture tuning",
+                "confidence": 0.8327
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "dataset": {
+                "value": "UData (New York)",
+                "confidence": 0.9999
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "New York",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "time_range": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_images": {
+                "value": 24444,
+                "confidence": 1.0
+            },
+            "token_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": "1e-5",
+                "confidence": 1.0
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Data quality checks",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Filtering",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Synthetic instruction generation",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Full dataset, with 1/3 domain-specific and 1/3 general instruction data for mixture tuning",
+                "confidence": 0.9999
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "missing_data": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "masking_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Urban Intelligence (multi-task)",
+                "confidence": 0.3139
+            },
+            "application": {
+                "value": "Urban spatial reasoning and understanding",
+                "confidence": 0.3621
+            },
+            "dataset": {
+                "value": "UBench (Beijing)",
+                "confidence": 0.8459
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "GeoQA Avg. Accuracy",
+                        "confidence": 0.6133
+                    },
+                    {
+                        "value": "TrajPredict Top-1",
+                        "confidence": 0.7017
+                    },
+                    {
+                        "value": "Navigation Success Rate",
+                        "confidence": 0.6737
+                    },
+                    {
+                        "value": "STV-Address Accuracy",
+                        "confidence": 0.6544
+                    },
+                    {
+                        "value": "STV-Landmark Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Outlier Accuracy",
+                        "confidence": 0.7147
+                    },
+                    {
+                        "value": "SAT-Address Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAT-Landuse Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SceneComp Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SceneFunc Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ImgRetrieval Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "CameraLoc Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.5682,
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": 0.1,
+                        "confidence": 0.7196
+                    },
+                    {
+                        "value": 0.46,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.91,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.87,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.815,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.78,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.72,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.585,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.58,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.785,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.62,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GoogleEarth",
+                        "confidence": 0.9787
+                    },
+                    {
+                        "value": "GoogleMap",
+                        "confidence": 0.9966
+                    },
+                    {
+                        "value": "BaiduMap",
+                        "confidence": 0.9953
+                    },
+                    {
+                        "value": "OpenStreetMap",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Beijing",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-05,
+                "confidence": 0.9923
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Urban Intelligence (multi-task)",
+                "confidence": 0.9996
+            },
+            "application": {
+                "value": "Urban spatial reasoning and understanding",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "UBench (London)",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "GeoQA Avg. Accuracy",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "TrajPredict Top-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Navigation Success Rate",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Address Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Landmark Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Outlier Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAT-Address Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAT-Landuse Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SceneComp Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SceneFunc Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ImgRetrieval Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "CameraLoc Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.6399,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.1959,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.34,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.61,
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": 0.955,
+                        "confidence": 1.3
+                    },
+                    {
+                        "value": 0.6851,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.575,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.75,
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": 0.955,
+                        "confidence": 1.3
+                    },
+                    {
+                        "value": 0.56,
+                        "confidence": 0.9998
+                    },
+                    {
+                        "value": 0.605,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.26,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GoogleEarth",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "GoogleMap",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BaiduMap",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "OpenStreetMap",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "London",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Urban Intelligence (multi-task)",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Urban spatial reasoning and understanding",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "UBench (New York)",
+                "confidence": 0.9998
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "GeoQA Avg. Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "TrajPredict Top-1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Navigation Success Rate",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Address Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Landmark Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "STV-Outlier Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAT-Address Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SAT-Landuse Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SceneComp Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "SceneFunc Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ImgRetrieval Accuracy",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "CameraLoc Accuracy",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.5773,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.112,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.5,
+                        "confidence": 0.9986
+                    },
+                    {
+                        "value": 0.92,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.935,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.695,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.885,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.88,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.835,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.49,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.645,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 0.52,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "GoogleEarth",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "GoogleMap",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "BaiduMap",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "OpenStreetMap",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "New York",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": 8,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 1e-05,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 1,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "General Visual Reasoning",
+                "confidence": 0.4201
+            },
+            "application": {
+                "value": "General visual-language tasks",
+                "confidence": 0.3071
+            },
+            "dataset": {
+                "value": "LLaVA-Bench (In-the-Wild)",
+                "confidence": 0.8279
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Rating Score",
+                        "confidence": 0.9983
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 58.95,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": []
+            },
+            "regions": {
+                "value": []
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "General Visual Reasoning",
+                "confidence": 0.5367
+            },
+            "application": {
+                "value": "Real-world spatial understanding",
+                "confidence": 0.4511
+            },
+            "dataset": {
+                "value": "RealWorldQA",
+                "confidence": 0.9999
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Accuracy",
+                        "confidence": 0.6496
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.4052,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": []
+            },
+            "regions": {
+                "value": []
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "General Visual Reasoning",
+                "confidence": 0.9626
+            },
+            "application": {
+                "value": "Integrated visual-language tasks",
+                "confidence": 0.3473
+            },
+            "dataset": {
+                "value": "MM-Vet",
+                "confidence": 0.9997
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "Rating Score",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 0.3239,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": []
+            },
+            "regions": {
+                "value": []
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "classes": {
+                "value": []
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": []
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

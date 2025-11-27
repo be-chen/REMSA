@@ -1,0 +1,1362 @@
+{
+    "model_id": {
+        "value": "HyperSL",
+        "confidence": 0.8586
+    },
+    "model_name": {
+        "value": "HyperSL",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "Base",
+        "confidence": 0.9835
+    },
+    "release_date": {
+        "value": "2025-05-01",
+        "confidence": 0.9996
+    },
+    "last_updated": {
+        "value": "2025-05-19",
+        "confidence": 0.9999
+    },
+    "short_description": {
+        "value": "HyperSL is a spectral foundation model for hyperspectral image interpretation. It standardizes spectral vectors into a common token format, embeds wavelength information into position encoding, and is pretrained on over 300 million spectral instances from diverse global sources. HyperSL achieves state-of-the-art performance in classification and change detection tasks, with strong cross-sensor and cross-domain generalization.",
+        "confidence": 0.7917
+    },
+    "paper_link": {
+        "value": "https://doi.org/10.1109/TGRS.2025.3566205",
+        "confidence": 0.9912
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/kkweil/HyperSL",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": "https://github.com/kkweil/HyperSL",
+        "confidence": 0.9947
+    },
+    "backbone": {
+        "value": "Transformer",
+        "confidence": 0.9996
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Masked autoencoding (self-supervised)",
+        "confidence": 0.7104
+    },
+    "masking_strategy": {
+        "value": "High-ratio random masking (95%) on spectral token sequences",
+        "confidence": 0.8561
+    },
+    "pretraining": {
+        "value": "Masked reconstruction self-supervised learning over 300 million spectral instances from EnMAP, DESIS, and airborne hyperspectral data, using a universal spectral tokenizer and spectral wavelength position encoding.",
+        "confidence": 0.7664
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Spectral wavelength encoding",
+                "confidence": 0.8165
+            },
+            {
+                "value": "Spectral tokenizer",
+                "confidence": 0.6051
+            },
+            {
+                "value": "Spectral signal as language analogy",
+                "confidence": 0.6579
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Universal spectral tokenizer",
+                "confidence": 0.9263
+            },
+            {
+                "value": "Spectral wavelength position encoding",
+                "confidence": 0.9083
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": "EnMAP",
+                "confidence": 0.9839
+            },
+            {
+                "value": "DESIS",
+                "confidence": 1.0
+            },
+            {
+                "value": "AVIRIS",
+                "confidence": 0.6655
+            },
+            {
+                "value": "EO-1",
+                "confidence": 0.9958
+            },
+            {
+                "value": "Headwall Hyperspec-VNIR-C",
+                "confidence": 0.9726
+            },
+            {
+                "value": "Airborne hyperspectral (Shanghai Bureau of Surveying and Mapping)",
+                "confidence": 0.7878
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 1.0
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Hyperspectral",
+                "confidence": 1.0
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "full",
+        "confidence": 1.0
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 0.9997
+    },
+    "spatial_resolution": {
+        "value": "variable",
+        "confidence": 0.966
+    },
+    "temporal_resolution": {
+        "value": "variable",
+        "confidence": 0.9998
+    },
+    "bands": {
+        "value": [
+            {
+                "value": "400?2500nm",
+                "confidence": 0.3123
+            },
+            {
+                "value": "420?2450nm",
+                "confidence": 0.4462
+            },
+            {
+                "value": "400?1000nm",
+                "confidence": 0.623
+            },
+            {
+                "value": "VNIR",
+                "confidence": 0.4527
+            },
+            {
+                "value": "SWIR",
+                "confidence": 0.8
+            },
+            {
+                "value": "128 bands",
+                "confidence": 0.4799
+            },
+            {
+                "value": "224 bands",
+                "confidence": 0.6549
+            },
+            {
+                "value": "145 bands",
+                "confidence": 0.7199
+            },
+            {
+                "value": "200 bands",
+                "confidence": 0.5615
+            },
+            {
+                "value": "varies by dataset",
+                "confidence": 0.3606
+            }
+        ]
+    },
+    "pretraining_phases": [
+        {
+            "dataset": {
+                "value": "EnMAP, DESIS, and airborne hyperspectral data (Shanghai Bureau of Surveying and Mapping)",
+                "confidence": 0.3613
+            },
+            "regions_coverage": {
+                "value": [
+                    {
+                        "value": "Global (oceans, wetlands, mountains, permafrost, rivers, farmlands, rural areas, urban environments)",
+                        "confidence": 0.3262
+                    }
+                ]
+            },
+            "time_range": {
+                "value": "Various seasons, 2001?2024",
+                "confidence": 0.3237
+            },
+            "num_images": {
+                "value": 300000000,
+                "confidence": 0.9996
+            },
+            "token_size": {
+                "value": "variable (depends on spectral bands, e.g., 15 tokens for 200 bands with kernel size 13)",
+                "confidence": 0.3
+            },
+            "image_resolution": {
+                "value": "variable (1.5m, 30m, etc.)",
+                "confidence": 0.3323
+            },
+            "epochs": {
+                "value": 50,
+                "confidence": 0.9332
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": "CosineAnnealingWarmRestarts, initial 0.0005",
+                "confidence": 0.4226
+            },
+            "augmentations": {
+                "value": []
+            },
+            "processing": {
+                "value": [
+                    {
+                        "value": "Layer-by-layer normalization",
+                        "confidence": 0.8599
+                    },
+                    {
+                        "value": "Removal of bad bands (EnMAP: [128?134], DESIS: [1?6])",
+                        "confidence": 0.3199
+                    }
+                ]
+            },
+            "sampling": {
+                "value": "Two separate data loaders for EnMAP and DESIS, cumulative gradient updates",
+                "confidence": 0.3088
+            },
+            "processing_level": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "cloud_cover": {
+                "value": "Below 10%",
+                "confidence": 0.535
+            },
+            "missing_data": {
+                "value": "Bad bands removed; normalization applied",
+                "confidence": 0.3353
+            },
+            "masking_ratio": {
+                "value": 95.0,
+                "confidence": 0.8978
+            }
+        }
+    ],
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 0.8944
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 0.5171
+            },
+            "dataset": {
+                "value": "Botswana (BOS)",
+                "confidence": 0.7538
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 0.9923
+                    },
+                    {
+                        "value": "AA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 99.66,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 99.67,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 99.63,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "EO-1 Hyperion",
+                        "confidence": 0.8592
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Okavango Delta, Botswana",
+                        "confidence": 0.9266
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 10.0,
+                "confidence": 0.9923
+            },
+            "num_classes": {
+                "value": 14,
+                "confidence": 0.9626
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Water",
+                        "confidence": 0.4589
+                    },
+                    {
+                        "value": "Swamp",
+                        "confidence": 0.4351
+                    },
+                    {
+                        "value": "Woodland",
+                        "confidence": 0.715
+                    },
+                    {
+                        "value": "Grassland",
+                        "confidence": 0.4534
+                    },
+                    {
+                        "value": "Crops",
+                        "confidence": 0.4425
+                    },
+                    {
+                        "value": "Trees",
+                        "confidence": 0.5322
+                    },
+                    {
+                        "value": "Wheat",
+                        "confidence": 0.6525
+                    },
+                    {
+                        "value": "Riverbank",
+                        "confidence": 0.5152
+                    },
+                    {
+                        "value": "Other land cover types",
+                        "confidence": 0.3135
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "30m",
+                "confidence": 0.9966
+            },
+            "spatial_resolution": {
+                "value": "30m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "145 bands: [10?55, 82?97, 102?119, 134?164, 187?220]",
+                        "confidence": 0.4448
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy",
+                "confidence": 0.831
+            },
+            "split_ratio": {
+                "value": "10% train, 90% test",
+                "confidence": 0.7599
+            }
+        },
+        {
+            "task": {
+                "value": "Classification",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Land cover classification",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "Indian Pines (IP)",
+                "confidence": 0.9994
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "AA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 98.48,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 98.7,
+                        "confidence": 0.8723
+                    },
+                    {
+                        "value": 98.27,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "AVIRIS",
+                        "confidence": 0.9986
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Northwestern Indiana, USA",
+                        "confidence": 0.6056
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 10.0,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Alfalfa",
+                        "confidence": 0.7283
+                    },
+                    {
+                        "value": "Corn-notill",
+                        "confidence": 0.9707
+                    },
+                    {
+                        "value": "Corn-mintill",
+                        "confidence": 0.9897
+                    },
+                    {
+                        "value": "Corn",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Grass-pasture",
+                        "confidence": 0.9822
+                    },
+                    {
+                        "value": "Grass-trees",
+                        "confidence": 0.9996
+                    },
+                    {
+                        "value": "Grass-pasture-mowed",
+                        "confidence": 0.9976
+                    },
+                    {
+                        "value": "Hay-windrowed",
+                        "confidence": 0.9981
+                    },
+                    {
+                        "value": "Oats",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Soybean-notill",
+                        "confidence": 0.9807
+                    },
+                    {
+                        "value": "Soybean-mintill",
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": "Soybean-clean",
+                        "confidence": 0.9981
+                    },
+                    {
+                        "value": "Wheat",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Woods",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "Buildings-Grass-Trees-Drives",
+                        "confidence": 0.7051
+                    },
+                    {
+                        "value": "Stone-Steel-Towers",
+                        "confidence": 0.9638
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "variable",
+                "confidence": 0.4563
+            },
+            "spatial_resolution": {
+                "value": "variable",
+                "confidence": 0.629
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "200 bands: 0.4?2.5?m, water absorption bands removed",
+                        "confidence": 0.3108
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 150,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "10% train, 90% test",
+                "confidence": 1.0
+            }
+        },
+        {
+            "task": {
+                "value": "Change detection",
+                "confidence": 0.8085
+            },
+            "application": {
+                "value": "Change detection",
+                "confidence": 0.6062
+            },
+            "dataset": {
+                "value": "Santa Barbara",
+                "confidence": 0.5672
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 98.66,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 98.42,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 98.28,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 96.97,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 99.62,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "AVIRIS",
+                        "confidence": 0.9999
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Santa Barbara, California, USA",
+                        "confidence": 0.6777
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 1.0,
+                "confidence": 0.9999
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Changed",
+                        "confidence": 0.9433
+                    },
+                    {
+                        "value": "Unchanged",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "224 bands",
+                        "confidence": 0.9029
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Binary cross-entropy",
+                "confidence": 0.9484
+            },
+            "split_ratio": {
+                "value": "1% train, 99% test",
+                "confidence": 0.9982
+            }
+        },
+        {
+            "task": {
+                "value": "Change detection",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Change detection",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "BayArea",
+                "confidence": 0.9839
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 96.81,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 95.56,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 96.31,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 97.71,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 97.0,
+                        "confidence": 0.9251
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "AVIRIS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Patterson, California, USA",
+                        "confidence": 0.5695
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": 1.0,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Changed",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Unchanged",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "224 bands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "loss_function": {
+                "value": "Binary cross-entropy",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": "1% train, 99% test",
+                "confidence": 1.0
+            }
+        },
+        {
+            "task": {
+                "value": "Unsupervised classification",
+                "confidence": 0.8346
+            },
+            "application": {
+                "value": "Unsupervised land cover clustering",
+                "confidence": 0.4824
+            },
+            "dataset": {
+                "value": "Chikusei",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "AA",
+                        "confidence": 0.999
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "ARI",
+                        "confidence": 0.9999
+                    },
+                    {
+                        "value": "NMI",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 73.43,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": null,
+                        "confidence": 1.2
+                    },
+                    {
+                        "value": null,
+                        "confidence": 1.2
+                    },
+                    {
+                        "value": null,
+                        "confidence": 1.2
+                    },
+                    {
+                        "value": null,
+                        "confidence": 1.2
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "Headwall Hyperspec-VNIR-C",
+                        "confidence": 0.9998
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Chikusei City, Japan",
+                        "confidence": 0.7337
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 19,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "image_resolution": {
+                "value": "2.5m",
+                "confidence": 0.9962
+            },
+            "spatial_resolution": {
+                "value": "2.5m",
+                "confidence": 1.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "128 bands, 343?1018nm",
+                        "confidence": 0.5904
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Unsupervised change detection",
+                "confidence": 0.9992
+            },
+            "application": {
+                "value": "Unsupervised change detection",
+                "confidence": 0.7669
+            },
+            "dataset": {
+                "value": "Santa Barbara",
+                "confidence": 0.9667
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 91.44,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 82.07,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 89.15,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 89.44,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 88.85,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "AVIRIS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Santa Barbara, California, USA",
+                        "confidence": 0.9966
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Changed",
+                        "confidence": 0.9989
+                    },
+                    {
+                        "value": "Unchanged",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "224 bands",
+                        "confidence": 0.9979
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Unsupervised change detection",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Unsupervised change detection",
+                "confidence": 1.0
+            },
+            "dataset": {
+                "value": "BayArea",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "OA",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Kappa",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "F1",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Precision",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Recall",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 84.97,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 70.33,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 83.99,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 73.75,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 97.52,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": "AVIRIS",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": "Patterson, California, USA",
+                        "confidence": 0.9932
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 2,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": "Changed",
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": "Unchanged",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "spatial_resolution": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": "224 bands",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": []
+            },
+            "optimizer": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "batch_size": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "learning_rate": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}

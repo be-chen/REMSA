@@ -1,0 +1,538 @@
+{
+    "model_id": {
+        "value": "SegEarth-R1",
+        "confidence": 0.9536
+    },
+    "model_name": {
+        "value": "SegEarth-R1",
+        "confidence": 1.0
+    },
+    "version": {
+        "value": "1.0",
+        "confidence": 0.7224
+    },
+    "release_date": {
+        "value": "2025-04-13",
+        "confidence": 0.9545
+    },
+    "last_updated": {
+        "value": "2025-04-13",
+        "confidence": 0.9636
+    },
+    "short_description": {
+        "value": "SegEarth-R1 is a language-guided segmentation model for remote sensing that supports geospatial pixel reasoning from implicit natural language queries, integrating a hierarchical visual encoder, LLM for instruction parsing, and a tailored mask generator for spatial correlation. It achieves SOTA on geospatial pixel reasoning and referring segmentation tasks.",
+        "confidence": 0.8368
+    },
+    "paper_link": {
+        "value": "https://arxiv.org/abs/2504.09644",
+        "confidence": 1.0
+    },
+    "citations": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "repository": {
+        "value": "https://github.com/earth-insights/SegEarth-R1",
+        "confidence": 1.0
+    },
+    "weights": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "backbone": {
+        "value": "Swin-B",
+        "confidence": 0.9786
+    },
+    "num_layers": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "num_parameters": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "pretext_training_type": {
+        "value": "Language-guided segmentation with LLM-based reasoning",
+        "confidence": 0.7447
+    },
+    "masking_strategy": {
+        "value": "No mask tokens; description embedding directly used as query for mask generator",
+        "confidence": 0.746
+    },
+    "pretraining": {
+        "value": "Visual encoder and mask generator initialized with pretrained weights from Mask2Former; LLM initialized from Phi-1.5",
+        "confidence": 0.8469
+    },
+    "domain_knowledge": {
+        "value": [
+            {
+                "value": "Aggressive visual token compression for ultra-high-resolution images",
+                "confidence": 0.8122
+            },
+            {
+                "value": "Description projection module for language and multi-scale feature fusion",
+                "confidence": 0.9047
+            },
+            {
+                "value": "Streamlined mask prediction pipeline for direct description embedding queries",
+                "confidence": 0.6033
+            }
+        ]
+    },
+    "backbone_modifications": {
+        "value": [
+            {
+                "value": "Progressive feature hierarchy construction for multi-scale feature maps",
+                "confidence": 0.858
+            },
+            {
+                "value": "Stacked convolutional blocks and Layer Normalization as token compression connector",
+                "confidence": 0.5966
+            }
+        ]
+    },
+    "supported_sensors": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "modality_integration_type": {
+        "value": "Unimodal",
+        "confidence": 0.7737
+    },
+    "modalities": {
+        "value": [
+            {
+                "value": "Multispectral",
+                "confidence": 0.8909
+            }
+        ]
+    },
+    "spectral_alignment": {
+        "value": "none",
+        "confidence": 0.9874
+    },
+    "temporal_alignment": {
+        "value": "none",
+        "confidence": 1.0
+    },
+    "spatial_resolution": {
+        "value": "0.5m-153m",
+        "confidence": 0.9571
+    },
+    "temporal_resolution": {
+        "value": null,
+        "confidence": 0.0
+    },
+    "bands": {
+        "value": [
+            {
+                "value": null,
+                "confidence": 0.3
+            }
+        ]
+    },
+    "pretraining_phases": {
+        "value": [],
+        "confidence": 0.0
+    },
+    "benchmarks": [
+        {
+            "task": {
+                "value": "Geospatial pixel reasoning",
+                "confidence": 0.7092
+            },
+            "application": {
+                "value": "Implicit language-guided segmentation in remote sensing",
+                "confidence": 0.3398
+            },
+            "dataset": {
+                "value": "EarthReason",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "cIoU",
+                        "confidence": 0.7123
+                    },
+                    {
+                        "value": "gIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 68.25,
+                        "confidence": 0.9973
+                    },
+                    {
+                        "value": 70.75,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 5434,
+                "confidence": 1.0
+            },
+            "num_samples": {
+                "value": 5434,
+                "confidence": 0.9782
+            },
+            "sampling_percentage": {
+                "value": 100,
+                "confidence": 1.0
+            },
+            "num_classes": {
+                "value": 28,
+                "confidence": 0.9999
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "1232-7617",
+                "confidence": 0.8912
+            },
+            "spatial_resolution": {
+                "value": "0.5m-153m",
+                "confidence": 0.9997
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 0.9999
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Focal loss + Dice loss + Cross-entropy loss (for answer generation)",
+                "confidence": 0.3034
+            },
+            "split_ratio": {
+                "value": "2371 train / 1135 val / 1928 test",
+                "confidence": 0.6311
+            }
+        },
+        {
+            "task": {
+                "value": "Referring segmentation",
+                "confidence": 0.9525
+            },
+            "application": {
+                "value": "Explicit language-guided segmentation in remote sensing",
+                "confidence": 0.6324
+            },
+            "dataset": {
+                "value": "RRSIS-D",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "P@0.5",
+                        "confidence": 0.9698
+                    },
+                    {
+                        "value": "cIoU",
+                        "confidence": 0.9927
+                    },
+                    {
+                        "value": "gIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 76.96,
+                        "confidence": 0.9993
+                    },
+                    {
+                        "value": 78.01,
+                        "confidence": 1.0
+                    },
+                    {
+                        "value": 66.4,
+                        "confidence": 0.9668
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 17402,
+                "confidence": 0.9999
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 20,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "512x512",
+                "confidence": 0.8281
+            },
+            "spatial_resolution": {
+                "value": "0.13m",
+                "confidence": 0.9999
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Focal loss + Dice loss",
+                "confidence": 0.9953
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        },
+        {
+            "task": {
+                "value": "Referring segmentation",
+                "confidence": 1.0
+            },
+            "application": {
+                "value": "Explicit language-guided segmentation in remote sensing",
+                "confidence": 0.9981
+            },
+            "dataset": {
+                "value": "RefSegRS",
+                "confidence": 1.0
+            },
+            "metrics": {
+                "value": [
+                    {
+                        "value": "P@0.5",
+                        "confidence": 0.978
+                    },
+                    {
+                        "value": "cIoU",
+                        "confidence": 0.8721
+                    },
+                    {
+                        "value": "gIoU",
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "metrics_value": {
+                "value": [
+                    {
+                        "value": 86.3,
+                        "confidence": 0.9468
+                    },
+                    {
+                        "value": 79.0,
+                        "confidence": 0.9978
+                    },
+                    {
+                        "value": 72.45,
+                        "confidence": 1.0
+                    }
+                ]
+            },
+            "sensor": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "regions": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "original_samples": {
+                "value": 24420,
+                "confidence": 0.9988
+            },
+            "num_samples": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "sampling_percentage": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "num_classes": {
+                "value": 14,
+                "confidence": 1.0
+            },
+            "classes": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "image_resolution": {
+                "value": "800x800",
+                "confidence": 0.7097
+            },
+            "spatial_resolution": {
+                "value": "0.5m-30m",
+                "confidence": 0.9971
+            },
+            "bands_used": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "augmentations": {
+                "value": [
+                    {
+                        "value": null,
+                        "confidence": 0.3
+                    }
+                ]
+            },
+            "optimizer": {
+                "value": "AdamW",
+                "confidence": 1.0
+            },
+            "batch_size": {
+                "value": 16,
+                "confidence": 1.0
+            },
+            "learning_rate": {
+                "value": 0.0001,
+                "confidence": 1.0
+            },
+            "epochs": {
+                "value": null,
+                "confidence": 0.0
+            },
+            "loss_function": {
+                "value": "Focal loss + Dice loss",
+                "confidence": 1.0
+            },
+            "split_ratio": {
+                "value": null,
+                "confidence": 0.0
+            }
+        }
+    ]
+}
