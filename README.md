@@ -28,7 +28,7 @@ If you use this code, please cite our paper given below:
 
 **RESMA** REMSA automates RS foundation model selection by combining:
 
-- A structured database (RS-FMD) containing metadata for 150+ RSFMs
+- A structured database (RS-FMD) containing metadata for 160+ RSFMs
 - A modular agent architecture with:
     - query interpretation
     - metadata-grounded retrieval
@@ -82,7 +82,7 @@ REMSA then interprets your input, retrieves suitable candidate models from RS-FM
 
 - Located in `model_metadata/`
 - Contains structured JSON model metadata extracted from papers, repositories, and model cards
-- Supports 150+ Remote Sensing Foundation Models
+- Supports 160+ Remote Sensing Foundation Models
 
 ### Internal Runtime Data
 
