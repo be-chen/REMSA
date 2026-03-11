@@ -73,3 +73,28 @@ I'm doing land cover classification on hyperspectral in Arctic region, but I onl
 I need fast inference for land cover classification using Sentinel-1 SAR imagery in near real-time on Jetson Nano.
 I want a model that can identify ports and industrial areas described in text along a given coastline using optical satellite imagery.
 I’m working on forest health assessment using combined LiDAR and multispectral data in the Amazon basin. Which model would be best to fully fine-tune from scratch?
+I’m looking for a model I can use out-of-the-box for landslide detection using multispectral imagery. I don’t have any labeled training data.
+I have a well-labeled dataset for crop yield estimation with multi-temporal Sentinel-2 imagery in Eastern Europe. Which model would be best to fully fine-tune from scratch?
+I only have a few labeled samples for oil spill detection using Sentinel-1 SAR imagery. I want a model that can adapt well in a few-shot setting.
+I have a lot of unlabeled optical satellite imagery from Southeast Asia. I need a model that works well with self-supervised learning for urban land use classification.
+My data uses UAV-based multispectral imagery with sub-meter resolution, but most foundation models don’t support it. Can you recommend one that can be adapted?
+I'm working on shoreline change detection but only have access to a laptop with no GPU. Which model would be small enough to run locally?
+I’m using a desktop with a single GPU and doing glacier retreat monitoring on multispectral imagery. Which models balance performance and efficiency?
+For wetland mapping, I have access to cloud GPUs and can afford large models. What’s the most powerful foundation model I can try using SAR imagery?
+I'm doing basic land use classification (e.g., urban, water, vegetation) using MODIS imagery. What lightweight model would you suggest for fast experimentation?
+I'm working on multi-class crop classification with multi-temporal SAR imagery. The task isn’t trivial, but I don’t need pixel-level precision.
+I need a model for high-resolution building damage segmentation after earthquakes using optical satellite imagery. Accuracy and spatial detail are important.
+For road extraction using high-resolution optical imagery, I mainly care about achieving the highest overall accuracy, even if the model is large.
+For flood extent mapping using SAR imagery, I want clean and reliable outputs with minimal false detections; high mIoU is most important.
+For wildfire burn scar mapping using multispectral imagery, I need to ensure all affected areas are captured, even if some false positives occur.
+I need fast inference for ship detection using SAR imagery in near real-time on an edge device deployed at sea. What’s a good lightweight model?
+I'm doing crop type classification on multispectral imagery in South America, but I only have few-shot labels and limited compute. Which model fits this setup best?
+I have a well-labeled dataset for urban heat island analysis using thermal and multispectral imagery in East Asia. Which model would be best to fully fine-tune from scratch?
+I'm looking for a model I can use out-of-the-box for snow cover mapping using MODIS imagery. I don’t have any labeled training data.
+I only have a few labeled samples for forest disturbance detection using multi-temporal Sentinel-1 SAR imagery. I want a model that can adapt well in a few-shot setting.
+I have a lot of unlabeled hyperspectral imagery from agricultural regions in India. I need a model that works well with unsupervised learning for crop stress detection.
+I need fast inference for land cover classification using PlanetScope imagery in near real-time on a laptop CPU. What’s a good lightweight model?
+I have access to cloud GPUs and want to try the most powerful foundation model for landslide susceptibility mapping using multispectral and DEM data.
+For marine habitat mapping using multispectral imagery, I want outputs with minimal misclassification. High overall accuracy is the most important metric.
+I’m working on urban expansion detection using Sentinel-2 imagery in South America, but I only have few-shot labels and limited compute. Which model fits this setup best?
+I need a model for fine-grained river network extraction using high-resolution optical satellite imagery. Accuracy and spatial continuity are important.
