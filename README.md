@@ -1,18 +1,18 @@
-# RESMA: Foundation Model Selection Agent for Remote Sensing
+# REMSA: Foundation Model Selection for Remote Sensing via a Constraint-Aware Agent
 
 ![Alt text](remsa.png?raw=true "Architecture of REMSA")
 
-This repository contains the code of the paper [REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing](https://arxiv.org/abs/2511.17442). The work introduces RS-FMD, the first structured database of Remote Sensing Foundation Models (RSFMs), and REMSA, the first LLM-based agent designed to automatically select suitable foundation models for a given remote sensing task.
+This repository contains the code of the paper [REMSA: Foundation Model Selection for Remote Sensing via a Constraint-Aware Agent](https://arxiv.org/abs/2511.17442). The work introduces RS-FMD, the first structured database of Remote Sensing Foundation Models (RSFMs), and REMSA, the first LLM-based agent designed to automatically select suitable foundation models for a given remote sensing task.
 
 This work has been done at the [Remote Sensing Image Analysis group](https://rsim.berlin/) at the [BIFOLD](https://www.bifold.berlin/) by [Binger Chen](https://rsim.berlin/team/members/binger-chen), [Tacettin Emre Bök](https://rsim.berlin/team/members/tacettin-bok), [Behnood Rasti](https://rsim.berlin/team/members/behnood-rasti), [Volker Markl](https://www.bifold.berlin/people/prof-dr-volker-markl.html), and [Begüm Demir](https://rsim.berlin/team/members/begum-demir).
 
 If you use this code, please cite our paper given below:
 
-> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing](https://arxiv.org/abs/2511.17442)", arXiv preprint arXiv:2511.17442 (2025).
+> B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[REMSA: Foundation Model Selection for Remote Sensing via a Constraint-Aware Agent](https://arxiv.org/abs/2511.17442)", arXiv preprint arXiv:2511.17442 (2025).
 
 ```bibtex
 @misc{chen2025remsallmagentfoundation,
-      title={REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing}, 
+      title={REMSA: Foundation Model Selection for Remote Sensing via a Constraint-Aware Agent}, 
       author={Binger Chen and Tacettin Emre Bök and Behnood Rasti and Volker Markl and Begüm Demir},
       year={2025},
       eprint={2511.17442},
@@ -26,7 +26,7 @@ If you use this code, please cite our paper given below:
 
 ## Overview
 
-**RESMA** REMSA automates RS foundation model selection by combining:
+**REMSA** REMSA automates RS foundation model selection by combining:
 
 - A structured database (RS-FMD) containing metadata for 160+ RSFMs
 - A modular agent architecture with:
@@ -53,7 +53,7 @@ This installs all required dependencies defined in the environment file.
 
 ## Configuration
 
-RESMA is fully configurable via the `config.py` file. The following parameters can be adjusted:
+REMSA is fully configurable via the `config.py` file. The following parameters can be adjusted:
 
 - LLM backend selection
 - LLM inference settings
