@@ -11,10 +11,10 @@ If you use this code, please cite our paper given below:
 > B. Chen, T. E. Bök, B. Rasti, V. Markl, B. Demir, "[REMSA: Foundation Model Selection for Remote Sensing via a Constraint-Aware Agent](https://arxiv.org/abs/2511.17442)", arXiv preprint arXiv:2511.17442 (2025).
 
 ```bibtex
-@misc{chen2025remsallmagentfoundation,
+@misc{chen2026remsafoundationmodelselection,
       title={REMSA: Foundation Model Selection for Remote Sensing via a Constraint-Aware Agent}, 
       author={Binger Chen and Tacettin Emre Bök and Behnood Rasti and Volker Markl and Begüm Demir},
-      year={2025},
+      year={2026},
       eprint={2511.17442},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
