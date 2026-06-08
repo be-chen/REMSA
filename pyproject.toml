@@ -1,0 +1,26 @@
+[project]
+name = "remsa"
+version = "0.1.0"
+description = "REMSA project"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "langchain",
+    "langchain-community",
+    "langchain-openai",
+    "langchain-huggingface",
+    "openai",
+    "sentence-transformers",
+    "faiss-cpu",
+    "pydantic",
+    "tqdm",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "pyyaml",
+    "rich",
+    "structured_logprobs",
+    "nltk==3.9.1",
+    "json5",
+    "RapidFuzz==3.10.1",
+    "neo4j==5.28.1",
+]

@@ -5,7 +5,6 @@ from typing import List, Union, Optional
 import config
 import json
 
-
 class QuerySchema(BaseModel):
     task: str
     modality: str

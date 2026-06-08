@@ -1,17 +1,36 @@
 from tools.query_parser import QueryParserTool, QuerySchema
 from tools.retrieval_tool import FMDRetrievalTool
 from tools.ranking_tool import RankerTool
-from tools.adaptation_tool import AdaptationTool
+# from tools.adaptation_tool import AdaptationTool
 from tools.explanation_tool import ExplanationTool
 from tools.clarifier_tool import ClarifierTool
-from typing import Tuple
+from typing import Tuple, Any, Dict
 import config
 import json
+from copy import deepcopy
 
 MANDATORY_FIELDS = [
     name for name, field in QuerySchema.model_fields.items()
     if field.is_required()
 ]
+
+def is_empty(value: Any) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, str) and value.strip() == "":
+        return True
+    if isinstance(value, (list, dict, tuple, set)) and len(value) == 0:
+        return True
+    return False
+
+def update_b_with_non_empty_a(a: Dict[str, Any], b: Dict[str, Any]) -> Dict[str, Any]:
+    new_b = deepcopy(b)
+    for key, a_value in a.items():
+        if not is_empty(a_value):
+            b_value = new_b.get(key)
+            if a_value != b_value:
+                new_b[key] = deepcopy(a_value)
+    return new_b
 
 class FMSAgent:
     def __init__(self):
@@ -21,7 +40,7 @@ class FMSAgent:
             embedding_model=config.EMBEDDING_MODEL_NAME
         )
         self.ranker = RankerTool()
-        self.adapt = AdaptationTool()
+        # self.adapt = AdaptationTool()
         self.explainer = ExplanationTool()
         self.clarifier = ClarifierTool()
         self.max_clarify = config.MAX_CLARIFY
@@ -70,8 +89,10 @@ class FMSAgent:
             if missing_mandatory:
                 if clarify_count < self.max_clarify:
                     clarification = self.clarifier._run({"structured_query": parsed, "missing_fields": missing_mandatory, "phase": "mandatory"})
-                    print(f"[Agent clarification] {clarification}")
+                    print(f"[Agent clarification] Please answer the following questions: \n{clarification}")
                     user_reply = input("[User Clarification] >> ")
+                    if user_reply.lower() in ["exit", "quit"]:
+                        return "exit", "exit"
                     query += f"\n{user_reply}"
                     clarify_count += 1
                     continue
@@ -80,8 +101,10 @@ class FMSAgent:
             break
 
         # === Retrieve candidates ===
-        results = self.retriever._run(query)
+        # results = self.retriever._run(query)
+        results = self.retriever._run(parsed)
         candidates = results["candidates"]
+        struc_query = results["query"]
         if isinstance(candidates, dict) and "error" in candidates:
             return f"[Agent] Retrieval failed: {candidates['error']}"
 
@@ -89,13 +112,18 @@ class FMSAgent:
             if len(candidates) > self.max_candidates:
                 if clarify_count < self.max_clarify:
                     clarification = self.clarifier._run({"structured_query": parsed, "missing_fields": missing_optional, "phase": "optional"})
-                    print(f"[Agent clarification] {clarification}")
+                    print(f"[Agent clarification] Please answer the following questions as much as you can: \n{clarification}")
                     user_reply = input("[User Clarification] >> ")
-                    query += f"\n{user_reply}"
+                    if user_reply.lower() in ["exit", "quit"]:
+                        return "exit", "exit"
+                    struc_query += f"\n{user_reply}"
+                    struc_query_new = self.parser._run(struc_query)
+                    if "error" in parsed:
+                        return "[Agent] Error parsing query."
+                    struc_query = update_b_with_non_empty_a(struc_query, struc_query_new)
                     clarify_count += 1
-                    results = self.retriever._run(query)
+                    results = self.retriever._run(struc_query)
                     candidates = results["candidates"]
-                    print(len(candidates))
                 else:
                     results["candidates"]=candidates[:self.max_candidates]
                     break
@@ -107,5 +135,6 @@ class FMSAgent:
             model_score.append({'model_name': c['model_name'], 'score': c['similarity']})
 
         # === Rank the candiates with LLM ===
+        results["query"] = struc_query
         response = self.ranker._run(results)
         return response, model_score

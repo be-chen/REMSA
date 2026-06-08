@@ -42,14 +42,15 @@ The system supports diverse RS tasks and modalities and provides reproducible, u
 
 ## Environment Setup
 
-Set up the environment using Conda:
+This project uses [`uv`](https://docs.astral.sh/uv/) for Python environment and dependency management.
+
+Install dependencies from the project root:
 
 ```bash
-conda env create -f environment_remsa.yaml
-conda activate remsa
+uv sync
+source .venv/bin/activate
 ```
-
-This installs all required dependencies defined in the environment file.
+This creates a local virtual environment in `.venv/` and installs all required dependencies defined in `pyproject.toml` and locked in `uv.lock`.
 
 ## Configuration
 
