@@ -113,9 +113,13 @@ class FMSAgent:
                 if clarify_count < self.max_clarify:
                     clarification = self.clarifier._run({"structured_query": parsed, "missing_fields": missing_optional, "phase": "optional"})
                     print(f"[Agent clarification] Please answer the following questions as much as you can: \n{clarification}")
+                    print("-----------------------------------------------------------")
+                    print("If you cannot answer any of the questions, please enter \"skip\".")
                     user_reply = input("[User Clarification] >> ")
                     if user_reply.lower() in ["exit", "quit"]:
                         return "exit", "exit"
+                    if user_reply.lower() == "skip":
+                        break
                     struc_query += f"\n{user_reply}"
                     struc_query_new = self.parser._run(struc_query)
                     if "error" in parsed:
