@@ -12,7 +12,7 @@ L2R_MODEL_PATH = "models/cross_encoder.pt"
 
 # === Clarification Settings ===
 MAX_CLARIFY = 3
-TOP_K = 6 #5
+TOP_K = 3 #5
 CONFIDENCE_THRESHOLD = 0.6
 CLARIFY_TEMPERATURE = 0
 
