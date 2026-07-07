@@ -144,7 +144,7 @@ https://www.bifold.berlin/people/prof-dr-volker-markl.html
 **Begüm Demir**
 https://rsim.berlin/team/members/begum-demir
 
-For questions, requests and concerns, please contact [Binger Chen](mailto:binger.chenn@hu-berlin.de)
+For questions, requests and concerns, please contact [Binger Chen](mailto:binger.chen@hu-berlin.de)
 
 ## License
 
