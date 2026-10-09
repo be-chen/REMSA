@@ -3,7 +3,7 @@ import numpy as np
 import json
 import re
 
-client = OpenAI(api_key="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", base_url="https://api.openai.com/v1/")
+client = OpenAI(api_key="", base_url="https://api.openai.com/v1/")
 
 # Embedding cache to avoid repeated API calls
 embedding_cache = {}
